@@ -1,0 +1,167 @@
+﻿@using System.Data
+@model DataSet
+
+@{
+    ViewBag.Title = "ยืนยันคำขอการสมัคร";
+    Layout = "~/Views/Shared/_LayoutAuthoritiesTemplate.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#urlonclick').change(function () {
+            var url = $(this).val();
+            if (url != null && url != '') {
+                window.location.href = url;
+            }
+        });
+
+        $('.btn-recieve').click(function () {
+            var url = $(this).val();
+            $.alert({
+                theme: 'modern',
+                title: 'ต้องการรับนักศึกษาคนนี้ ?',
+                content: '',
+                type: 'green',
+                typeAnimated: true,
+                boxWidth: '30%',
+                useBootstrap: false,
+                buttons: {
+                    confirm: {
+                        text: 'ยืนยัน',
+                        btnClass: 'btn-green',
+                        action: function () {
+                            window.location.href = url;
+                        }
+                    },
+                    cancel: {
+                        text: 'ยกเลิก',
+                        action: function () {
+                            
+                        }
+                    },
+                },
+            }); 
+        });
+
+        $('.btn-reject').click(function () {
+            var url = $(this).val();
+            $.alert({
+                theme: 'modern',
+                title: 'ต้องการปฏิเสธนักศึกษาคนนี้ ?',
+                content: '',
+                type: 'red',
+                typeAnimated: true,
+                boxWidth: '30%',
+                useBootstrap: false,
+                buttons: {
+                    confirm: {
+                        text: 'ยืนยัน',
+                        btnClass: 'btn-red',
+                        action: function () {
+                            window.location.href = url;
+                        }
+                    },
+                    cancel: {
+                        text: 'ยกเลิก',
+                        action: function () {
+                            
+                        }
+                    },
+                },
+            }); 
+        });
+    });
+</script>
+
+<style>
+    tr {
+        text-align: center;
+    }
+</style>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-8" style="margin:auto;">
+            <div class="card">
+                <div class="card-body">
+                    <!-- title -->
+                    <div class="align-items-center">
+                        <h4 class="card-title">ยืนยันคำขอการสมัครของ นศ.</h4>
+                        <h5 class="card-subtitle">รายชื่อสถานประกอบการจะมีรายชื่ีอที่ นศ. ได้มาสมัครไว้เท่านั้น</h5>
+                        <hr />
+                    </div>
+                    <!-- title -->
+                    <div class="form-group col-md-12" style="text-align:center;">
+                        <div style="margin:auto;">
+                            <label class="col-md-5" style="font-weight:bold; text-align:left;">ชื่อสถานประกอบการ :</label>
+                            <div class="col-md-5" style="margin:auto;">
+                                <select id="urlonclick" class="selectpicker form-control" name="company_id" title="เลือกสถานประกอบการ" data-live-search="true">
+                                    @if (ViewData["company_name"].ToString() == "กรุณาเลือกสถานประกอบการ")
+                                    {
+                                        <option selected hidden disabled>@ViewData["company_name"].ToString()</option>
+                                    }
+                                    else
+                                    {
+                                        <option selected hidden>@ViewData["company_name"].ToString()</option>
+                                    }
+                                    @for (int i = 0; i < Model.Tables[0].Rows.Count; i++)
+                                    {
+                                        if (Model.Tables[0].Rows[i]["name_th"].ToString().Length > 10)
+                                        {
+                                            <option value=@Url.Action("ConfirmStudent", "Authorities", new { company_id = Model.Tables[0].Rows[i]["company_id"], company_name =  Model.Tables[0].Rows[i]["name_th"].ToString(), user_id_title = ViewData["user_id"], name_title = ViewData["name"]})>
+                                                @Model.Tables[0].Rows[i]["name_th"].ToString()
+                                            </option>
+                                        }
+                                        else
+                                        {
+                                            <option value=@Url.Action("ConfirmStudent", "Authorities", new { company_id = Model.Tables[0].Rows[i]["company_id"], company_name = @Model.Tables[0].Rows[i]["name_en"].ToString(), user_id_title = ViewData["user_id"], name_title = ViewData["name"] })>
+                                                @Model.Tables[0].Rows[i]["name_en"].ToString()
+                                            </option>
+
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <hr class="col-md-8" style="margin:auto;" />
+                    </div>
+
+                    <div class="table-responsive col-md-12">
+                        <table class="table v-middle">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th class="border-top-0">รหัสนักศึกษา</th>
+                                    <th class="border-top-0">ชื่อ - สกุลนักศึกษา</th>
+                                    <th class="border-top-0">ภาควิชา</th>
+                                    <th class="border-top-0"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (ViewData["company_name"].ToString() != "กรุณาเลือกสถานประกอบการ")
+                                {
+                                    for (int i = 0; i < Model.Tables[1].Rows.Count; i++)
+                                    {
+                                        <tr>
+                                            <td style="vertical-align:middle">@Model.Tables[1].Rows[i]["student_id"]</td>
+                                            <td style="vertical-align:middle">@Model.Tables[1].Rows[i]["name_th"]</td>
+                                            <td style="vertical-align:middle">@Model.Tables[1].Rows[i]["major"]</td>
+                                            <td>
+                                                <button class="btn btn-success btn-recieve" value="@Url.Action("UpdateConfirmStudent","Authorities", new { student_id = Model.Tables[1].Rows[i]["student_id"], company_id = Model.Tables[1].Rows[i]["company_id"], company_name = ViewData["company_name"], confirm_status = "รับแล้ว", user_id_title = ViewData["user_id"], name_title = ViewData["name"] })">รับ</button>
+                                                <button class="btn btn-danger btn-reject" value="@Url.Action("UpdateConfirmStudent","Authorities", new { student_id = Model.Tables[1].Rows[i]["student_id"], company_id = Model.Tables[1].Rows[i]["company_id"], company_name = ViewData["company_name"], confirm_status = "ปฏิเสธ", user_id_title = ViewData["user_id"], name_title = ViewData["name"] })">ปฏิเสธ</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

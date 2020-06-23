@@ -1,0 +1,1055 @@
+﻿@using System.Data
+@model DataSet
+
+@{
+    ViewBag.Title = "แก้ไขข้อมูลส่วนตัว";
+    Layout = "~/Views/Shared/_LayoutStudentTemplate.cshtml";
+}
+
+    <script>
+    $(document).ready(function () {
+        //--------------------------------------------------------------------------------
+        var _study = $('#get_study').val();
+        $("input[name=study][value='" + _study + "']").prop("checked", true);
+
+        var _listen = $('#listen').val();
+        $("input[name='la_listening[0]'][value='" + _listen + "']").prop("checked", true);
+        var _speak = $('#speak').val();
+        $("input[name='la_speaking[0]'][value='" + _speak + "']").prop("checked", true);
+        var _read = $('#read').val();
+        $("input[name='la_reading[0]'][value='" + _read + "']").prop("checked", true);
+        var _write = $('#write').val();
+        $("input[name='la_writing[0]'][value='" + _write + "']").prop("checked", true);
+
+        var _gender = $('#get_gender').val();
+        if (_gender != '') {
+            $('select[name=gender]').val(_gender);
+            $('.selectpicker').selectpicker('refresh');
+        }
+
+        if ($('#msgAlert').val() == "Success") {
+                $.alert({
+                    theme: 'modern',
+                    title: 'บันทึกข้อมูลสำเร็จ !!!',
+                    content: $('#msgAlert').val(),
+                    type: 'green',
+                    typeAnimated: true,
+                    boxWidth: '20%',
+                    useBootstrap: false,
+                    buttons: {
+                        OK: {
+                            text: 'OK',
+                            btnClass: 'btn-green',
+                            action: function () {
+                                //location.reload();
+                            }
+                        }
+                    },
+                }); 
+            }
+        //----------------------------------------------------------------------------------
+        $('.datepicker').datepicker({
+            autoclose: true,
+            language: 'th',
+            format: 'dd/mm/yyyy',
+            orientation: "bottom auto"
+        });
+        //----------------------------------------------------------------------------
+        $("#province").change(function () {
+                var Area = {};
+                Area.url = "/Student/Area";
+                Area.type = "POST";
+                Area.data = JSON.stringify({
+                    province: $("#province").val()
+                });
+                Area.datatype = "json";
+                Area.contentType = "application/json";
+                Area.success = function (AreaList) {
+                    $('.selectpicker').selectpicker('render');
+                    $("#area").empty();
+                    $("#sub_area").empty();
+                    $('.selectpicker').selectpicker('refresh');
+                    $('.selectpicker').selectpicker('render');
+                    $("#area").append("<option hidden disabled selected>กรุณาเลือกอำเภอ</option>");
+                    $("#sub_area").append("<option hidden disabled selected>กรุณาเลือกตำบล</option>");
+                    $('.selectpicker').selectpicker('refresh');
+                    for (var i = 0; i < AreaList.length; i++) {
+                        $('.selectpicker').selectpicker('render');
+                        $("#area").append("<option>" + AreaList[i] + "</option>");
+                        $('.selectpicker').selectpicker('refresh');
+                    }
+                };
+                Area.error = function () {
+                    alert("Error in Getting Area !!");
+                };
+                $.ajax(Area);
+            });
+
+            $("#area").change(function () {
+                var Sub_Area = {};
+                Sub_Area.url = "/Student/Sub_Area";
+                Sub_Area.type = "POST";
+                Sub_Area.data = JSON.stringify({
+                    area: $("#area").val(),
+                    province: $("#province").val()
+                });
+                Sub_Area.datatype = "json";
+                Sub_Area.contentType = "application/json";
+                Sub_Area.success = function (Sub_AreaList) {
+                    $('.selectpicker').selectpicker('render');
+                    $("#sub_area").empty();
+                    $('.selectpicker').selectpicker('refresh');
+                    $('.selectpicker').selectpicker('render');
+                    $("#sub_area").append("<option hidden disabled selected>กรุณาเลือกตำบล</option>");
+                    $('.selectpicker').selectpicker('refresh');
+                    for (var i = 0; i < Sub_AreaList.length; i++) {
+                        $('.selectpicker').selectpicker('render');
+                        $("#sub_area").append("<option>" + Sub_AreaList[i] + "</option>");
+                        $('.selectpicker').selectpicker('refresh');
+                    }
+                };
+                Sub_Area.error = function () {
+                    alert("Error in Getting Sub_Area !!");
+                };
+                $.ajax(Sub_Area);
+            });
+
+            $("#sub_area").change(function () {
+                var Sub_Area = {};
+                Sub_Area.url = "/Student/Prototype_id";
+                Sub_Area.type = "POST";
+                Sub_Area.data = JSON.stringify({
+                    sub_area: $("#sub_area").val(),
+                    area: $("#area").val(),
+                    province: $("#province").val()
+                });
+                Sub_Area.datatype = "json";
+                Sub_Area.contentType = "application/json";
+                Sub_Area.success = function (prototype_id) {
+                    $("#prototype_id1").val(prototype_id)
+                };
+                Sub_Area.error = function () {
+                    alert("Error in Getting Prototype_id !!");
+                };
+                $.ajax(Sub_Area);
+            });
+
+            $("#province2").change(function () {
+                var Area = {};
+                Area.url = "/Student/Area";
+                Area.type = "POST";
+                Area.data = JSON.stringify({
+                    province: $("#province2").val()
+                });
+                Area.datatype = "json";
+                Area.contentType = "application/json";
+                Area.success = function (AreaList) {
+                    $('.selectpicker').selectpicker('render');
+                    $("#area2").empty();
+                    $("#sub_area2").empty();
+                    $('.selectpicker').selectpicker('refresh');
+                    $('.selectpicker').selectpicker('render');
+                    $("#area2").append("<option hidden disabled selected>กรุณาเลือกอำเภอ</option>");
+                    $("#sub_area2").append("<option hidden disabled selected>กรุณาเลือกตำบล</option>");
+                    $('.selectpicker').selectpicker('refresh');
+                    for (var i = 0; i < AreaList.length; i++) {
+                        $('.selectpicker').selectpicker('render');
+                        $("#area2").append("<option>" + AreaList[i] + "</option>");
+                        $('.selectpicker').selectpicker('refresh');
+                    }
+                };
+                Area.error = function () {
+                    alert("Error in Getting Area !!");
+                };
+                $.ajax(Area);
+            });
+
+            $("#area2").change(function () {
+                var Sub_Area = {};
+                Sub_Area.url = "/Student/Sub_Area";
+                Sub_Area.type = "POST";
+                Sub_Area.data = JSON.stringify({
+                    area: $("#area2").val(),
+                    province: $("#province2").val()
+                });
+                Sub_Area.datatype = "json";
+                Sub_Area.contentType = "application/json";
+                Sub_Area.success = function (Sub_AreaList) {
+                    $('.selectpicker').selectpicker('render');
+                    $("#sub_area2").empty();
+                    $('.selectpicker').selectpicker('refresh');
+                    $('.selectpicker').selectpicker('render');
+                    $("#sub_area2").append("<option hidden disabled selected>กรุณาเลือกตำบล</option>");
+                    $('.selectpicker').selectpicker('refresh');
+                    for (var i = 0; i < Sub_AreaList.length; i++) {
+                        $('.selectpicker').selectpicker('render');
+                        $("#sub_area2").append("<option>" + Sub_AreaList[i] + "</option>");
+                        $('.selectpicker').selectpicker('refresh');
+                    }
+                };
+                Sub_Area.error = function () {
+                    alert("Error in Getting Sub_Area !!");
+                };
+                $.ajax(Sub_Area);
+            });
+
+            $("#sub_area2").change(function () {
+                var Sub_Area = {};
+                Sub_Area.url = "/Student/Prototype_id";
+                Sub_Area.type = "POST";
+                Sub_Area.data = JSON.stringify({
+                    sub_area: $("#sub_area2").val(),
+                    area: $("#area2").val(),
+                    province: $("#province2").val()
+                });
+                Sub_Area.datatype = "json";
+                Sub_Area.contentType = "application/json";
+                Sub_Area.success = function (prototype_id) {
+                    $("#prototype_id2").val(prototype_id)
+                };
+                Sub_Area.error = function () {
+                    alert("Error in Getting Prototype_id !!");
+                };
+                $.ajax(Sub_Area);
+            });
+
+            $("#province3").change(function () {
+                var Area = {};
+                Area.url = "/Student/Area";
+                Area.type = "POST";
+                Area.data = JSON.stringify({
+                    province: $("#province3").val()
+                });
+                Area.datatype = "json";
+                Area.contentType = "application/json";
+                Area.success = function (AreaList) {
+                    $('.selectpicker').selectpicker('render');
+                    $("#area3").empty();
+                    $("#sub_area3").empty();
+                    $('.selectpicker').selectpicker('refresh');
+                    $('.selectpicker').selectpicker('render');
+                    $("#area3").append("<option hidden disabled selected>กรุณาเลือกอำเภอ</option>");
+                    $("#sub_area3").append("<option hidden disabled selected>กรุณาเลือกตำบล</option>");
+                    $('.selectpicker').selectpicker('refresh');
+                    for (var i = 0; i < AreaList.length; i++) {
+                        $('.selectpicker').selectpicker('render');
+                        $("#area3").append("<option>" + AreaList[i] + "</option>");
+                        $('.selectpicker').selectpicker('refresh');
+                    }
+                };
+                Area.error = function () {
+                    alert("Error in Getting Area !!");
+                };
+                $.ajax(Area);
+            });
+
+            $("#area3").change(function () {
+                var Sub_Area = {};
+                Sub_Area.url = "/Student/Sub_Area";
+                Sub_Area.type = "POST";
+                Sub_Area.data = JSON.stringify({
+                    area: $("#area3").val(),
+                    province: $("#province3").val()
+                });
+                Sub_Area.datatype = "json";
+                Sub_Area.contentType = "application/json";
+                Sub_Area.success = function (Sub_AreaList) {
+                    $('.selectpicker').selectpicker('render');
+                    $("#sub_area3").empty();
+                    $('.selectpicker').selectpicker('refresh');
+                    $('.selectpicker').selectpicker('render');
+                    $("#sub_area3").append("<option hidden disabled selected>กรุณาเลือกตำบล</option>");
+                    $('.selectpicker').selectpicker('refresh');
+                    for (var i = 0; i < Sub_AreaList.length; i++) {
+                        $('.selectpicker').selectpicker('render');
+                        $("#sub_area3").append("<option>" + Sub_AreaList[i] + "</option>");
+                        $('.selectpicker').selectpicker('refresh');
+                    }
+                };
+                Sub_Area.error = function () {
+                    alert("Error in Getting Sub_Area !!");
+                };
+                $.ajax(Sub_Area);
+            });
+
+            $("#sub_area3").change(function () {
+                var Sub_Area = {};
+                Sub_Area.url = "/Student/Prototype_id";
+                Sub_Area.type = "POST";
+                Sub_Area.data = JSON.stringify({
+                    sub_area: $("#sub_area3").val(),
+                    area: $("#area3").val(),
+                    province: $("#province3").val()
+                });
+                Sub_Area.datatype = "json";
+                Sub_Area.contentType = "application/json";
+                Sub_Area.success = function (prototype_id) {
+                    $("#prototype_id3").val(prototype_id)
+                };
+                Sub_Area.error = function () {
+                    alert("Error in Getting Prototype_id !!");
+                };
+                $.ajax(Sub_Area);
+            });
+
+            $("#province4").change(function () {
+                var Area = {};
+                Area.url = "/Student/Area";
+                Area.type = "POST";
+                Area.data = JSON.stringify({
+                    province: $("#province4").val()
+                });
+                Area.datatype = "json";
+                Area.contentType = "application/json";
+                Area.success = function (AreaList) {
+                    $('.selectpicker').selectpicker('render');
+                    $("#area4").empty();
+                    $("#sub_area4").empty();
+                    $('.selectpicker').selectpicker('refresh');
+                    $('.selectpicker').selectpicker('render');
+                    $("#area4").append("<option hidden disabled selected>กรุณาเลือกอำเภอ</option>");
+                    $("#sub_area4").append("<option hidden disabled selected>กรุณาเลือกตำบล</option>");
+                    $('.selectpicker').selectpicker('refresh');
+                    for (var i = 0; i < AreaList.length; i++) {
+                        $('.selectpicker').selectpicker('render');
+                        $("#area4").append("<option>" + AreaList[i] + "</option>");
+                        $('.selectpicker').selectpicker('refresh');
+                    }
+                };
+                Area.error = function () {
+                    alert("Error in Getting Area !!");
+                };
+                $.ajax(Area);
+            });
+
+            $("#area4").change(function () {
+                var Sub_Area = {};
+                Sub_Area.url = "/Student/Sub_Area";
+                Sub_Area.type = "POST";
+                Sub_Area.data = JSON.stringify({
+                    area: $("#area4").val(),
+                    province: $("#province4").val()
+                });
+                Sub_Area.datatype = "json";
+                Sub_Area.contentType = "application/json";
+                Sub_Area.success = function (Sub_AreaList) {
+                    $('.selectpicker').selectpicker('render');
+                    $("#sub_area4").empty();
+                    $('.selectpicker').selectpicker('refresh');
+                    $('.selectpicker').selectpicker('render');
+                    $("#sub_area4").append("<option hidden disabled selected>กรุณาเลือกตำบล</option>");
+                    $('.selectpicker').selectpicker('refresh');
+                    for (var i = 0; i < Sub_AreaList.length; i++) {
+                        $('.selectpicker').selectpicker('render');
+                        $("#sub_area4").append("<option>" + Sub_AreaList[i] + "</option>");
+                        $('.selectpicker').selectpicker('refresh');
+                    }
+                };
+                Sub_Area.error = function () {
+                    alert("Error in Getting Sub_Area !!");
+                };
+                $.ajax(Sub_Area);
+            });
+
+            $("#sub_area4").change(function () {
+                var Sub_Area = {};
+                Sub_Area.url = "/Student/Prototype_id";
+                Sub_Area.type = "POST";
+                Sub_Area.data = JSON.stringify({
+                    sub_area: $("#sub_area4").val(),
+                    area: $("#area4").val(),
+                    province: $("#province4").val()
+                });
+                Sub_Area.datatype = "json";
+                Sub_Area.contentType = "application/json";
+                Sub_Area.success = function (prototype_id) {
+                    $("#prototype_id4").val(prototype_id)
+                };
+                Sub_Area.error = function () {
+                    alert("Error in Getting Prototype_id !!");
+                };
+                $.ajax(Sub_Area);
+            });
+        //-------------------------------------------------------------------------------------
+    });
+    </script>
+
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        tr{
+            text-align:center;
+        }
+    </style>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <!-- column -->
+            <div class="col-lg-9" style="margin:auto">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group col-md-12">
+                            <h4 class="card-title">แก้ไขข้อมูลส่วนตัว</h4>
+                            <h5 class="card-subtitle">เป็นข้อมูลที่เพิ่มเข้ามาตอนเข้าใช้งานครั้งแรก</h5>
+                            <hr />
+                        </div>
+                        <div class="form-group col-md-12" style="margin-top:20px;">
+                            <label class="font-16">ข้อมูลส่วนตัวนักศึกษา :</label>
+                        </div>
+                        <form method="post">
+
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    <label>รหัสนักศึกษา :</label>
+                                    <input class="form-control" name="student_id" value="@Model.Tables["Edit"].Rows[0]["student_id"]" readonly />
+                                </div>
+                                <div class="col-md-4">
+                                    <label>ชื่อภาษาไทย :</label>
+                                    <input class="form-control" name="name_th" value="@Model.Tables["Edit"].Rows[0]["name_th"]" readonly />
+                                </div>
+                                <div class="col-md-4">
+                                    <label>ชื่อภาษาอังกฤษ :</label>
+                                    <input class="form-control" name="name_en" value="@Model.Tables["Edit"].Rows[0]["name_en"]" maxlength="100" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    <label>ชื่อภาควิชา :</label>
+                                    <input class="form-control" name="major" value="@Model.Tables["Edit"].Rows[0]["major"]" readonly />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>นักศึกษาชั้นปีที่ :</label>
+                                    <input class="form-control" type="number" name="year" value="@Model.Tables["Edit"].Rows[0]["year"]" maxlength="5" autocomplete="off" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label>อาจารย์ที่ปรึกษา :</label>
+                                    <input class="form-control" name="advisor" value="@Model.Tables["Edit"].Rows[0]["advisor"]" maxlength="70" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-3">
+                                    <label>เกรดเฉลี่ยภาคการศึกษาที่ผ่านมา :</label>
+                                    <input class="form-control" type="number" name="gpa" value="@Model.Tables["Edit"].Rows[0]["gpa"]" maxlength="5" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>เกรดเฉลี่ยรวม :</label>
+                                    <input class="form-control" type="number" name="gpax" value="@Model.Tables["Edit"].Rows[0]["gpax"]" maxlength="5" autocomplete="off" />
+                                </div>
+                                <div class="col-md-6" style="margin-top:30px; margin-left:10%;">
+                                    <label class="radio-inline m-r-30">
+                                        <input class="m-r-10" type="radio" name="study" value="ภาคปกติ">ภาคปกติ
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input class="m-r-10" type="radio" name="study" value="ภาคพิเศษ">ภาคพิเศษ
+                                    </label>
+                                    <input type="hidden" id="get_study" value="@Model.Tables["Edit"].Rows[0]["study"]" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-3">
+                                    <label>บัตรประจำตัวประชาชนเลขที่ :</label>
+                                    <input class="form-control" name="identification" value="@Model.Tables["Edit"].Rows[0]["identification"]" maxlength="13" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ออกให้ ณ :</label>
+                                    <input class="form-control" name="at" value="@Model.Tables["Edit"].Rows[0]["at"]" maxlength="30" autocomplete="off" />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>เมื่อวันที่ :</label>
+                                    <input class="form-control datepicker" name="date" value="@Model.Tables["Edit"].Rows[0]["date"]" autocomplete="off" />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>เชื้อชาติ :</label>
+                                    <input class="form-control" name="race" value="@Model.Tables["Edit"].Rows[0]["race"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>สัญชาติ :</label>
+                                    <input class="form-control" name="nationality" value="@Model.Tables["Edit"].Rows[0]["nationality"]" maxlength="20" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-3">
+                                    <label>ศาสนา :</label>
+                                    <input class="form-control" name="religion" value="@Model.Tables["Edit"].Rows[0]["religion"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>วันเดือนปีเกิด :</label>
+                                    <input class="form-control datepicker" name="date_birth" value="@Model.Tables["Edit"].Rows[0]["date_birth"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>เพศ :</label>
+                                    <select class="selectpicker form-control" id="major" title="Please select" name="gender">
+                                        <option>ชาย</option>
+                                        <option>หญิง</option>
+                                    </select>
+                                    <input type="hidden" id="get_gender" value="@Model.Tables["Edit"].Rows[0]["gender"]" />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>ส่วนสูง :</label>
+                                    <input class="form-control" type="number" name="height" value="@Model.Tables["Edit"].Rows[0]["height"]" maxlength="5" autocomplete="off" />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>น้ำหนัก :</label>
+                                    <input class="form-control" type="number" name="weight" value="@Model.Tables["Edit"].Rows[0]["weight"]" maxlength="5" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <div class="col-md-4">
+                                    <label>โรคประจำตัว ระบุ :</label>
+                                    <input class="form-control" name="disease" value="@Model.Tables["Edit"].Rows[0]["disease"]" maxlength="50" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12" style="margin-top:40px;">
+                                <label class="font-16">ที่อยู่ในภาคการศึกษานี้ :</label>
+                                <input type="hidden" value="นักศึกษา" name="ad_who[0]" />
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-2">
+                                    <label>ที่อยู่เลขที่ :</label>
+                                    <input class="form-control" name="ad_number[0]" value="@Model.Tables["Edit1"].Rows[0]["number"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ที่อยู่เลขที่ :</label>
+                                    <input class="form-control" name="ad_building[0]" value="@Model.Tables["Edit1"].Rows[0]["building"]" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-1">
+                                    <label>ชั้น :</label>
+                                    <input class="form-control" name="ad_floor[0]" value="@Model.Tables["Edit1"].Rows[0]["floor"]" maxlength="5" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ซอย :</label>
+                                    <input class="form-control" name="ad_lane[0]" value="@Model.Tables["Edit1"].Rows[0]["lane"]" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ถนน :</label>
+                                    <input class="form-control" name="ad_road[0]" value="@Model.Tables["Edit1"].Rows[0]["road"]" maxlength="50" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    @Html.Label("จังหวัด:", htmlAttributes: new { @class = "control-label" })
+                                    <select class="selectpicker form-control" id="province" name="ad_province[0]" data-size="10" data-live-search="true" required>
+                                        <option selected hidden value="@Model.Tables["Edit1"].Rows[0]["province"]">@Model.Tables["Edit1"].Rows[0]["province"]</option>
+                                        @foreach (string province in ViewBag.province)
+                                        {
+                                            <option value="@province">
+                                                @province
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.Label("อำเภอ/เขต:", htmlAttributes: new { @class = "control-label" })
+                                    <select id="area" class="selectpicker form-control" name="ad_area[0]" required>
+                                        <option selected hidden value="@Model.Tables["Edit1"].Rows[0]["area"]">@Model.Tables["Edit1"].Rows[0]["area"]</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.Label("ตำบล/แขวง:", htmlAttributes: new { @class = "control-label" })
+                                    <select id="sub_area" class="selectpicker form-control" name="ad_sub_area[0]" required>
+                                        <option selected hidden value="@Model.Tables["Edit1"].Rows[0]["sub_area"]">@Model.Tables["Edit1"].Rows[0]["sub_area"]</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    <label>เบอร์โทรศัพท์ติดต่อนักศึกษา :</label>
+                                    <input class="form-control" name="telephone" value="@Model.Tables["Edit4"].Rows[0]["telephone"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label>โทรศัพท์เคลื่อนที่ :</label>
+                                    <input class="form-control" name="mobile_phone" value="@Model.Tables["Edit4"].Rows[0]["mobile_phone"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label>E-mail :</label>
+                                    <input class="form-control" name="email" value="@Model.Tables["Edit4"].Rows[0]["email"]" maxlength="100" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12" style="margin-top:40px;">
+                                <label class="font-16">บุคคลที่ติดต่อได้ในกรณีฉุกเฉิน :</label>
+                                <input type="hidden" value="กรณีฉุกเฉิน" name="ad_who[1]" />
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    <label>ชื่อ - สกุล :</label>
+                                    <input class="form-control" name="fa_name[0]" value="@Model.Tables["Edit4"].Rows[0]["name"]" maxlength="100" autocomplete="off" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label>ความเกี่ยวข้อง :</label>
+                                    <input class="form-control" name="fa_relation[0]" value="@Model.Tables["Edit4"].Rows[0]["relation"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label>อาชีพ :</label>
+                                    <input class="form-control" name="fa_occupation[0]" value="@Model.Tables["Edit4"].Rows[0]["occupation"]" maxlength="50" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <div class="col-md-6">
+                                    <label>สถานที่ทำงาน :</label>
+                                    <input class="form-control" name="fa_place_work[0]" value="@Model.Tables["Edit4"].Rows[0]["place_work"]" maxlength="70" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-2">
+                                    <label>ที่อยู่เลขที่ :</label>
+                                    <input class="form-control" name="ad_number[1]" value="@Model.Tables["Edit1"].Rows[1]["number"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ที่อยู่เลขที่ :</label>
+                                    <input class="form-control" name="ad_building[1]" value="@Model.Tables["Edit1"].Rows[1]["building"]" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-1">
+                                    <label>ชั้น :</label>
+                                    <input class="form-control" name="ad_floor[1]" value="@Model.Tables["Edit1"].Rows[1]["floor"]" maxlength="5" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ซอย :</label>
+                                    <input class="form-control" name="ad_lane[1]" value="@Model.Tables["Edit1"].Rows[1]["lane"]" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ถนน :</label>
+                                    <input class="form-control" name="ad_road[1]" value="@Model.Tables["Edit1"].Rows[1]["road"]" maxlength="50" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    @Html.Label("จังหวัด:", htmlAttributes: new { @class = "control-label" })
+                                    <select class="selectpicker form-control" id="province2" name="ad_province[1]" data-size="10" data-live-search="true" required>
+                                        <option selected hidden value="@Model.Tables["Edit1"].Rows[1]["province"]">@Model.Tables["Edit1"].Rows[1]["province"]</option>
+                                        @foreach (string province in ViewBag.province)
+                                        {
+                                            <option value="@province">
+                                                @province
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.Label("อำเภอ/เขต:", htmlAttributes: new { @class = "control-label" })
+                                    <select id="area2" class="selectpicker form-control" name="ad_area[1]" required>
+                                        <option selected hidden value="@Model.Tables["Edit1"].Rows[1]["area"]">@Model.Tables["Edit1"].Rows[1]["area"]</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.Label("ตำบล/แขวง:", htmlAttributes: new { @class = "control-label" })
+                                    <select id="sub_area2" class="selectpicker form-control" name="ad_sub_area[1]" required>
+                                        <option selected hidden value="@Model.Tables["Edit1"].Rows[1]["sub_area"]">@Model.Tables["Edit1"].Rows[1]["sub_area"]</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-3">
+                                    <label>โทรศัพท์ :</label>
+                                    <input class="form-control" name="fa_telephone[0]" value="@Model.Tables["Edit4"].Rows[0]["telephone"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>โทรศัพท์เคลื่อนที่ :</label>
+                                    <input class="form-control" name="fa_mobile_phone[0]" value="@Model.Tables["Edit4"].Rows[0]["mobile_phone"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>โทรสาร :</label>
+                                    <input class="form-control" name="fa_fax[0]" value="@Model.Tables["Edit4"].Rows[0]["fax"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>E-mail :</label>
+                                    <input class="form-control" name="fa_email[0]" value="@Model.Tables["Edit4"].Rows[0]["email"]" maxlength="100" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12" style="margin-top:40px;">
+                                <label class="font-16">ข้อมูลบิดา :</label>
+                                <input type="hidden" value="บิดา" name="ad_who[2]" />
+                                <input type="hidden" value="บิดา" name="fa_relation[1]" />
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-3">
+                                    <label>ชื่อบิดา :</label>
+                                    <input class="form-control" name="fa_name[1]" value="@Model.Tables["Edit4"].Rows[1]["name"]" maxlength="100" autocomplete="off" />
+                                </div>
+                                <div class="col-md-1">
+                                    <label>อายุ :</label>
+                                    <input class="form-control" type="number" name="fa_age[0]" value="@Model.Tables["Edit4"].Rows[1]["age"]" maxlength="5" autocomplete="off" />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>อาชีพ :</label>
+                                    <input class="form-control" name="fa_occupation[1]" value="@Model.Tables["Edit4"].Rows[1]["occupation"]" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>โทรศัพท์ :</label>
+                                    <input class="form-control" name="fa_mobile_phone[1]" value="@Model.Tables["Edit4"].Rows[1]["mobile_phone"]" maxlength="20" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-2">
+                                    <label>ที่อยู่เลขที่ :</label>
+                                    <input class="form-control" name="ad_number[2]" value="@Model.Tables["Edit1"].Rows[2]["number"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ที่อยู่เลขที่ :</label>
+                                    <input class="form-control" name="ad_building[2]" value="@Model.Tables["Edit1"].Rows[2]["building"]" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-1">
+                                    <label>ชั้น :</label>
+                                    <input class="form-control" name="ad_floor[2]" value="@Model.Tables["Edit1"].Rows[2]["floor"]" maxlength="5" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ซอย :</label>
+                                    <input class="form-control" name="ad_lane[2]" value="@Model.Tables["Edit1"].Rows[2]["lane"]" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ถนน :</label>
+                                    <input class="form-control" name="ad_road[2]" value="@Model.Tables["Edit1"].Rows[2]["road"]" maxlength="50" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    @Html.Label("จังหวัด:", htmlAttributes: new { @class = "control-label" })
+                                    <select class="selectpicker form-control" id="province3" name="ad_province[2]" data-size="10" data-live-search="true">
+                                        <option selected hidden value="@Model.Tables["Edit1"].Rows[2]["province"]">@Model.Tables["Edit1"].Rows[2]["province"]</option>
+                                        @foreach (string province in ViewBag.province)
+                                        {
+                                            <option value="@province">
+                                                @province
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.Label("อำเภอ/เขต:", htmlAttributes: new { @class = "control-label" })
+                                    <select id="area3" class="selectpicker form-control" name="ad_area[2]">
+                                        <option selected hidden value="@Model.Tables["Edit1"].Rows[2]["area"]">@Model.Tables["Edit1"].Rows[2]["area"]</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.Label("ตำบล/แขวง:", htmlAttributes: new { @class = "control-label" })
+                                    <select id="sub_area3" class="selectpicker form-control" name="ad_sub_area[2]">
+                                        <option selected hidden value="@Model.Tables["Edit1"].Rows[2]["sub_area"]">@Model.Tables["Edit1"].Rows[2]["sub_area"]</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12" style="margin-top:40px;">
+                                <label class="font-16">ข้อมูลมารดา :</label>
+                                <input type="hidden" value="มารดา" name="ad_who[3]" />
+                                <input type="hidden" value="มารดา" name="fa_relation[2]" />
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-3">
+                                    <label>ชื่อมารดา :</label>
+                                    <input class="form-control" name="fa_name[2]" value="@Model.Tables["Edit4"].Rows[2]["name"]" maxlength="100" autocomplete="off" />
+                                </div>
+                                <div class="col-md-1">
+                                    <label>อายุ :</label>
+                                    <input class="form-control" type="number" name="fa_age[1]" value="@Model.Tables["Edit4"].Rows[2]["age"]" maxlength="5" autocomplete="off" />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>อาชีพ :</label>
+                                    <input class="form-control" name="fa_occupation[2]" value="@Model.Tables["Edit4"].Rows[2]["occupation"]" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>โทรศัพท์ :</label>
+                                    <input class="form-control" name="fa_mobile_phone[2]" value="@Model.Tables["Edit4"].Rows[2]["mobile_phone"]" maxlength="20" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-2">
+                                    <label>ที่อยู่เลขที่ :</label>
+                                    <input class="form-control" name="ad_number[3]" value="@Model.Tables["Edit1"].Rows[3]["number"]" maxlength="20" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ที่อยู่เลขที่ :</label>
+                                    <input class="form-control" name="ad_building[3]" value="@Model.Tables["Edit1"].Rows[3]["building"]" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-1">
+                                    <label>ชั้น :</label>
+                                    <input class="form-control" name="ad_floor[3]" value="@Model.Tables["Edit1"].Rows[3]["floor"]" maxlength="5" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ซอย :</label>
+                                    <input class="form-control" name="ad_lane[3]" value="@Model.Tables["Edit1"].Rows[3]["lane"]" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>ถนน :</label>
+                                    <input class="form-control" name="ad_road[3]" value="@Model.Tables["Edit1"].Rows[3]["road"]" maxlength="50" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    @Html.Label("จังหวัด:", htmlAttributes: new { @class = "control-label" })
+                                    <select class="selectpicker form-control" id="province4" name="ad_province[3]" data-size="10" data-live-search="true">
+                                        <option selected hidden value="@Model.Tables["Edit1"].Rows[3]["province"]">@Model.Tables["Edit1"].Rows[3]["province"]</option>
+                                        @foreach (string province in ViewBag.province)
+                                        {
+                                            <option value="@province">
+                                                @province
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.Label("อำเภอ/เขต:", htmlAttributes: new { @class = "control-label" })
+                                    <select id="area4" class="selectpicker form-control" name="ad_area[3]">
+                                        <option selected hidden value="@Model.Tables["Edit1"].Rows[3]["area"]">@Model.Tables["Edit1"].Rows[3]["area"]</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.Label("ตำบล/แขวง:", htmlAttributes: new { @class = "control-label" })
+                                    <select id="sub_area4" class="selectpicker form-control" name="ad_sub_area[3]">
+                                        <option selected hidden value="@Model.Tables["Edit1"].Rows[3]["sub_area"]">@Model.Tables["Edit1"].Rows[3]["sub_area"]</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group col-md-12" style="margin-top:40px;">
+                                <label class="font-16">ข้อมูลพี่น้อง :</label>
+                            </div>
+
+                            <div class="form-group table-responsive col-md-12" style="margin-top:20px">
+                                <div class="col-12">
+                                    <table class="table v-middle">
+                                        <thead>
+                                            <tr class="bg-light">
+                                                <th class="border-top-0" style="width:6%; text-align:center;">ลำดับ</th>
+                                                <th class="border-top-0" style="width:20%; text-align:center;">ชื่อ - นามสกุล</th>
+                                                <th class="border-top-0" style="width:8%; text-align:center;">อายุ</th>
+                                                <th class="border-top-0" style="width:18%; text-align:center;">อาชีพ</th>
+                                                <th class="border-top-0" style="width:18%; text-align:center;">ตำแหน่ง</th>
+                                                <th class="border-top-0" style="width:30%; text-align:center;">สถานที่ทำงาน</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (int i = 0; i < Model.Tables["Edit6"].Rows.Count; i++)
+                                            {
+                                                <tr>
+                                                    <td><label class="control-label" style="font-weight:normal; padding-top:7px;">@(i + 1)</label></td>
+                                                    <td><input class="form-control" type="text" name="fa_name[@(i+3)]" maxlength="70" value="@Model.Tables["Edit6"].Rows[i]["name"]" autocomplete="off"></td>
+                                                    <td><input class="form-control" type="number" name="fa_age[@(i+2)]" maxlength="5" value="@Model.Tables["Edit6"].Rows[i]["age"]" autocomplete="off"></td>
+                                                    <td><input class="form-control" type="text" name="fa_occupation[@(i+3)]" maxlength="50" value="@Model.Tables["Edit6"].Rows[i]["occupation"]" autocomplete="off"></td>
+                                                    <td><input class="form-control" type="text" name="fa_position[@i]" maxlength="50" value="@Model.Tables["Edit6"].Rows[i]["position"]" autocomplete="off"></td>
+                                                    <td><input class="form-control" type="text" name="fa_place_work[@(i+1)]" maxlength="70" value="@Model.Tables["Edit6"].Rows[i]["place_work"]" autocomplete="off"></td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12" style="margin-top:40px;">
+                                <label class="font-16">ประวัติการศึกษา :</label>
+                            </div>
+
+                            <div class="form-group col-md-12" style="margin-top:20px">
+                                <div class="col-12 table-responsive">
+                                    <table class="table v-middle">
+                                        <thead>
+                                            <tr class="bg-light">
+                                                <th class="border-top-0" style="width:15%; text-align:center;">ระดับ</th>
+                                                <th class="border-top-0" style="width:30%; text-align:center;">สถานศึกษา</th>
+                                                <th class="border-top-0" style="width:12%; text-align:center;">สำเร็จการศึกษา</th>
+                                                <th class="border-top-0" style="width:13%; text-align:center;">วุฒิการศึกษา</th>
+                                                <th class="border-top-0" style="width:20%; text-align:center;">วิชาเอก</th>
+                                                <th class="border-top-0" style="width:10%; text-align:center;">เกรดเฉลี่ย</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (int i = 0; i < Model.Tables["Edit3"].Rows.Count; i++)
+                                            {
+                                                string name = "";
+                                                switch (Model.Tables["Edit3"].Rows[i]["number"])
+                                                {
+                                                    case 1:
+                                                        name = "มหาวิทยาลัย";
+                                                        break;
+                                                    case 2:
+                                                        name = "อนุปริญญา/ปวส.";
+                                                        break;
+                                                    case 3:
+                                                        name = "มัธยมปลาย/ปวช.";
+                                                        break;
+                                                    case 4:
+                                                        name = "มัธยมต้น";
+                                                        break;
+                                                };
+                                                <tr>
+                                                    <td><label class="control-label" style="font-weight:normal">@name</label></td>
+                                                    <td><input class="form-control" name="hi_name[@i]" maxlength="200" value="@Model.Tables["Edit3"].Rows[i]["name"]" autocomplete="off"></td>
+                                                    <td><input class="form-control" type="number" name="hi_year[@i]" value="@Model.Tables["Edit3"].Rows[i]["year"]" maxlength="5" autocomplete="off"></td>
+                                                    <td><input class="form-control" name="hi_certificate[@i]" value="@Model.Tables["Edit3"].Rows[i]["certificate"]" maxlength="50" autocomplete="off"></td>
+                                                    <td><input class="form-control" name="hi_major[@i]" value="@Model.Tables["Edit3"].Rows[i]["major"]" maxlength="50" autocomplete="off"></td>
+                                                    <td><input class="form-control" type="number" name="hi_gpa[@i]" value="@Model.Tables["Edit3"].Rows[i]["gpa"]" maxlength="5" autocomplete="off"></td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12" style="margin-top:40px;">
+                                <label class="font-16">ความสามารถทางภาษา :</label>
+                            </div>
+
+
+
+                            <div class="form-group col-md-12" style="margin-top:20px">
+                                <div class="col-12 table-responsive">
+                                    <table class="table v-middle">
+                                        <thead>
+                                            <tr class="bg-light">
+                                                <th class="border-top-0" style="vertical-align:middle;">
+                                                    <label class="control-label">ความสามารถทางภาษา</label>
+                                                </th>
+                                                <th class="border-top-0">
+                                                    <label class="control-label">การฟัง</label><br />
+                                                    <label class="control-label" style="font-weight:normal">ดี / ปานกลาง / แย่</label>
+                                                </th>
+                                                <th class="border-top-0">
+                                                    <label class="control-label">การพูด</label><br />
+                                                    <label class="control-label" style="font-weight:normal">ดี / ปานกลาง / แย่</label>
+                                                </th>
+                                                <th class="border-top-0">
+                                                    <label class="control-label">การอ่าน</label><br />
+                                                    <label class="control-label" style="font-weight:normal">ดี / ปานกลาง / แย่</label>
+                                                </th>
+                                                <th class="border-top-0">
+                                                    <label class="control-label">การเขียน</label><br />
+                                                    <label class="control-label" style="font-weight:normal">ดี / ปานกลาง / แย่</label>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <label class="control-label" style="font-weight:normal;">ภาษาอังกฤษ</label>
+                                                    <input type="hidden" name="la_name[0]" value="ภาษาอังกฤษ">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="la_listening[0]" value="ดี">
+                                                    <input type="radio" name="la_listening[0]" style="margin:0 25px 0 25px;" value="ปานกลาง">
+                                                    <input type="radio" name="la_listening[0]" value="แย่">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="la_speaking[0]" value="ดี">
+                                                    <input type="radio" name="la_speaking[0]" style="margin:0 25px 0 25px;" value="ปานกลาง">
+                                                    <input type="radio" name="la_speaking[0]" value="แย่">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="la_reading[0]" value="ดี">
+                                                    <input type="radio" name="la_reading[0]" style="margin:0 25px 0 25px;" value="ปานกลาง">
+                                                    <input type="radio" name="la_reading[0]" value="แย่">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="la_writing[0]" value="ดี">
+                                                    <input type="radio" name="la_writing[0]" style="margin:0 25px 0 25px;" value="ปานกลาง">
+                                                    <input type="radio" name="la_writing[0]" value="แย่">
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-6">
+                                    <label>ความสามารถพิเศษอื่น ๆ :</label>
+                                    <input class="form-control" name="ability_spectify" value="@Model.Tables["Edit"].Rows[0]["ability_spectify"]" maxlength="250" autocomplete="off" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label>ประสบการณ์การทำงาน/ฝึกอบรม :</label>
+                                    <input class="form-control" name="experience" value="@Model.Tables["Edit"].Rows[0]["experience"]" maxlength="250" autocomplete="off" />
+                                </div>
+                            </div>
+
+
+                            @if (ViewData["check"] == "Yes")
+                            {
+                            }
+                            else
+                            {
+                                if (Model.Tables[0].Rows[0]["confirm_status"].ToString() != "ไม่ประสงค์ออกฝึก")
+                                {
+
+                                <div class="col-md-6">
+                                    <input type="radio" id="changeS" name="changeS" value="checkNo">
+                                    <label>ไม่ประสงค์ออกฝึก <font color="red">*กรุณาเลือกเทอมที่ต้องการ</font> :</label>
+                                    <input type="radio" id="changeS" name="changeS" value="checkYes" checked>
+                                    <label>ประสงค์ออกฝึก</label>
+                                    <select class="form-control form-control-line" name="sem" id="sem">
+                                        <option selected>กรุณาเลือก</option>
+                                        @foreach (DataRow sem in Model.Tables[7].Rows)
+                                        {
+                                            <option value="@sem[0]">@sem[0]</option>
+                                        }
+                                    </select>
+                                </div>
+
+                                }
+                                else
+                                {
+
+                                <div class="col-md-6">
+                                    <input type="radio" id="changeS" name="changeS" value="checkNo" checked>
+                                    <label>ไม่ประสงค์ออกฝึก <font color="red">*กรุณาเลือกเทอมที่ต้องการ</font> :</label>
+                                    <input type="radio" id="changeS" name="changeS" value="checkYes">
+                                    <label>ประสงค์ออกฝึก</label>
+                                    <select class="form-control form-control-line" name="sem" id="sem">
+                                        <option selected>กรุณาเลือก</option>
+                                        @foreach (DataRow sem in Model.Tables[7].Rows)
+                                        {
+                                            <option value="@sem[0]">@sem[0]</option>
+                                        }
+                                    </select>
+                                </div>
+
+                                }
+                            }
+
+
+
+                            <div class="hide">
+                                <input id="prototype_id1" value="@Model.Tables["Edit1"].Rows[0]["prototype_id"]" name="ad_prototype_id" />
+                                <input id="prototype_id2" value="@Model.Tables["Edit1"].Rows[1]["prototype_id"]" name="ad_prototype_id" />
+                                <input id="prototype_id3" value="@Model.Tables["Edit1"].Rows[2]["prototype_id"]" name="ad_prototype_id" />
+                                <input id="prototype_id4" value="@Model.Tables["Edit1"].Rows[3]["prototype_id"]" name="ad_prototype_id" />
+                                <input id="listen" value="@Model.Tables["Edit2"].Rows[0]["listening"]" />
+                                <input id="speak" value="@Model.Tables["Edit2"].Rows[0]["speaking"]" />
+                                <input id="read" value="@Model.Tables["Edit2"].Rows[0]["reading"]" />
+                                <input id="write" value="@Model.Tables["Edit2"].Rows[0]["writing"]" />
+                                <input name="user_id_title" value="@ViewData["user_id"]" />
+                                <input name="name_title" value="@ViewData["name"]" />
+                                <input id="msgAlert" value="@ViewData["msgAlert"]" />
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <div class="col-md-12" style="text-align:center;">
+                                    <input id="submit" type="submit" value="บันทึกข้อมูล" class="btn btn-success col-md-2" style="margin:auto; margin-top:25px;" />
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+

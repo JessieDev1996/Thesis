@@ -1,0 +1,124 @@
+﻿@model Project_Test1.Models.Company
+
+@{
+    ViewBag.Title = "แสดงข้อมูลการรับนักศึกษา";
+    Layout = "~/Views/Shared/_LayoutAuthoritiesTemplate.cshtml";
+}
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#urlonclick').change(function() {
+            var url = $(this).val();
+            if (url != null && url != '') {
+                window.location.href = url + $("#year").val();
+            }
+        });
+
+        var year = $("#getYear").val();
+
+        $('#year').datepicker({
+            minViewMode: 'years',
+            autoclose: true,
+            format: 'yyyy',
+            orientation: "bottom auto"
+        }).datepicker("setDate", new Date('11/11/'+year));
+
+    });
+    </script>
+
+    <style>
+        tr {
+            text-align: center;
+        }
+    </style>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <!-- column -->
+            <div class="col-8" style="margin:auto;">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- title -->
+                        <div class="align-items-center">
+
+                            <h4 class="card-title">ตารางแสดงข้อมูลความต้องการของสถานประกอบการ</h4>
+                            <h5 class="card-subtitle">**สถานประกอบการที่ติด blacklist จะไม่สามารถเข้าดูได้</h5>
+                            <h5 class="card-subtitle">เลือกปีการศึกษา แล้วเลือกสถานประการตารางจะแสดงรายชื่อภาควิชาแต่ละเทอมและจำนวนที่ต้องการรับ นศ.</h5>
+                            <hr />
+
+                        </div>
+                        <!-- title -->
+                    </div>
+                    <div class="form-group col-md-12" style="text-align:center;">
+                        <div class="col-md-12">
+                            <label class="col-md-2" style="font-weight:bold;">ปีการศึกษา :</label>
+                            <div class="input-group col-md-2" style="margin:auto;">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                <input id="year" type="text" class="form-control" name="year" style="text-align:center;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12" style="text-align:center;">
+                        <div class="align-items-center form-horizontal" style="margin:auto;">
+                            <label class="col-md-6" style="font-weight:bold; text-align:left;">ชื่อสถานประกอบการ :</label>
+                            <div class="col-md-6" style="margin:auto;">
+                                <select id="urlonclick" class="selectpicker form-control" name="company_id" data-size="5" data-width="100%" data-live-search="true" style="margin:auto;" required>
+                                    @if (Model.name.ToString() == "Please Select")
+                                    {
+                                        <option selected hidden disabled>@Model.name.ToString()</option>
+                                    }
+                                    else
+                                    {
+                                        <option selected hidden>@Model.name.ToString()</option>
+                                    }
+                                    @for (int i = 0; i < Model.company_id.Length; i++)
+                                    {
+                                        <option value=@Url.Action("ViewRequire_s", "Authorities", new { user_id_title = ViewData["user_id"], name_title = ViewData["name"], company = Model.company_id[i], name = Model.name_th[i], year = " "})>@Model.name_th[i].ToString()</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <hr style="margin-bottom:25px" />
+                    </div>
+                    <div class="table-responsive col-7" style="margin:auto; margin-bottom:100px;">
+                        <table id="viewCompany" class="table v-middle">
+                            <thead>
+                                <tr class="bg-light">
+                                    <!--<th class="border-top-0" style="text-align:center;"></th>-->
+                                    <th class="border-top-0" style="text-align:center;">เทอม</th>
+                                    <th class="border-top-0" style="text-align:center;">ภาควิชา</th>
+                                    <th class="border-top-0" style="text-align:center;">จำนวนที่ต้องการ</th>
+                                    <!--<th class="border-top-0" style="text-align:center;"></th>-->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.major != null)
+                                {
+                                    for (int i = 0; i < Model.major.Length; i++)
+                                    {
+                                <tr>
+                                    <!--<td></td>-->
+                                    <td>@Model.term[i]</td>
+                                    <td>@Model.major[i]</td>
+                                    <td>@Model.require[i]</td>
+                                    <!--<td></td>-->
+                                </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="hide">
+                        <input type="hidden" id="getYear" value="@Model.rs_id" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+

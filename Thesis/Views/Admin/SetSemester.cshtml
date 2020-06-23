@@ -1,0 +1,333 @@
+﻿@using System.Data
+@model DataSet
+@{
+    ViewBag.Title = "เพิ่มปีการศึกษา";
+    Layout = "~/Views/Shared/_LayoutAdminTemplate.cshtml";
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var msgAlert = $("#msgAlert").val();
+
+        if (msgAlert == "Success") {
+            $.alert({
+                theme: 'modern',
+                title: 'เพิ่มปีการศึกษาสำเร็จ',
+                content: '',
+                type: 'green',
+                typeAnimated: true,
+                boxWidth: '20%',
+                useBootstrap: false,
+                buttons: {
+                    OK: {
+                        text: 'OK',
+                        btnClass: 'btn-green',
+                        action: function () {
+                        }
+                    }
+                },
+            });
+        } else if (msgAlert == "Already") {
+            $.alert({
+                theme: 'modern',
+                title: 'เพิ่มปีการศึกษาไม่สำเร็จ !!!',
+                content: 'กรุณาตรวจสอบปีการศึกษา เนื่องจากมีปีการศึกษานี้ในระบบแล้ว',
+                type: 'red',
+                typeAnimated: true,
+                boxWidth: '30%',
+                useBootstrap: false,
+                buttons: {
+                    OK: {
+                        text: 'OK',
+                        btnClass: 'btn-red',
+                        action: function () {
+                        }
+                    }
+                },
+            });
+        }
+
+        $('#year').datepicker({
+            minViewMode: 'years',
+            autoclose: true,
+            format: 'yyyy',
+            orientation: "bottom auto"
+        });
+
+        $('.datepicker').datepicker({
+            autoclose: true,
+            language: 'th',
+            format: 'dd/mm/yyyy',
+            orientation: "bottom auto"
+        });
+
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var elements = document.getElementsByTagName("INPUT");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].oninvalid = function (e) {
+                e.target.setCustomValidity("");
+                if (!e.target.validity.valid) {
+                    e.target.setCustomValidity("เลือกข้อมูลในฟิลด์นี้ !!");
+                }
+            };
+            elements[i].oninput = function (e) {
+                e.target.setCustomValidity("");
+            };
+        }
+    });
+</script>
+
+<style>
+    /* Create four equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 33%;
+    }
+
+    /* Clear floats */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @@media screen and (max-width: 1230px) {
+        .column {
+            width: 50%;
+        }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @@media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="container-fluid" style="margin-top:30px;">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <!-- Row -->
+    <div class="row">
+        <!-- Column -->
+        <!-- Column -->
+        <!-- Column -->
+        <div class="col-md-8" style="margin-bottom:8%;">
+            <div class="card">
+                <div class="card-body">
+                    <div style="text-align:center;">
+
+                        <h4 class="card-title">กำหนดวันที่และจำนวนครั้งการออกนิเทศ</h4>
+                        <h5 class="card-subtitle">ในแต่ละฟิลด์จะให้เลือกข้อมูลและโปรดตรวจสอบข้อมูลก่อนกดยืนยัน</h5>
+                        <hr />
+                    </div>
+                    <form class="form-horizontal form-material" method="post" id="formAccount">
+                        <div class="form-group">
+                            <label class="col-md-12" style="font-weight:bold; text-align:center;">ปีการศึกษา :</label>
+                            <div class="col-md-12">
+                                <input id="year" type="text" class="form-control" name="semester_id" placeholder="ปปปป" maxlength="4" style="width:15%; text-align:center; margin:auto; margin-bottom:30px;" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!--*********************************************** ภาคการศึกษาที่ 1 ***********************************************-->
+                            <div class="column" style="text-align:center;">
+                                <div class="form-group" style="margin:auto;">
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-12" style="font-weight:bold; text-align:center;">ภาคการศึกษาที่ 1</label>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-12">วันที่เริ่มต้นการออกสหกิจ :</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control datepicker" type="text" name="date_start1" placeholder="วว/ดด/ปปปป" style="width:60%; margin:auto; text-align:center;" autocomplete="off" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-12">วันที่สิ้นสุดการออกสหกิจ :</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control datepicker" type="text" name="date_end1" placeholder="วว/ดด/ปปปป" style="width:60%; margin:auto; text-align:center;" autocomplete="off" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-12">จำนวนครั้งในการออกนิเทศ :</label>
+                                        <div class="col-md-12">
+                                            <select class="selectpicker form-control col-md-12" id="to_go1" title="Please select" name="to_go1" data-width="60%" required>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--*********************************************** ภาคการศึกษาที่ 2 ***********************************************-->
+                            <div class="column" style="text-align:center;">
+                                <div class="form-group" style="margin:auto;">
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-12" style="font-weight:bold; text-align:center;">ภาคการศึกษาที่ 2</label>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-12">วันที่เริ่มต้นการออกสหกิจ :</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control datepicker" type="text" name="date_start2" placeholder="วว/ดด/ปปปป" style="width:60%; margin:auto; text-align:center;" autocomplete="off" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-12">วันที่สิ้นสุดการออกสหกิจ :</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control datepicker" type="text" name="date_end2" placeholder="วว/ดด/ปปปป" style="width:60%; margin:auto; text-align:center;" autocomplete="off" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-12">จำนวนครั้งในการออกนิเทศ :</label>
+                                        <div class="col-md-12">
+                                            <select class="selectpicker form-control col-md-12" id="to_go2" title="Please select" name="to_go2" data-width="60%" required>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--*********************************************** ภาคการศึกษาที่ 3 ***********************************************-->
+                            <div class="column" style="text-align:center;">
+                                <div class="form-group" style="margin:auto;">
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-12" style="font-weight:bold;">ภาคการศึกษาที่ 3</label>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-12">วันที่เริ่มต้นการออกฝึกงาน :</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control datepicker" type="text" name="date_start3" placeholder="วว/ดด/ปปปป" style="width:60%; margin:auto; text-align:center;" autocomplete="off" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-12">วันที่สิ้นสุดการออกฝึกงาน :</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control datepicker" type="text" name="date_end3" placeholder="วว/ดด/ปปปป" style="width:60%; margin:auto; text-align:center;" autocomplete="off" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-12">จำนวนครั้งในการออกนิเทศ :</label>
+                                        <div class="col-md-12">
+                                            <select class="selectpicker form-control col-md-12" id="to_go3" title="Please select" name="to_go3" data-width="60%" required>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-12" style="text-align:center;">
+                                <button class="btn btn-success" style="width:100px; margin:auto; margin-top:30px;" type="submit">ยืนยัน</button>
+                            </div>
+                        </div>
+
+                        <div class="hide">
+                            <input name="user_id_title" value="@ViewData["user_id"]" />
+                            <input name="name_title" value="@ViewData["name"]" />
+                            <input id="msgAlert" value="@ViewData["msgAlert"]" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align:center;">ปีการศึกษาล่าสุด</h4>
+                    <h5 class="card-subtitle" style="text-align:center;">ตัวอย่างในการกำหนดภาคการศึกษา</h5>
+                    <hr />
+                    <div class="feed-widget">
+                        <div class="form-group">
+                            <label class="col-md-12" style="font-weight:bold; text-align:center;">ปีการศึกษา :</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" style="width:30%; text-align:center; margin:auto; margin-bottom:30px;" value="@Model.Tables["Semester"].Rows[0]["semester_id"]" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin:auto; text-align:center;">
+                            <div class="form-group col-md-12">
+                                <label class="col-md-12" style="font-weight:bold;">ภาคการศึกษาที่ 3</label>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label class="col-md-12">วันที่เริ่มต้นการออกฝึกงาน :</label>
+                                <div class="col-md-12">
+                                    <input class="form-control datepicker" type="text" style="width:60%; margin:auto; text-align:center;" value="@Model.Tables["Semester"].Rows[0]["date_start"]" disabled>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label class="col-md-12">วันที่สิ้นสุดการออกฝึกงาน :</label>
+                                <div class="col-md-12">
+                                    <input class="form-control datepicker" type="text" style="width:60%; margin:auto; text-align:center;" value="@Model.Tables["Semester"].Rows[0]["date_end"]" disabled>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label class="col-md-12">จำนวนครั้งในการออกนิเทศ :</label>
+                                <div class="col-md-12">
+                                    <input class="form-control datepicker" type="text" style="width:60%; margin:auto; text-align:center;" value="@Model.Tables["Semester"].Rows[0]["to_go"]" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:30px;">
+                            <div class="d-flex align-items-center" style="text-align:center;">
+                                <div class="m-r-10" style="margin-left:auto;">
+                                    <i class="btn-circle bg-orange text-white ti-calendar"></i>
+                                </div>
+                                <div class="m-r-10">
+                                    <i class="btn-circle bg-success text-white ti-calendar"></i>
+                                </div>
+                                <div class="m-r-10" style="margin-right:auto;">
+                                    <i class="btn-circle bg-primary text-white ti-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+    </div>
+    <!-- Row -->
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+</div>
+

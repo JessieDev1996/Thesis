@@ -1,0 +1,361 @@
+﻿@using System.Data
+@model DataSet
+
+@{
+    ViewBag.Title = "กรอกเอกสารเพิ่มเติม สก.07, สก.09";
+    Layout = "~/Views/Shared/_LayoutStudentTemplate.cshtml";
+}
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var _get_receive_doc = $('#get_receive_doc').val();
+            if (_get_receive_doc == "") {
+                $("input[name=receive_doc][value='ไม่รับ']").prop("checked", true);
+            } else {
+                $("input[name=receive_doc][value='" + _get_receive_doc + "']").prop("checked", true);
+            }
+
+            if ($('#msgAlert').val() == "Success") {
+                $.alert({
+                    theme: 'modern',
+                    title: 'บันทึกข้อมูลสำเร็จ !!!',
+                    content: $('#msgAlert').val(),
+                    type: 'green',
+                    typeAnimated: true,
+                    boxWidth: '20%',
+                    useBootstrap: false,
+                    buttons: {
+                        OK: {
+                            text: 'OK',
+                            btnClass: 'btn-green',
+                            action: function () {
+                                //location.reload();
+                            }
+                        }
+                    },
+                }); 
+            }
+
+        $("#province").change(function () {
+            var Area = {};
+            Area.url = "/Authorities/Area";
+            Area.type = "POST";
+            Area.data = JSON.stringify({
+                province: $("#province").val()
+            });
+            Area.datatype = "json";
+            Area.contentType = "application/json";
+            Area.success = function (AreaList) {
+                $('.selectpicker').selectpicker('render');
+                $("#area").empty();
+                $("#sub_area").empty();
+                $('.selectpicker').selectpicker('refresh');
+                $('.selectpicker').selectpicker('render');
+                $("#area").append("<option hidden disabled selected>กรุณาเลือกอำเภอ</option>");
+                $("#sub_area").append("<option hidden disabled selected>กรุณาเลือกตำบล</option>");
+                $('.selectpicker').selectpicker('refresh');
+                for (var i = 0; i < AreaList.length; i++) {
+                    $('.selectpicker').selectpicker('render');
+                    $("#area").append("<option>" + AreaList[i] + "</option>");
+                    $('.selectpicker').selectpicker('refresh');
+                }
+            };
+            Area.error = function () {
+                alert("Error in Getting Area !!");
+            };
+            $.ajax(Area);
+        });
+
+        $("#area").change(function () {
+            var Sub_Area = {};
+            Sub_Area.url = "/Authorities/Sub_Area";
+            Sub_Area.type = "POST";
+            Sub_Area.data = JSON.stringify({
+                area: $("#area").val(),
+                province: $("#province").val()
+            });
+            Sub_Area.datatype = "json";
+            Sub_Area.contentType = "application/json";
+            Sub_Area.success = function (Sub_AreaList) {
+                $('.selectpicker').selectpicker('render');
+                $("#sub_area").empty();
+                $('.selectpicker').selectpicker('refresh');
+                $('.selectpicker').selectpicker('render');
+                $("#sub_area").append("<option hidden disabled selected>กรุณาเลือกตำบล</option>");
+                $('.selectpicker').selectpicker('refresh');
+                for (var i = 0; i < Sub_AreaList.length; i++) {
+                    $('.selectpicker').selectpicker('render');
+                    $("#sub_area").append("<option>" + Sub_AreaList[i] + "</option>");
+                    $('.selectpicker').selectpicker('refresh');
+                }
+            };
+            Sub_Area.error = function () {
+                alert("Error in Getting Sub_Area !!");
+            };
+            $.ajax(Sub_Area);
+        });
+
+        $("#sub_area").change(function () {
+            var Sub_Area = {};
+            Sub_Area.url = "/Authorities/Prototype_id";
+            Sub_Area.type = "POST";
+            Sub_Area.data = JSON.stringify({
+                sub_area: $("#sub_area").val(),
+                area: $("#area").val(),
+                province: $("#province").val()
+            });
+            Sub_Area.datatype = "json";
+            Sub_Area.contentType = "application/json";
+            Sub_Area.success = function (prototype_id) {
+                $("#prototype_id").val(prototype_id)
+            };
+            Sub_Area.error = function () {
+                alert("Error in Getting Sub_Area !!");
+            };
+            $.ajax(Sub_Area);
+        });
+
+        $.validator.addMethod("valueNotEquals", function(value, element, arg){
+            return arg !== value;
+        }, "Value must not equal arg.");
+
+         // configure your validation
+        $("#sub_area").validate({
+              rules: {
+               SelectName: { valueNotEquals: "" }
+              },
+              messages: {
+               SelectName: { valueNotEquals: "Please select an item!" }
+              }  
+        });
+
+    });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var elements = document.getElementsByTagName("INPUT");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].oninvalid = function (e) {
+                    e.target.setCustomValidity("");
+                    if (!e.target.validity.valid) {
+                        e.target.setCustomValidity("กรุณากรอกข้อมูลในฟิลด์นี้ !!");
+                    }
+                };
+                elements[i].oninput = function (e) {
+                    e.target.setCustomValidity("");
+                };
+            }
+
+
+        });
+
+
+
+    </script>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8" style="margin:auto;">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <h4 class="card-title">กรอกข้อมูลเพิ่มเติม</h4>
+                            <h5 class="card-subtitle">ข้อมูลในส่วน สก. 07 และ สก. 09</h5>
+                            <hr />
+                        </div>
+                        <form class="form-horizontal" method="post">
+                            <div class="hide">
+                                <input id="get_receive_doc" value="@Model.Tables["Detail"].Rows[0]["receive_doc"]" />
+                                <input id="prototype_id" name="prototype_id" value="@ViewData["prototype_id"]" />
+                                <input name="user_id_title" value="@ViewData["user_id"]" />
+                                <input name="name_title" value="@ViewData["name"]" />
+                                <input id="msgAlert" value="@ViewData["msgAlert"]" />
+                            </div>
+                            <div class="form-group">
+                                <label class="font-16" style="font-weight:bold;">ข้อมูลผู้นิเทศงาน</label>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">ชื่อ - นามสกุล :</label>
+                                    <input class="form-control" name="name" maxlength="70" autocomplete="off" value="@Model.Tables["Detail1"].Rows[0]["name"]" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">ตำแหน่ง :</label>
+                                    <input class="form-control" name="position" maxlength="50" autocomplete="off" value="@Model.Tables["Detail1"].Rows[0]["position"]" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">แผนก :</label>
+                                    <input class="form-control" name="department" maxlength="50" autocomplete="off" value="@Model.Tables["Detail1"].Rows[0]["department"]" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">โทรศัพท์ :</label>
+                                    <input class="form-control" name="phone" maxlength="20" autocomplete="off" value="@Model.Tables["Detail1"].Rows[0]["phone"]" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">โทรสาร :</label>
+                                    <input class="form-control" name="fax" maxlength="20" autocomplete="off" value="@Model.Tables["Detail1"].Rows[0]["fax"]" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">E-mail :</label>
+                                    <input class="form-control" name="email" maxlength="100" autocomplete="off" value="@Model.Tables["Detail1"].Rows[0]["email"]" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="font-16" style="font-weight:bold; margin-top:50px;">งานที่ได้รับมอบหมาย</label>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">ตำแหน่งงาน :</label>
+                                    <input class="form-control" name="job_position" maxlength="50" autocomplete="off" value="@Model.Tables["Detail"].Rows[0]["job_position"]" />
+                                </div>
+                                <div class="col-md-8">
+                                    <label class="control-label" style="font-weight:bold;">ลักษณะงานที่ได้ปฏิบัติ :</label>
+                                    <input class="form-control" name="job_description" maxlength="250" autocomplete="off" value="@Model.Tables["Detail"].Rows[0]["job_description"]" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="font-16" style="font-weight:bold; margin-top:50px;">รายละเอียดที่พักระหว่างปฏิบัติงาน</label>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-5">
+                                    <label class="control-label" style="font-weight:bold;">ชื่อหอพัก/อพาร์ทเม้นท์ :</label>
+                                    <input class="form-control" name="apartment" maxlength="50" autocomplete="off" value="@Model.Tables["Detail"].Rows[0]["apartment"]" />
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="control-label" style="font-weight:bold;">ห้องที่ :</label>
+                                    <input class="form-control" name="room" maxlength="10" autocomplete="off" value="@Model.Tables["Detail"].Rows[0]["room"]" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-2">
+                                    <label class="control-label" style="font-weight:bold;">ที่อยู่เลขที่ :</label>
+                                    <input class="form-control" name="number" maxlength="10" autocomplete="off" value="@Model.Tables["Detail3"].Rows[0]["number"]" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">หมู่บ้าน/อาคาร :</label>
+                                    <input class="form-control" name="building" maxlength="50" autocomplete="off" value="@Model.Tables["Detail3"].Rows[0]["building"]" />
+                                </div>
+                                <div class="col-md-1">
+                                    <label class="control-label" style="font-weight:bold;">ชั้น :</label>
+                                    <input class="form-control" name="floor" maxlength="50" autocomplete="off" value="@Model.Tables["Detail3"].Rows[0]["floor"]" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">ซอย :</label>
+                                    <input class="form-control" name="lane" maxlength="50" autocomplete="off" value="@Model.Tables["Detail3"].Rows[0]["lane"]" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">ถนน :</label>
+                                    <input class="form-control" name="road" maxlength="50" autocomplete="off" value="@Model.Tables["Detail3"].Rows[0]["road"]" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">จังหวัด :</label>
+                                    <select class="selectpicker form-control" id="province" name="province" data-live-search="true">
+                                        @if (ViewData["prototype_id"].ToString() == "")
+                                        {
+                                            <option selected hidden disabled>กรุณาเลือกจังหวัด</option>
+                                        }
+                                        else
+                                        {
+                                            <option selected hidden value="@Model.Tables["Detail3"].Rows[0]["province"]">@Model.Tables["Detail3"].Rows[0]["province"]</option>
+                                        }
+                                        @foreach (string province in ViewBag.province)
+                                        {
+                                            <option value="@province">
+                                                @province
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">อำเภอ/เขต :</label>
+                                    <select id="area" class="selectpicker form-control" name="area">
+                                        @if (ViewData["prototype_id"].ToString() == "")
+                                        {
+                                            <option selected hidden disabled>กรุณาเลือกอำเภอ</option>
+                                        }
+                                        else
+                                        {
+                                            <option selected hidden value="@Model.Tables["Detail3"].Rows[0]["area"]">@Model.Tables["Detail3"].Rows[0]["area"]</option>
+                                        }
+                                        @foreach (string area in ViewBag.area)
+                                        {
+                                            <option>
+                                                @area
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">ตำบล/แขวง :</label>
+                                    <select id="sub_area" class="selectpicker form-control" name="sub_area" required>
+                                        @if (ViewData["prototype_id"].ToString() == "")
+                                        {
+                                            <option selected disabled hidden value="">กรุณาเลือกตำบล</option>
+                                        }
+                                        else
+                                        {
+                                            <option selected hidden value="@Model.Tables["Detail3"].Rows[0]["sub_area"]">@Model.Tables["Detail3"].Rows[0]["sub_area"]</option>
+                                        }
+                                        @foreach (string sub_area in ViewBag.sub_area)
+                                        {
+                                            <option>
+                                                @sub_area
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="font-16" style="font-weight:bold; margin-top:50px;">หัวข้องาน/โครงงาน</label>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-6">
+                                    <label class="control-label" style="font-weight:bold;">ชื่อหัวข้อ/โครงงานภาษาไทย :</label>
+                                    <input class="form-control" name="title_th" maxlength="150" autocomplete="off" value="@Model.Tables["Detail"].Rows[0]["title_th"]" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label" style="font-weight:bold;">ชื่อหัวข้อ/โครงงานภาษาอังกฤษ :</label>
+                                    <input class="form-control" name="title_en" maxlength="150" autocomplete="off" value="@Model.Tables["Detail"].Rows[0]["title_en"]" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <div class="col-md-12">
+                                    <label class="control-label" style="font-weight:bold;">รายละเอียดเนื้อหางาน/โครงงาน :</label>
+                                    <input class="form-control" name="title_detail" maxlength="500" autocomplete="off" value="@Model.Tables["Detail"].Rows[0]["title_detail"]" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="font-16" style="font-weight:bold; margin-top:50px;">งานที่ได้รับมอบหมาย</label>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex align-items-center" style="margin-left:50px;">
+                                <div class="radio">
+                                    <label><input type="radio" name="receive_doc" class="m-r-10 m-l-40" value="ไม่รับ">ไม่รับโดยจะติดตามข่าวสารจากเว็บไซต์</label>
+                                </div>
+                                <div class="radio d-flex align-items-center">
+                                    <label>
+                                        <input type="radio" name="receive_doc" class="m-r-10 m-l-40" value="รับส่งไปยังที่พัก">รับเอกสารโดยไปส่งที่ ที่พัก
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="receive_doc" class="m-r-10 m-l-40" value="รับส่งไปยัง">รับเอกสารโดยไปส่งที่ สถานประกอบการ</label>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group col-md-12" style="text-align:center;">
+                                <input type="submit" value="บันทึก" class="btn btn-info" style="margin:auto; width:150px; margin-top:30px;" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

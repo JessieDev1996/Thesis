@@ -1,0 +1,636 @@
+﻿@using System.Data
+@model DataSet
+@{
+    ViewBag.Title = "กรอกเอกสารเพิ่มเติม สก.08";
+    Layout = "~/Views/Shared/_LayoutStudentTemplate.cshtml";
+}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+            var elements = document.getElementsByTagName("INPUT");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].oninvalid = function (e) {
+                    e.target.setCustomValidity("");
+                    if (!e.target.validity.valid) {
+                        e.target.setCustomValidity("กรุณากรอกข้อมูลในฟิลด์นี้ !!");
+                    }
+                };
+                elements[i].oninput = function (e) {
+                    e.target.setCustomValidity("");
+                };
+            }
+    });
+
+    $(document).ready(function () {
+        var _round = $('#count_round').val();
+        var val_old = 0;
+        for (var i = 0; i < _round; i++) {
+            var _count = parseInt($('#get_round_' + i.toString()).val());
+            for (var j = val_old; j < _count + val_old; j++) { 
+                var _week = parseInt($('#get_week_' + j.toString()).val()); 
+                $("input[name='week[" + (_week - 1 + i * 16).toString() + "]']:checkbox").prop('checked', true);
+            }
+            val_old = val_old + _count;
+        }
+        if ($('#msgAlert').val() == "Success") {
+                $.alert({
+                    theme: 'modern',
+                    title: 'บันทึกข้อมูลสำเร็จ !!!',
+                    content: $('#msgAlert').val(),
+                    type: 'green',
+                    typeAnimated: true,
+                    boxWidth: '20%',
+                    useBootstrap: false,
+                    buttons: {
+                        OK: {
+                            text: 'OK',
+                            btnClass: 'btn-green',
+                            action: function () {
+                                //location.reload();
+                            }
+                        }
+                    },
+                }); 
+            }
+    });
+</script>
+
+<div class="container-fluid">
+    
+        <div class="row">
+            <div class="col-lg-8" style="margin:auto;">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">แบบแจ้งแผนปฏิบัติงาน</h4>
+                        <h5 class="card-subtitle">กรอกหัวข้องานแล้วเลือกช่วงเวลาให้กับหัวข้องานใน 1 เดือนจะแบ่งเป็น 4 สัปดาห์</h5>
+                        <hr />
+                        <form method="post">
+
+                            <div class="table-responsive">
+                                <table class="table m-t-20 table-bordered">
+                                    <thead>
+                                        <tr class="bg-light">
+                                            <th style="text-align:center; width:10%;">ลำดับที่</th>
+                                            <th style="text-align:center; width:50%">หัวข้องาน</th>
+                                            <th style="text-align:center; width:10%">เดือนที่ 1</th>
+                                            <th style="text-align:center; width:10%">เดือนที่ 2</th>
+                                            <th style="text-align:center; width:10%">เดือนที่ 3</th>
+                                            <th style="text-align:center; width:10%">เดือนที่ 4</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:middle;">1</td>
+                                            <td><input class="form-control" type="text" name="detail" autocomplete="off" value="@Model.Tables["Work"].Rows[0]["detail"]" maxlength="55" required /></td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[0]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[1]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[2]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[3]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[4]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[5]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[6]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[7]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[8]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[9]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[10]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[11]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[12]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[13]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[14]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[15]" style="margin:auto;" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:middle;">2</td>
+                                            <td><input class="form-control" type="text" name="detail" autocomplete="off" value="@Model.Tables["Work"].Rows[1]["detail"]" maxlength="55" /></td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[16]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[17]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[18]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[19]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[20]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[21]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[22]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[23]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[24]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[25]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[26]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[27]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[28]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[29]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[30]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[31]" style="margin:auto;" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:middle;">3</td>
+                                            <td><input class="form-control" type="text" name="detail" autocomplete="off" value="@Model.Tables["Work"].Rows[2]["detail"]" maxlength="55" /></td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[32]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[33]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[34]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[35]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[36]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[37]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[38]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[39]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[40]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[41]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[42]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[43]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[44]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[45]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[46]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[47]" style="margin:auto;" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:middle;">4</td>
+                                            <td><input class="form-control" type="text" name="detail" autocomplete="off" value="@Model.Tables["Work"].Rows[3]["detail"]" maxlength="55" /></td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[48]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[49]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[50]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[51]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[52]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[53]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[54]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[55]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[56]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[57]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[58]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[59]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[60]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[61]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[62]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[63]" style="margin:auto;" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:middle;">5</td>
+                                            <td><input class="form-control" type="text" name="detail" autocomplete="off" value="@Model.Tables["Work"].Rows[4]["detail"]" maxlength="55" /></td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[64]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[65]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[66]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[67]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[68]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[69]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[70]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[71]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[72]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[73]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[74]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[75]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[76]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[77]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[78]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[79]" style="margin:auto;" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:middle;">6</td>
+                                            <td><input class="form-control" type="text" name="detail" autocomplete="off" value="@Model.Tables["Work"].Rows[5]["detail"]" maxlength="55" /></td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[80]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[81]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[82]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[83]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[84]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[85]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[86]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[87]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[88]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[89]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[90]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[91]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[92]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[93]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[94]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[95]" style="margin:auto;" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:middle;">7</td>
+                                            <td><input class="form-control" type="text" name="detail" autocomplete="off" value="@Model.Tables["Work"].Rows[6]["detail"]" maxlength="55" /></td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[96]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[97]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[98]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[99]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[100]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[101]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[102]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[103]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[104]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[105]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[106]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[107]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[108]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[109]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[110]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[111]" style="margin:auto;" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:middle;">8</td>
+                                            <td><input class="form-control" type="text" name="detail" autocomplete="off" value="@Model.Tables["Work"].Rows[7]["detail"]" maxlength="55" /></td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[112]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[113]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[114]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[115]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[116]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[117]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[118]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[119]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[120]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[121]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[122]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[123]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[124]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[125]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[126]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[127]" style="margin:auto;" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:middle;">9</td>
+                                            <td><input class="form-control" type="text" name="detail" autocomplete="off" value="@Model.Tables["Work"].Rows[8]["detail"]" maxlength="55" /></td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[128]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[129]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[130]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[131]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[132]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[133]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[134]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[135]" style="margin:auto;" />
+
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[136]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[137]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[138]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[139]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[140]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[141]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[142]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[143]" style="margin:auto;" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:middle;">10</td>
+                                            <td><input class="form-control" type="text" name="detail" autocomplete="off" value="@Model.Tables["Work"].Rows[9]["detail"]" maxlength="55" /></td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[144]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[145]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[146]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[147]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[148]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[149]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[150]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[151]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[152]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[153]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[154]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[155]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[156]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[157]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[158]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[159]" style="margin:auto;" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:middle;">11</td>
+                                            <td><input class="form-control" type="text" name="detail" autocomplete="off" value="@Model.Tables["Work"].Rows[10]["detail"]" maxlength="55" /></td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[160]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[161]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[162]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[163]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[164]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[165]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[166]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[167]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[168]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[169]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[170]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[171]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[172]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[173]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[174]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[175]" style="margin:auto;" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:middle;">12</td>
+                                            <td><input class="form-control" type="text" name="detail" autocomplete="off" value="@Model.Tables["Work"].Rows[11]["detail"]" maxlength="55" /></td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[176]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[177]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[178]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[179]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[180]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[181]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[182]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[183]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[184]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[185]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[186]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[187]" style="margin:auto;" />
+                                            </td>
+                                            <td style="text-align:center; vertical-align:middle;">
+                                                <input class="checkbox-inline" type="checkbox" name="week[188]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[189]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[190]" style="margin:auto;" />
+                                                <input class="checkbox-inline" type="checkbox" name="week[191]" style="margin:auto;" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="hide">
+                                <input id="count_round" value="@Model.Tables["Round"].Rows.Count" />
+                                @for (int i = 0; i < Model.Tables["Round"].Rows.Count; i++)
+                                {
+                                    <input id="get_round_@i" value="@Model.Tables["Round"].Rows[i]["round"]" />
+                                }
+                                @for (int i = 0; i < Model.Tables["Week"].Rows.Count; i++)
+                                {
+                                    <input id="get_week_@i" value="@Model.Tables["Week"].Rows[i]["week"]" />
+                                }
+                                <input name="user_id_title" value="@ViewData["user_id"]" />
+                                <input name="name_title" value="@ViewData["name"]" />
+                                <input id="msgAlert" value="@ViewData["msgAlert"]" />
+                                <input name="week[0]" value="off" />
+                                <input name="week[1]" value="off" />
+                                <input name="week[2]" value="off" />
+                                <input name="week[3]" value="off" />
+                                <input name="week[4]" value="off" />
+                                <input name="week[5]" value="off" />
+                                <input name="week[6]" value="off" />
+                                <input name="week[7]" value="off" />
+                                <input name="week[8]" value="off" />
+                                <input name="week[9]" value="off" />
+                                <input name="week[10]" value="off" />
+                                <input name="week[11]" value="off" />
+                                <input name="week[12]" value="off" />
+                                <input name="week[13]" value="off" />
+                                <input name="week[14]" value="off" />
+                                <input name="week[15]" value="off" />
+                                <input name="week[16]" value="off" />
+                                <input name="week[17]" value="off" />
+                                <input name="week[18]" value="off" />
+                                <input name="week[19]" value="off" />
+                                <input name="week[20]" value="off" />
+                                <input name="week[21]" value="off" />
+                                <input name="week[22]" value="off" />
+                                <input name="week[23]" value="off" />
+                                <input name="week[24]" value="off" />
+                                <input name="week[25]" value="off" />
+                                <input name="week[26]" value="off" />
+                                <input name="week[27]" value="off" />
+                                <input name="week[28]" value="off" />
+                                <input name="week[29]" value="off" />
+                                <input name="week[30]" value="off" />
+                                <input name="week[31]" value="off" />
+                                <input name="week[32]" value="off" />
+                                <input name="week[33]" value="off" />
+                                <input name="week[34]" value="off" />
+                                <input name="week[35]" value="off" />
+                                <input name="week[36]" value="off" />
+                                <input name="week[37]" value="off" />
+                                <input name="week[38]" value="off" />
+                                <input name="week[39]" value="off" />
+                                <input name="week[40]" value="off" />
+                                <input name="week[41]" value="off" />
+                                <input name="week[42]" value="off" />
+                                <input name="week[43]" value="off" />
+                                <input name="week[44]" value="off" />
+                                <input name="week[45]" value="off" />
+                                <input name="week[46]" value="off" />
+                                <input name="week[47]" value="off" />
+                                <input name="week[48]" value="off" />
+                                <input name="week[49]" value="off" />
+                                <input name="week[50]" value="off" />
+                                <input name="week[51]" value="off" />
+                                <input name="week[52]" value="off" />
+                                <input name="week[53]" value="off" />
+                                <input name="week[54]" value="off" />
+                                <input name="week[55]" value="off" />
+                                <input name="week[56]" value="off" />
+                                <input name="week[57]" value="off" />
+                                <input name="week[58]" value="off" />
+                                <input name="week[59]" value="off" />
+                                <input name="week[60]" value="off" />
+                                <input name="week[61]" value="off" />
+                                <input name="week[62]" value="off" />
+                                <input name="week[63]" value="off" />
+                                <input name="week[64]" value="off" />
+                                <input name="week[65]" value="off" />
+                                <input name="week[66]" value="off" />
+                                <input name="week[67]" value="off" />
+                                <input name="week[68]" value="off" />
+                                <input name="week[69]" value="off" />
+                                <input name="week[70]" value="off" />
+                                <input name="week[71]" value="off" />
+                                <input name="week[72]" value="off" />
+                                <input name="week[73]" value="off" />
+                                <input name="week[74]" value="off" />
+                                <input name="week[75]" value="off" />
+                                <input name="week[76]" value="off" />
+                                <input name="week[77]" value="off" />
+                                <input name="week[78]" value="off" />
+                                <input name="week[79]" value="off" />
+                                <input name="week[80]" value="off" />
+                                <input name="week[81]" value="off" />
+                                <input name="week[82]" value="off" />
+                                <input name="week[83]" value="off" />
+                                <input name="week[84]" value="off" />
+                                <input name="week[85]" value="off" />
+                                <input name="week[86]" value="off" />
+                                <input name="week[87]" value="off" />
+                                <input name="week[88]" value="off" />
+                                <input name="week[89]" value="off" />
+                                <input name="week[90]" value="off" />
+                                <input name="week[91]" value="off" />
+                                <input name="week[92]" value="off" />
+                                <input name="week[93]" value="off" />
+                                <input name="week[94]" value="off" />
+                                <input name="week[95]" value="off" />
+                                <input name="week[96]" value="off" />
+                                <input name="week[97]" value="off" />
+                                <input name="week[98]" value="off" />
+                                <input name="week[99]" value="off" />
+                                <input name="week[100]" value="off" />
+                                <input name="week[101]" value="off" />
+                                <input name="week[102]" value="off" />
+                                <input name="week[103]" value="off" />
+                                <input name="week[104]" value="off" />
+                                <input name="week[105]" value="off" />
+                                <input name="week[106]" value="off" />
+                                <input name="week[107]" value="off" />
+                                <input name="week[108]" value="off" />
+                                <input name="week[109]" value="off" />
+                                <input name="week[110]" value="off" />
+                                <input name="week[111]" value="off" />
+                                <input name="week[112]" value="off" />
+                                <input name="week[113]" value="off" />
+                                <input name="week[114]" value="off" />
+                                <input name="week[115]" value="off" />
+                                <input name="week[116]" value="off" />
+                                <input name="week[117]" value="off" />
+                                <input name="week[118]" value="off" />
+                                <input name="week[119]" value="off" />
+                                <input name="week[120]" value="off" />
+                                <input name="week[121]" value="off" />
+                                <input name="week[122]" value="off" />
+                                <input name="week[123]" value="off" />
+                                <input name="week[124]" value="off" />
+                                <input name="week[125]" value="off" />
+                                <input name="week[126]" value="off" />
+                                <input name="week[127]" value="off" />
+                                <input name="week[128]" value="off" />
+                                <input name="week[129]" value="off" />
+                                <input name="week[130]" value="off" />
+                                <input name="week[131]" value="off" />
+                                <input name="week[132]" value="off" />
+                                <input name="week[133]" value="off" />
+                                <input name="week[134]" value="off" />
+                                <input name="week[135]" value="off" />
+                                <input name="week[136]" value="off" />
+                                <input name="week[137]" value="off" />
+                                <input name="week[138]" value="off" />
+                                <input name="week[139]" value="off" />
+                                <input name="week[140]" value="off" />
+                                <input name="week[141]" value="off" />
+                                <input name="week[142]" value="off" />
+                                <input name="week[143]" value="off" />
+                                <input name="week[144]" value="off" />
+                                <input name="week[145]" value="off" />
+                                <input name="week[146]" value="off" />
+                                <input name="week[147]" value="off" />
+                                <input name="week[148]" value="off" />
+                                <input name="week[149]" value="off" />
+                                <input name="week[150]" value="off" />
+                                <input name="week[151]" value="off" />
+                                <input name="week[152]" value="off" />
+                                <input name="week[153]" value="off" />
+                                <input name="week[154]" value="off" />
+                                <input name="week[155]" value="off" />
+                                <input name="week[156]" value="off" />
+                                <input name="week[157]" value="off" />
+                                <input name="week[158]" value="off" />
+                                <input name="week[159]" value="off" />
+                                <input name="week[160]" value="off" />
+                                <input name="week[161]" value="off" />
+                                <input name="week[162]" value="off" />
+                                <input name="week[163]" value="off" />
+                                <input name="week[164]" value="off" />
+                                <input name="week[165]" value="off" />
+                                <input name="week[166]" value="off" />
+                                <input name="week[167]" value="off" />
+                                <input name="week[168]" value="off" />
+                                <input name="week[169]" value="off" />
+                                <input name="week[170]" value="off" />
+                                <input name="week[171]" value="off" />
+                                <input name="week[172]" value="off" />
+                                <input name="week[173]" value="off" />
+                                <input name="week[174]" value="off" />
+                                <input name="week[175]" value="off" />
+                                <input name="week[176]" value="off" />
+                                <input name="week[177]" value="off" />
+                                <input name="week[178]" value="off" />
+                                <input name="week[179]" value="off" />
+                                <input name="week[180]" value="off" />
+                                <input name="week[181]" value="off" />
+                                <input name="week[182]" value="off" />
+                                <input name="week[183]" value="off" />
+                                <input name="week[184]" value="off" />
+                                <input name="week[185]" value="off" />
+                                <input name="week[186]" value="off" />
+                                <input name="week[187]" value="off" />
+                                <input name="week[188]" value="off" />
+                                <input name="week[189]" value="off" />
+                                <input name="week[190]" value="off" />
+                                <input name="week[191]" value="off" />
+                            </div>
+                            <div class="form-group col-md-12" style="text-align:center;">
+                                <input type="submit" value="บันทึก" class="btn btn-info" style="margin:auto; width:150px; margin-top:30px;" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

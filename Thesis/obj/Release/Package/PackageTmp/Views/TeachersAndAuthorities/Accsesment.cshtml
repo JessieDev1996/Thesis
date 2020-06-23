@@ -1,0 +1,475 @@
+﻿@using System.Data;
+
+@model Project_03.Models.AccesmentScore
+
+
+@{
+    ViewBag.Title = "Accsesment";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <title>แบบประเมิน สก.16</title>
+    <!-- Custom CSS -->
+    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $('#checkSem').click(function () {
+                alert('ขณะนี้อยู่ในช่วงปิดเทอมไม่สามารถใช้งานส่วนนี้ได้');
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .kuy {
+            height: 20px;
+        }
+
+        .wtf {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+        }
+
+        .left1 {
+            text-align: left;
+        }
+    </style>
+
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="#">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <img src="../../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="../../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item search-box">
+                            <!---->
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                        @Html.ActionLink("ออกจากระบบ", "taLogout", "TeachersAndAuthorities", new { Style = "color:white", @class = "btn" })
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li>
+                            <!-- User Profile-->
+                            <div class="user-profile d-flex no-block dropdown m-t-20">
+
+                                <div class="user-content hide-menu m-l-10">
+                                    <div class="center">
+                                        <h4 class="m-b-0 user-name font-medium">อาจารย์และผู้ช่วย</h4>
+                                        <p>@ViewData["name"].ToString()</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="user-content hide-menu m-l-10">
+                                <div class="left1">
+                                    <h6>ภาควิชา : @ViewData["department"].ToString()</h6>
+                                </div>
+                            </div>
+                            <!-- End User Profile-->
+                        </li>
+                        <hr />
+                        <!-- User Profile-->
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("TeacherHome", "TeachersAndAuthorities", new { id = @ViewData["teacher_id"] })" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">หน้าหลัก</span></a></li>
+                        @if (ViewData["semCheck"] == null)
+                        {
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false" id="checkSem"><i class="mdi mdi-border-all"></i><span class="hide-menu">ตารางการออกนิเทศ</span></a></li>
+                        }
+                        else
+                        {
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("TeacherMatching", "TeachersAndAuthorities")" aria-expanded="false"><i class="mdi mdi-border-all"></i><span class="hide-menu">ตารางการออกนิเทศ</span></a></li>
+                        }
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("All_Accesment", "TeachersAndAuthorities")" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">แบบประเมิน สก.16</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Teacher", "TeachersAndAuthorities")" aria-expanded="false"><i class="mdi mdi-account-network"></i><span class="hide-menu">อาจารย์นิเทศ</span></a></li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="error-404.html" id="Userdd" role="button" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">นักศึกษา</span></a>
+                            <div class="user-content hide-menu m-l-10">
+                                <div class="dropdown-menu dropdown-menu" aria-labelledby="Userdd">
+                                    <a class="dropdown-item" href="@Url.Action("Student", "TeachersAndAuthorities")"><i class="mdi mdi-newspaper m-r-5 m-l-5"></i>รายงานการออก/ไม่ออกฝึกงาน</a>
+                                    <a class="dropdown-item" href="@Url.Action("StudentAll", "TeachersAndAuthorities")"><i class="mdi mdi-clipboard-account m-r-5 m-l-5"></i>รายชื่อนักศึกษาทั้งหมด</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="@Url.Action("StudentAdd", "TeachersAndAuthorities")"><i class="mdi mdi-account-multiple-plus m-r-5 m-l-5"></i>เพิ่มรายชื่อนักศึกษา</a>
+                                </div>
+                            </div>
+                        </li>
+                        <hr />
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("TeacherEdit", "TeachersAndAuthorities")" aria-expanded="false"><i class="mdi mdi-account-card-details"></i><span class="hide-menu">ข้อมูลส่วนตัว</span></a></li>
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+                    <div class="col-5">
+                        <h4 class="page-title">Profile Page</h4>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+  
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-5">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="jumbotron" style="background-color:#f62d51;">
+                                    <h4 class="display-4" style="text-align:center;color:white;">ข้อมูลนักศึกษา</h4>
+                                </div>
+
+                                <h3>รหัสนักศึกษา : @ViewData["student_id"]</h3>
+                                <h4>ชื่อ-นามสกุล : @ViewData["student_name"]</h4>
+                                <h4>สถานประกอบการ : @ViewData["company_name"]</h4>
+                                <h4>อาจารย์นิเทศ : @ViewData["teacher_name"]</h4>
+                                <h4>หัวข้อโครงงาน : @ViewData["project_name"]</h4>
+
+                            </div>
+                            <div>
+                                <hr>
+                            </div>
+                            <div class="card-body">
+                                <div class="center">
+                                    @Html.ActionLink("พิมพ์ สก.16", "sk16", "TeachersAndAuthorities", new { s_ID = ViewData["student_id"].ToString() + "+" + ViewData["sem"].ToString() }, new { target = "_blank", @class = "btn btn-info" })
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-7">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="jumbotron" style="background-color:#f62d51;">
+                                    <h3 class="display-4" style="text-align:center;color:white;">รายละเอียดคะแนน</h3>
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="table v-middle">
+                                        <thead>
+                                            <tr class="bg-light">
+                                                <th class="border-top-0"><h3>หัวข้อ</h3></th>
+                                                <th class="border-top-0"><h3>คะแนน</h3></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>คำนำ, สารบัญ</td>
+                                                <td>@Html.DisplayFor(m => m.score[0])</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>บทที่ 1 บทนำ</td>
+                                                <td>@Html.DisplayFor(m => m.score[1])</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>บทที่ 2 เนื้อหางาน/โครงงาน</td>
+                                                <td>@Html.DisplayFor(m => m.score[2])</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>บทที่ 3 วิธีการดำเนินงาน</td>
+                                                <td>@Html.DisplayFor(m => m.score[3])</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>บทที่ 4 ผลการดำเนินงาน</td>
+                                                <td>@Html.DisplayFor(m => m.score[4])</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>บทที่ 5 ปัญหาและข้อเสนอแนะ</td>
+                                                <td>@Html.DisplayFor(m => m.score[5])</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>เอกสารอ้างอิง</td>
+                                                <td>@Html.DisplayFor(m => m.score[6])</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>ภาคผนวก</td>
+                                                <td>@Html.DisplayFor(m => m.score[7])</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>ความถูกต้องตามหลักการเขียนรายงาน</td>
+                                                <td>@Html.DisplayFor(m => m.score[8])</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>การส่งรูปเล่มตามกำหนดเวลา</td>
+                                                <td>@Html.DisplayFor(m => m.score[9])</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><h4>คะแนนรวม</h4></td>
+                                                <td><h4>@ViewData["score"]</h4></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                All Rights Reserved by Xtreme Admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../dist/js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="../../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../../dist/js/custom.js"></script>
+</body>
+</html>
+
+@*<h2>รหัสนักศึกษา : @ViewData["student_id"]</h2>
+    <h4>ชื่อ-นามสกุล : @ViewData["student_name"]</h4>
+    <h4>สถานประกอบการ : @ViewData["company_name"]</h4>
+    <h4>อาจารย์นิเทศ : @ViewData["teacher_name"]</h4>
+    <h4>หัวข้อโครงงาน : @ViewData["project_name"]</h4>
+
+
+    <table width="80%">
+        <tr>
+            <td></td>
+            <td><div class="left1">@Html.ActionLink("พิมพ์ สก.16", "sk16", "TeachersAndAuthorities", new { s_ID = @ViewData["student_id"] }, new { target = "_blank", @class = "btn btn-primary" })</div></td>
+        </tr>
+
+        @foreach (DataRow item in Model.Rows)
+        {
+            <tr>
+                <th>หัวข้อ</th>
+                <th>รายละเอียด</th>
+            </tr>
+
+            <tr>
+                <td>คำนำ, สารบัญ</td>
+                <td>@item[5]</td>
+            </tr>
+
+            <tr>
+                <td>บทที่ 1 บทนำ</td>
+                <td>@item[6]</td>
+            </tr>
+
+            <tr>
+                <td>บทที่ 2 เนื้อหางาน/โครงงาน</td>
+                <td>@item[7]</td>
+            </tr>
+
+            <tr>
+                <td>บทที่ 3 วิธีการดำเนินงาน</td>
+                <td>@item[8]</td>
+            </tr>
+
+            <tr>
+                <td>บทที่ 4 ผลการดำเนินงาน</td>
+                <td>@item[9]</td>
+            </tr>
+
+            <tr>
+                <td>บทที่ 5 ปัญหาและข้อเสนอแนะ</td>
+                <td>@item[10]</td>
+            </tr>
+
+            <tr>
+                <td>เอกสารอ้างอิง</td>
+                <td>@item[11]</td>
+            </tr>
+
+            <tr>
+                <td>ภาคผนวก</td>
+                <td>@item[12]</td>
+            </tr>
+
+            <tr>
+                <td>ความถูกต้องตามหลักการเขียนรายงาน</td>
+                <td>@item[13]</td>
+            </tr>
+
+            <tr>
+                <td>การส่งรูปเล่มตามกำหนดเวลา</td>
+                <td>@item[14]</td>
+            </tr>
+
+            <tr>
+                <td><label>คะแนนรวม</label></td>
+                <td><label>@ViewData["score"]</label></td>
+            </tr>
+        }
+
+    </table>*@
+

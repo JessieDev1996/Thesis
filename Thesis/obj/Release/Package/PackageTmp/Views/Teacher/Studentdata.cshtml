@@ -1,0 +1,356 @@
+﻿@using System.Data;
+@model DataSet
+@{
+    Layout = "";
+    if (Session["position"].ToString() != "อาจารย์นิเทศ")
+    {
+        Response.Redirect("~/Home/LoginTemplate");
+    }
+}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/assets/images/rmutt.png">
+    <title>ข้อมูลนักศึกษา-อาจารย์นิเทศ</title>
+    <!-- Custom CSS -->
+    <link href="~/Content/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/dist/css/style.min.css" rel="stylesheet">
+    <script src="~/Scripts/bootstrap-select.min.js"></script>
+    <link href="~/Content/bootstrap-select.min.css" rel="stylesheet" />
+
+    <link href="~/Content/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+    <style>
+        .jumbotron {
+            box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            border-radius: 5px
+        }
+
+        body {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="preloader" style="display: none;">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="mini-sidebar" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+
+                    <a class="navbar-brand" href="@Url.Action("Index", "Teacher")">
+
+                        <b class="logo-icon">
+
+                            <img src="~/Content/assets/images/rmutt.png" alt="หน้าแรก" class="light-logo">
+                        </b>
+                        <span class="logo-text">
+                            <img src="~/Content/assets/images/cooperative.png" alt="หน้าแรก" class="light-logo">
+                        </span>
+
+
+                    </a>
+
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+
+                    <ul class="navbar-nav float-left mr-auto">
+                    </ul>
+
+                    <ul class="navbar-nav float-right">
+
+                        <li><a style="color:white;" href="@Url.Action("Logout_teacher","Teacher")"><i class="mdi mdi-logout"></i> ออกจากระบบ</a></li>
+
+                    </ul>
+
+
+                </div>
+            </nav>
+        </header>
+
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+
+            <div class="scroll-sidebar">
+
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="in">
+
+                        <li>
+
+                            <div class="user-profile d-flex no-block dropdown m-t-20">
+                                <div class="user-pic"><img src="~/Content/assets/images/users/1.jpg" alt="users" class="rounded-circle" width="40"></div>
+                                <div class="user-content hide-menu m-l-10">
+
+                                    <h5 class="m-b-0 user-name font-medium">@ViewData["name"] </h5>
+                                    <span class="op-5 user-email">@ViewData["email"]</span>
+
+
+                                </div>
+                            </div>
+
+
+                        <li class="sidebar-item selected"> <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="@Url.Action("Index", "Teacher")" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">หน้าหลัก</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Score", "Teacher",new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"]  })" aria-expanded="false"><i class="mdi mdi-account-edit"></i><span class="hide-menu">ประเมินคะแนนนักศึกษา</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Ask", "Teacher",new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"]  })" aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">แบบสอบถามนิเทศ</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("ViewMatch", "Teacher", new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"]  })" aria-expanded="false"><i class="mdi mdi-calendar-check"></i><span class="hide-menu">รายการนิเทศ</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("FacData", "Teacher",new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"]  })" aria-expanded="false"><i class="mdi mdi-factory"></i><span class="hide-menu">ข้อมูลสถานประกอบการ</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("EditPersonal", "Teacher",new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"] })" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">ข้อมูลส่วนตัว</span></a></li>
+
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </aside>
+
+        <div class="page-wrapper">
+
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <h4 class="page-title">ข้อมูลนักศึกษา</h4>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">อาจารย์นิเทศ</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">ข้อมูลสถานประกอบการ</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="d-md-flex align-items-center">
+                                    <div>
+                                        <h3 class="error-title" style="text-align:center">ข้อมูลนักศึกษาและหัวหน้างานของนักศึกษา</h3>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-md-flex align-items-center">
+                                    <div>
+
+
+                                        <label class="font-bold">ชื่อนักศึกษา:</label>
+                                        <label>@Model.Tables[0].Rows[0]["name_th"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">ชื่อนักศึกษา(อังกฤษ) :</label>
+                                        <label>@Model.Tables[0].Rows[0]["name_en"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">เพศ :</label>
+                                        <label>@Model.Tables[0].Rows[0]["gender"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">อายุ :</label>
+                                        <label>@Model.Tables[0].Rows[0]["age"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">ศาสนา :</label>
+                                        <label>@Model.Tables[0].Rows[0]["religion"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">สัญชาติ :</label>
+                                        <label>@Model.Tables[0].Rows[0]["religion"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">หลักสูตร :</label>
+                                        <label>@Model.Tables[0].Rows[0]["study"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">ชั้นปี :</label>
+                                        <label>@Model.Tables[0].Rows[0]["year"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">อาจารย์ที่ปรึกษา :</label>
+                                        <label>@Model.Tables[0].Rows[0]["advisor"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">เกรดเฉลี่ยเทอมการศึกษาล่าสุด :</label>
+                                        <label>@Model.Tables[0].Rows[0]["gpa"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">เกรดเฉลี่ยปัจจุบัน :</label>
+                                        <label>@Model.Tables[0].Rows[0]["gpax"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">เบอร์โทรศัพท์ :</label>
+                                        <label>@Model.Tables[0].Rows[0]["telephone"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">เบอร์โทรศัพท์มือถือ :</label>
+                                        <label>@Model.Tables[0].Rows[0]["mobile_phone"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">อีเมล :</label>
+                                        <label>@Model.Tables[0].Rows[0]["email"]</label>
+                                        <br />
+                                        <br />
+                                        <label class="font-bold">ความสามารถพิเศษ :</label>
+                                        <label>@Model.Tables[0].Rows[0]["ability_spectify"]</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    @if (Model.Tables[1].Rows.Count > 0)
+                    {
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-md-flex align-items-center">
+                                        <div>
+                                            <label class="font-bold">ชื่อหัวหน้างาน:</label>
+                                            <label>@Model.Tables[1].Rows[0]["name"]</label>
+                                            <br />
+                                            <br />
+                                            <label class="font-bold">ตำแหน่ง :</label>
+                                            <label>@Model.Tables[1].Rows[0]["position"]</label>
+                                            <br />
+                                            <br />
+                                            <label class="font-bold">แผนก :</label>
+                                            <label>@Model.Tables[1].Rows[0]["department"]</label>
+                                            <br />
+                                            <br />
+                                            <label class="font-bold">เบอร์โทรศัพท์ :</label>
+                                            <label>@Model.Tables[1].Rows[0]["phone"]</label>
+                                            <br />
+                                            <br />
+                                            <label class="font-bold">แฟกซ์ :</label>
+                                            <label>@Model.Tables[1].Rows[0]["fax"]</label>
+                                            <br />
+                                            <br />
+                                            <label class="font-bold">อีเมล :</label>
+                                            <label>@Model.Tables[1].Rows[0]["email"]</label>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-body">
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <h1 class="error-title text-danger" style="text-align:center;">ยังไม่มีข้อมูลของหัวหน้างาน</h1>
+
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <br />
+                    <br />
+                    <br />
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <footer class="footer text-center">
+            <p>ระบบจัดการการฝึกงานและสหกิจศึกษา กรณีศึกษา:คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี</p>
+            All Rights Reserved by Xtreme Admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+        </footer>
+
+    </div>
+
+    
+
+    <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/Content/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/Content/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/dist/js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="~/Content/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="~/Content/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/Content/dist/js/custom.js"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="~/Content/assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="~/Content/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="~/Content/dist/js/pages/dashboards/dashboard1.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+
+    <script src="~/Scripts/locales/bootstrap-datepicker.th.min.js"></script>
+    <script>
+        $('body').fadeIn("slow")
+
+    </script>
+</body>
+</html>
+

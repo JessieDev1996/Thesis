@@ -1,0 +1,256 @@
+﻿@model Project_Test1.Models.Company
+
+@{
+    ViewBag.Title = "เพิ่มข้อมูลการรับนักศึกษา";
+    Layout = "~/Views/Shared/_LayoutAuthoritiesTemplate.cshtml";
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var msgAlert = $("#msgAlert").val();
+
+        if (msgAlert == "Success") {
+            $.alert({
+                theme: 'modern',
+                title: 'เพิ่มข้อมูลการรับนักศึกษาสำเร็จ',
+                content: '',
+                type: 'green',
+                typeAnimated: true,
+                boxWidth: '20%',
+                useBootstrap: false,
+                buttons: {
+                    OK: {
+                        text: 'OK',
+                        btnClass: 'btn-green',
+                        action: function () {
+                        }
+                    }
+                },
+            });
+        } else if (msgAlert == "Already") {
+            $.alert({
+                theme: 'modern',
+                title: 'เพิ่มข้อมูลการรับนักศึกษาไม่สำเร็จ !!!',
+                content: 'กรุณาตรวจสอบข้อมูล เนื่องจากมีข้อมูลนี้ในระบบแล้ว',
+                type: 'red',
+                typeAnimated: true,
+                boxWidth: '30%',
+                useBootstrap: false,
+                buttons: {
+                    OK: {
+                        text: 'OK',
+                        btnClass: 'btn-red',
+                        action: function () {
+                        }
+                    }
+                },
+            });
+        }
+
+        $(document).on('click', '.add', function () {
+            var tc = parseInt($("#totalContacts").val());
+            tc = tc + 1;
+            $("#totalContacts").val(tc)
+
+            var html = '<div id="form_major">';
+            html += '<div class="form-group col-md-12 d-flex">';
+            html += '<div class="col-md-5">';
+            html += '<label class"control-label" style="font-weight:bold;">ต้องการรับนักศึกษาในสาขา :</label>';
+            html += '<select class="selectpicker form-control" title="Please select" name="major[' + (tc - 1) + ']" required>';
+            html += '<option>วิศวกรรมโยธา</option>';
+            html += '<option>วิศวกรรมสิ่งแวดล้อม</option>';
+            html += '<option>วิศวกรรมไฟฟ้า</option>';
+            html += '<option>วิศวกรรมเครื่องกล</option>';
+            html += '<option>วิศวกรรมอุตสาหการ</option>';
+            html += '<option>วิศวกรรมนวัตกรรมสิ่งทอ</option>';
+            html += '<option>วิศวกรรมอิเล็กทรอนิกส์และโทรคมนาคม</option>';
+            html += '<option>วิศวกรรมคอมพิวเตอร์</option>';
+            html += '<option>วิศวกรรมเคมี</option>';
+            html += '<option>วิศวกรรมวัสดุ</option>';
+            html += '<option>วิศวกรรมเครื่องจักรกลเกษตร</option>';
+            html += '<option>วิศวกรรมชลประทานและการจัดการน้ำ</option>';
+            html += '<option>วิศวกรรมอาหาร</option>';
+            html += '<option>วิศวกรรมอิเล็กทรอนิกส์อากาศยาน</option>';
+            html += '<option>วิศวกรรมระบบราง</option>';
+            html += '</select>';
+            html += '</div>';
+            html += '<div class="col-md-4">';
+            html += '<label class"control-label" style="font-weight:bold;">ตำแหน่งงานที่นักศึกษาต้องปฏิบัติ :</label>';
+            html += '<input type="text" class="form-control" maxlength="30" name="position_of_student[' + (tc - 1) + ']" autocomplete = "off" />';
+            html += '</div>';
+            html += '<div class="col-md-3">';
+            html += '<label class"control-label" style="font-weight:bold;">ต้องการรับนักศึกษาจำนวน :</label>';
+            html += '<input type="number" class="form-control" maxlength="5" name="require[' + (tc - 1) + ']" autocomplete = "off" required />';
+            html += '</div>';
+            html += '</div>';
+            html += '<div class="form-group col-md-12 d-flex align-items-center">';
+            html += '<div class="col-md-7">';
+            html += '<label class"control-label" style="font-weight:bold;">ลักษณะงานที่นักศึกษาต้องปฏิบัติ :</label>';
+            html += '<input type="text" class="form-control" maxlength="70" name="job_description[' + (tc - 1) + ']" autocomplete = "off" />';
+            html += '</div>';
+            html += '<div class="col-md-5">';
+            html += '<button type="button" id = "btn-op' + (tc - 1) + '" class="btn btn-danger remove" style="margin-top:26px; margin-left:30px;">ลบ</button>';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+
+            $('.selectpicker').selectpicker('render');
+            $('#add_major').append(html);
+            $('.selectpicker').selectpicker('refresh');
+
+            $("#btn-op" + (tc - 2).toString()).hide();
+        });
+
+        $(document).on('click', '.remove', function () {
+            var tc = parseInt($("#totalContacts").val());
+            tc = tc - 1;
+            $("#totalContacts").val(tc)
+
+            $(this).closest('#form_major').remove();
+
+            $("#btn-op" + (tc - 1).toString()).show();
+        });
+
+        $('#year').datepicker({
+            minViewMode: 'years',
+            autoclose: true,
+            format: 'yyyy',
+            orientation: "bottom auto"
+        }).datepicker("setDate", "today" + 543);
+
+    });
+</script>
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-9" style="margin:auto;">
+            <div class="card">
+                <div class="card-body">
+                    <!-- title -->
+                    <div class="align-items-center">
+                        <h4 class="card-title">เพิ่มข้อมูลการรับนักศึกษา</h4>
+                        <h5 class="card-subtitle">เลือกสถานประกอบการแล้วเลือกปีการศึกษา จากนั้นเลือกภาคการศึกษาที่ต้องการรับนักศึกษา</h5>
+                        <hr />
+                    </div>
+                    <!-- title -->
+                    <form class="form-horizontal" method="post" style="margin-bottom:100px">
+                        <div class="hide">
+                            <input id="totalContacts" value=1 />
+                            <input name="user_id_title" value="@ViewData["user_id"]" />
+                            <input name="name_title" value="@ViewData["name"]" />
+                            <input id="msgAlert" value="@ViewData["msgAlert"]" />
+                        </div>
+
+                        <div class="form-group col-md-12" style="text-align:center;">
+                            <div style="margin:auto;">
+                                <label class="col-md-5" style="font-weight:bold; text-align:left;">ชื่อสถานประกอบการ :</label>
+                                <div class="col-md-5" style="margin:auto;">
+                                    <select class="selectpicker form-control" title="Please select" name="company_id[0]" data-size="10" data-live-search="true" required>
+                                        @for (int i = 0; i < Model.company_id.Length; i++)
+                                        {
+                                            <option value="@Model.company_id[i].ToString()">@Model.name_th[i].ToString()</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <hr class="col-md-8" style="margin:auto;" />
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <div class="col-md-12 d-flex">
+                                <div class="col-md-5" style="margin-left:auto;">
+                                    <label class="control-label" style="font-weight:bold;">ระยะเวลาที่ต้องการให้นักศึกษาไปปฏิบัติงาน :</label>
+                                    <div class="form-inline">
+                                        <label class="control-label" style="font-weight:bold; margin-right:20px;">ปีการศึกษา :</label>
+                                        <input id="year" type="text" class="form-control" style="width:20%; text-align:center;" name="year">
+                                    </div>
+                                </div>
+                                <div class="col-md-3" style="margin-right:auto;">
+                                    <label class="checkbox col-12">
+                                        <input type="checkbox" class="m-r-10" name="semester_id1" value=1 checked>ภาคเรียนที่ 1 (มิถุนายน - ตุลาคม)
+                                    </label>
+                                    <label class="checkbox col-12">
+                                        <input type="checkbox" class="m-r-10" name="semester_id2" value=1 checked>ภาคเรียนที่ 2 (พฤศจิกายน - มีนาคม)
+                                    </label>
+                                    <label class="checkbox col-12">
+                                        <input type="checkbox" class="m-r-10" name="semester_id3" value=1 checked>ภาคเรียนที่ 3 (เมษายน - มิถุนายน)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12 d-flex">
+                            <div class="col-md-5">
+                                <label class"control-label" style="font-weight:bold;">ต้องการรับนักศึกษาในสาขา :</label>
+                                <select class="selectpicker form-control" title="Please select" name="major[0]" required>
+                                    <option>วิศวกรรมโยธา</option>
+                                    <option>วิศวกรรมสิ่งแวดล้อม</option>
+                                    <option>วิศวกรรมไฟฟ้า</option>
+                                    <option>วิศวกรรมเครื่องกล</option>
+                                    <option>วิศวกรรมอุตสาหการ</option>
+                                    <option>วิศวกรรมนวัตกรรมสิ่งทอ</option>
+                                    <option>วิศวกรรมอิเล็กทรอนิกส์และโทรคมนาคม</option>
+                                    <option>วิศวกรรมคอมพิวเตอร์</option>
+                                    <option>วิศวกรรมเคมี</option>
+                                    <option>วิศวกรรมวัสดุ</option>
+                                    <option>วิศวกรรมเครื่องจักรกลเกษตร</option>
+                                    <option>วิศวกรรมชลประทานและการจัดการน้ำ</option>
+                                    <option>วิศวกรรมอาหาร</option>
+                                    <option>วิศวกรรมอิเล็กทรอนิกส์อากาศยาน</option>
+                                    <option>วิศวกรรมระบบราง</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="control-label" style="font-weight:bold;">ตำแหน่งงานที่นักศึกษาต้องปฏิบัติ :</label>
+                                <input type="text" class="form-control" maxlength="30" name="position_of_student[0]" autocomplete="off" />
+                            </div>
+
+                            <div class="col-md-3">
+                                <label class="control-label" style="font-weight:bold;">ต้องการรับนักศึกษาจำนวน :</label>
+                                <input type="number" class="form-control" maxlength="5" name="require[0]" autocomplete="off" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12 d-flex">
+                            <div class="col-md-7">
+                                <label class"control-label" style="font-weight:bold;">ลักษณะงานที่นักศึกษาต้องปฏิบัติ :</label>
+                                <input type="text" class="form-control" maxlength="70" name="job_description[0]" autocomplete="off" />
+                            </div>
+
+                            <div class="col-md-5">
+                                <button class="btn btn-success add" style="margin-top:28px; margin-left:30px;" type="button">ต้องการรับนักศึกษาเพิ่ม</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="add_major">
+                        </div>
+                        <div class="form-group col-md-12" style="text-align:center;">
+                            <input type="submit" value="เพิ่มข้อมูล" class="btn btn-info" style="margin:auto; width:150px; margin-top:40px;" />
+                        </div>
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

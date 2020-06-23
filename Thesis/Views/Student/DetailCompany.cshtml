@@ -1,0 +1,110 @@
+﻿@using System.Data
+@model DataSet
+
+@{
+    ViewBag.Title = "รายละเอียดสถานประกอบการ";
+    Layout = "~/Views/Shared/_LayoutStudentTemplate.cshtml";
+}
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <!-- column -->
+            <div class="col-lg-8" style="margin:auto">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group col-md-12">
+                            <h4 class="card-title">กระบวนการเอกสาร</h4>
+                            <h5 class="card-subtitle">บอกถึงความพร้อมของเอกสารแต่ละชุด</h5>
+                            <hr />
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <h2 style="text-align:center;">@ViewBag.Title</h2>
+                            <hr />
+                        </div>
+
+                        <div class="form-group col-md-12 d-flex">
+                            <label class="control-label col-md-5" style="text-align:right; font-weight:bold;">
+                                ชื่อสถานประกอบการ :
+                            </label>
+                            <label class="control-label col-md-7" style="text-align:left; font-weight:normal; margin-left:40px;">
+                                @Model.Tables["Company"].Rows[0]["name_th"].ToString()
+                                <br />
+                                @Model.Tables["Company"].Rows[0]["name_en"].ToString()
+                            </label>
+                        </div>
+
+                        <div class="form-group col-md-12 d-flex">
+                            <label class="control-label col-md-5" style="text-align:right; font-weight:bold;">
+                                Website :
+                            </label>
+                            <label class="control-label col-md-7" style="text-align:left; font-weight:normal; margin-left:40px;">
+                                <a href="https://@Model.Tables["Company"].Rows[0]["website"].ToString()" target="_blank">@Model.Tables["Company"].Rows[0]["website"].ToString()</a>
+                            </label>
+                        </div>
+
+                        <div class="form-group col-md-12 d-flex">
+                            <label class="control-label col-md-5" style="text-align:right; font-weight:bold;">
+                                ที่อยู่ :
+                            </label>
+                            <label class="control-label col-md-7" style="text-align:left; font-weight:normal; margin-left:40px;">
+                                @ViewData["address"]
+                            </label>
+                        </div>
+
+                        <div class="form-group col-md-12 d-flex">
+                            <label class="control-label col-md-5" style="text-align:right; font-weight:bold;">
+                                สิ่งที่ต้องนำไปเอง :
+                            </label>
+                            <label class="control-label col-md-7" style="text-align:left; font-weight:normal; margin-left:40px;">
+                                @Model.Tables["Company"].Rows[0]["job_request"].ToString()
+                            </label>
+                        </div>
+
+                        <div class="form-group col-md-12 d-flex">
+                            <label class="control-label col-md-5" style="text-align:right; font-weight:bold;">
+                                ค่าตอบแทน :
+                            </label>
+                            <label class="control-label col-md-7" style="text-align:left; font-weight:normal; margin-left:40px;">
+                                @Model.Tables["Company"].Rows[0]["pay"].ToString()
+                            </label>
+                        </div>
+
+                        <div class="form-group col-md-12 d-flex">
+                            <label class="control-label col-md-5" style="text-align:right; font-weight:bold;">
+                                สวัสดิการอื่น ๆ :
+                            </label>
+                            <label class="control-label col-md-7" style="text-align:left; font-weight:normal; margin-left:40px;">
+                                @Model.Tables["Company"].Rows[0]["welfare"].ToString()
+                            </label>
+                        </div>
+
+                        <div class="form-group col-md-12 d-flex">
+                            <label class="control-label col-md-5" style="text-align:right; font-weight:bold;">
+                                วันที่ต้องปฏิบัติงาน :
+                            </label>
+                            <label class="control-label col-md-7" style="text-align:left; font-weight:normal; margin-left:40px;">
+                                @Model.Tables["Company"].Rows[0]["job_day"].ToString()
+                            </label>
+                        </div>
+
+                        <div class="form-group col-md-12 d-flex">
+                            <label class="control-label col-md-5" style="text-align:right; font-weight:bold;">
+                                เวลาในการปฏิบัติงาน :
+                            </label>
+                            <label class="control-label col-md-7" style="text-align:left; font-weight:normal; margin-left:40px;">
+                                @Model.Tables["Company"].Rows[0]["job_time"].ToString()
+                            </label>
+                        </div>
+
+                        <div class="form-group col-md-12" style="text-align:center;">
+                            @Html.ActionLink("สมัคร", "RegisterCompany", new { company_id = Model.Tables["Company"].Rows[0]["company_id"], user_id_title = ViewData["user_id"], name_title = ViewData["name"] }, new { @class = "btn btn-info", @style="margin:auto; width:150px;" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+

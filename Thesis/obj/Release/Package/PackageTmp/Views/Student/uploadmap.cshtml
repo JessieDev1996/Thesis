@@ -1,0 +1,70 @@
+﻿
+@using System.Data
+@model DataSet
+
+@{
+    ViewBag.Title = "uploadmap";
+    Layout = "~/Views/Shared/_LayoutStudentTemplate.cshtml";
+}
+
+<script>
+
+    $(document).ready(function () {
+
+
+        $('#btnUpload').click(function () {
+
+            if ($('#file').get(0).files.length === 0) {
+
+                alert("กรุณาเลือกไฟล์");
+            }
+            else {
+
+                this.form.submit();
+            }
+
+        });
+
+        $("#file").change(function () {
+
+            var val = $(this).val();
+
+            switch (val.substring(val.lastIndexOf('.') + 1).toLowerCase()) {
+                case 'jpg': case 'png': break;
+                default:
+                    $(this).val('');
+                    // error message here
+                    alert("กรุณาเลือกไฟล์รูปภาพ .jpg หรือ .png เท่านั้น");
+                    break;
+            }
+        });
+
+
+    });
+
+</script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8" style="margin:auto;">
+            <div class="card">
+                <div class="card-body">
+                    @using (Html.BeginForm("upload_map", "Student", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="card-body">
+                            <div class="center">
+                                <h4>เปลี่ยนรูปโปรไฟล์</h4> <br>
+                                <input type="file" name="file" id="file" /> <br> <br>
+                                @*<button class="btn btn-info" type="submit" name="id" value="@ViewData["id"]">ตกลง</button>*@
+                                <input type="button" id="btnUpload" class="btn btn-primary" value="ตกลง">
+                                <input type="hidden" name="user_id_title" value="@ViewData["user_id"]">
+                                <input type="hidden" name="name_title" value="@ViewData["name"]">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

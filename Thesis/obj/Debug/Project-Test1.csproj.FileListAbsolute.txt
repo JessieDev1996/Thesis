@@ -1,0 +1,921 @@
+D:\Project\Project-Test1\bin\Project-Test1.dll.config
+D:\Project\Project-Test1\bin\Project-Test1.dll
+D:\Project\Project-Test1\bin\Project-Test1.pdb
+D:\Project\Project-Test1\bin\roslyn\csc.exe
+D:\Project\Project-Test1\bin\roslyn\csc.exe.config
+D:\Project\Project-Test1\bin\roslyn\csc.rsp
+D:\Project\Project-Test1\bin\roslyn\csi.exe
+D:\Project\Project-Test1\bin\roslyn\csi.exe.config
+D:\Project\Project-Test1\bin\roslyn\csi.rsp
+D:\Project\Project-Test1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Project\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Project\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Project\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Project\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Project\Project-Test1\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Project\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Project\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Project\Project-Test1\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Project\Project-Test1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Project\Project-Test1\bin\roslyn\System.AppContext.dll
+D:\Project\Project-Test1\bin\roslyn\System.Collections.Immutable.dll
+D:\Project\Project-Test1\bin\roslyn\System.Console.dll
+D:\Project\Project-Test1\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Project\Project-Test1\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Project\Project-Test1\bin\roslyn\System.IO.Compression.dll
+D:\Project\Project-Test1\bin\roslyn\System.IO.FileSystem.dll
+D:\Project\Project-Test1\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Project\Project-Test1\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Project\Project-Test1\bin\roslyn\System.IO.Pipes.dll
+D:\Project\Project-Test1\bin\roslyn\System.Reflection.Metadata.dll
+D:\Project\Project-Test1\bin\roslyn\System.Security.AccessControl.dll
+D:\Project\Project-Test1\bin\roslyn\System.Security.Claims.dll
+D:\Project\Project-Test1\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Project\Project-Test1\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Project\Project-Test1\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Project\Project-Test1\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Project\Project-Test1\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Project\Project-Test1\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Project\Project-Test1\bin\roslyn\System.ValueTuple.dll
+D:\Project\Project-Test1\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Project\Project-Test1\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Project\Project-Test1\bin\roslyn\System.Xml.XPath.dll
+D:\Project\Project-Test1\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Project\Project-Test1\bin\roslyn\vbc.exe
+D:\Project\Project-Test1\bin\roslyn\vbc.exe.config
+D:\Project\Project-Test1\bin\roslyn\vbc.rsp
+D:\Project\Project-Test1\bin\roslyn\VBCSCompiler.exe
+D:\Project\Project-Test1\bin\roslyn\VBCSCompiler.exe.config
+D:\Project\Project-Test1\bin\Antlr3.Runtime.dll
+D:\Project\Project-Test1\bin\EntityFramework.dll
+D:\Project\Project-Test1\bin\EntityFramework.SqlServer.dll
+D:\Project\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project\Project-Test1\bin\Microsoft.Web.Infrastructure.dll
+D:\Project\Project-Test1\bin\Newtonsoft.Json.dll
+D:\Project\Project-Test1\bin\System.Web.Helpers.dll
+D:\Project\Project-Test1\bin\System.Web.Mvc.dll
+D:\Project\Project-Test1\bin\System.Web.Optimization.dll
+D:\Project\Project-Test1\bin\System.Web.Razor.dll
+D:\Project\Project-Test1\bin\System.Web.WebPages.Deployment.dll
+D:\Project\Project-Test1\bin\System.Web.WebPages.dll
+D:\Project\Project-Test1\bin\System.Web.WebPages.Razor.dll
+D:\Project\Project-Test1\bin\WebGrease.dll
+D:\Project\Project-Test1\bin\EntityFramework.xml
+D:\Project\Project-Test1\bin\EntityFramework.SqlServer.xml
+D:\Project\Project-Test1\bin\System.Web.Helpers.xml
+D:\Project\Project-Test1\bin\System.Web.Mvc.xml
+D:\Project\Project-Test1\bin\System.Web.Optimization.xml
+D:\Project\Project-Test1\bin\System.Web.Razor.xml
+D:\Project\Project-Test1\bin\System.Web.WebPages.xml
+D:\Project\Project-Test1\bin\System.Web.WebPages.Deployment.xml
+D:\Project\Project-Test1\bin\System.Web.WebPages.Razor.xml
+D:\Project\Project-Test1\bin\Newtonsoft.Json.xml
+D:\Project\Project-Test1\bin\Antlr3.Runtime.pdb
+D:\Project\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project\Project-Test1\obj\Debug\Project-Test1.csprojAssemblyReference.cache
+D:\Project\Project-Test1\obj\Debug\Project-Test1.csproj.CopyComplete
+D:\Project\Project-Test1\obj\Debug\Project-Test1.dll
+D:\Project\Project-Test1\obj\Debug\Project-Test1.pdb
+D:\Project\Project-Test1\bin\itextsharp.dll
+D:\Project\Project-Test1\bin\itextsharp.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csprojAssemblyReference.cache
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\obj\Debug\Project-Test1.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\obj\Debug\Project-Test1.pdb
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\Project-Test1.dll.config
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\Project-Test1.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\Project-Test1.pdb
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\csc.exe
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\csc.exe.config
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\csc.rsp
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\csi.exe
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\csi.exe.config
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\csi.rsp
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.AppContext.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Console.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.IO.Compression.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Security.Claims.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.ValueTuple.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\vbc.exe
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\vbc.exe.config
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\vbc.rsp
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\Antlr3.Runtime.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\EntityFramework.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\itextsharp.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\Newtonsoft.Json.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.Helpers.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.Mvc.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.Optimization.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.Razor.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.WebPages.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\WebGrease.dll
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\EntityFramework.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\itextsharp.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.Helpers.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.Mvc.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.Optimization.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.Razor.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.WebPages.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\Newtonsoft.Json.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\Antlr3.Runtime.pdb
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Pcomputer\Downloads\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csproj.CopyComplete
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.dll.config
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.pdb
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.exe
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.exe.config
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.rsp
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.exe
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.exe.config
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.rsp
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.AppContext.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Console.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Compression.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Claims.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.ValueTuple.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.exe
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.exe.config
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.rsp
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Antlr3.Runtime.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\itextsharp.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Newtonsoft.Json.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Licensing.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Helpers.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Mvc.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Optimization.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Razor.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\WebGrease.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\itextsharp.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.pdb
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Helpers.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Mvc.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Optimization.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Razor.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Newtonsoft.Json.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Antlr3.Runtime.pdb
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csprojAssemblyReference.cache
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csproj.CopyComplete
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.pdb
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.dll.config
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.pdb
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.exe
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.exe.config
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.rsp
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.exe
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.exe.config
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.rsp
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.AppContext.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Console.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Compression.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Claims.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.ValueTuple.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.exe
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.exe.config
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.rsp
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Antlr3.Runtime.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\itextsharp.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Newtonsoft.Json.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Licensing.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Helpers.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Mvc.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Optimization.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Razor.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\WebGrease.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\itextsharp.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.pdb
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Helpers.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Mvc.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Optimization.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Razor.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Newtonsoft.Json.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Antlr3.Runtime.pdb
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csprojAssemblyReference.cache
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csproj.CoreCompileInputs.cache
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csproj.CopyComplete
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.dll
+C:\Users\computer\source\repos\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.pdb
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.dll.config
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.pdb
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.exe
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.exe.config
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.rsp
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.exe
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.exe.config
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.rsp
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.AppContext.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Console.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Compression.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Claims.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.ValueTuple.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.exe
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.exe.config
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.rsp
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Antlr3.Runtime.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\itextsharp.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Newtonsoft.Json.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Licensing.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Helpers.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Mvc.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Optimization.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Razor.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\WebGrease.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\itextsharp.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.pdb
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Helpers.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Mvc.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Optimization.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Razor.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Newtonsoft.Json.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Antlr3.Runtime.pdb
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csprojAssemblyReference.cache
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csproj.CopyComplete
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.dll
+C:\Users\Pcomputer\Downloads\Project-คิว-แบงค์(1)\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.pdb
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.dll.config
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.pdb
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.exe
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.exe.config
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.rsp
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.exe
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.exe.config
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.rsp
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.AppContext.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Console.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Compression.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Claims.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.ValueTuple.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.exe
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.exe.config
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.rsp
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Antlr3.Runtime.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\itextsharp.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Newtonsoft.Json.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Licensing.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Helpers.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Mvc.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Optimization.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Razor.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\WebGrease.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\itextsharp.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.pdb
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Helpers.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Mvc.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Optimization.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Razor.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Newtonsoft.Json.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Antlr3.Runtime.pdb
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csprojAssemblyReference.cache
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csproj.CoreCompileInputs.cache
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csproj.CopyComplete
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.dll
+C:\Users\computer\source\repos\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.pdb
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.dll.config
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.pdb
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.exe
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.exe.config
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.rsp
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.exe
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.exe.config
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.rsp
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.AppContext.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Console.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Compression.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Claims.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.ValueTuple.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.exe
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.exe.config
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.rsp
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Antlr3.Runtime.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\itextsharp.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Newtonsoft.Json.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Licensing.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Helpers.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Mvc.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Optimization.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Razor.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\WebGrease.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\itextsharp.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.pdb
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Helpers.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Mvc.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Optimization.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Razor.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Newtonsoft.Json.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Antlr3.Runtime.pdb
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csprojAssemblyReference.cache
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csproj.CopyComplete
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.pdb
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\BouncyCastle.Crypto.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Google.Protobuf.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\MySql.Data.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Renci.SshNet.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Ubiety.Dns.Core.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Google.Protobuf.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\MySql.Data.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Renci.SshNet.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Ubiety.Logging.Core.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Ubiety.Dns.Core.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 90%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Ubiety.Logging.Core.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.dll.config
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Project-Test1.pdb
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.exe
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.exe.config
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csc.rsp
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.exe
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.exe.config
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\csi.rsp
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.AppContext.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Console.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Compression.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Claims.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.ValueTuple.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.exe
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.exe.config
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\vbc.rsp
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Antlr3.Runtime.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\BouncyCastle.Crypto.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Google.Protobuf.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\itextsharp.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\MySql.Data.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Newtonsoft.Json.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Renci.SshNet.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Licensing.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Helpers.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Mvc.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Optimization.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Razor.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Ubiety.Dns.Core.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Ubiety.Logging.Core.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\WebGrease.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Google.Protobuf.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\itextsharp.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.pdb
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\MySql.Data.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Renci.SshNet.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Helpers.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Mvc.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Optimization.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.Razor.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Newtonsoft.Json.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Ubiety.Dns.Core.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Ubiety.Logging.Core.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Antlr3.Runtime.pdb
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csprojAssemblyReference.cache
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csproj.CopyComplete
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.dll
+C:\Users\Pcomputer\Downloads\Project-ล่าสุด 100%\Project-ล่าสุด 90%\Project-คิว-แบงค์\Project-Test1\Project-Test1\obj\Debug\Project-Test1.pdb
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Project-Test1.dll.config
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Project-Test1.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Project-Test1.pdb
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\csc.exe
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\csc.exe.config
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\csc.rsp
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\csi.exe
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\csi.exe.config
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\csi.rsp
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.AppContext.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Console.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.IO.Compression.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.Claims.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.ValueTuple.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\vbc.exe
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\vbc.exe.config
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\vbc.rsp
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Antlr3.Runtime.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\BouncyCastle.Crypto.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\EntityFramework.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Google.Protobuf.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\itextsharp.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\MySql.Data.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Newtonsoft.Json.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Renci.SshNet.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Syncfusion.Licensing.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Helpers.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Mvc.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Optimization.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Razor.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.WebPages.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Ubiety.Dns.Core.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Ubiety.Logging.Core.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\WebGrease.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\EntityFramework.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Google.Protobuf.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\itextsharp.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.pdb
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\MySql.Data.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Renci.SshNet.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Helpers.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Mvc.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Optimization.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Razor.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.WebPages.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Newtonsoft.Json.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Ubiety.Dns.Core.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Ubiety.Logging.Core.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Antlr3.Runtime.pdb
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csprojAssemblyReference.cache
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csproj.CoreCompileInputs.cache
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csproj.CopyComplete
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\obj\Debug\Project-Test1.dll
+C:\Users\computer\source\repos\Project 100_\Project-Test1\Project-Test1\obj\Debug\Project-Test1.pdb
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csprojAssemblyReference.cache
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\obj\Debug\Project-Test1.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\obj\Debug\Project-Test1.pdb
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Project-Test1.dll.config
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Project-Test1.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Project-Test1.pdb
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\csc.exe
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\csc.exe.config
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\csc.rsp
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\csi.exe
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\csi.exe.config
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\csi.rsp
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.AppContext.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Console.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.IO.Compression.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.Claims.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.ValueTuple.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\vbc.exe
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\vbc.exe.config
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\vbc.rsp
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Antlr3.Runtime.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\BouncyCastle.Crypto.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\EntityFramework.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Google.Protobuf.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\itextsharp.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\MySql.Data.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Newtonsoft.Json.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Renci.SshNet.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Syncfusion.Licensing.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Helpers.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Mvc.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Optimization.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Razor.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.WebPages.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Ubiety.Dns.Core.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Ubiety.Logging.Core.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\WebGrease.dll
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\EntityFramework.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\EntityFramework.SqlServer.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Google.Protobuf.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\itextsharp.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.pdb
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\LumenWorks.Framework.IO.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\MySql.Data.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Renci.SshNet.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Syncfusion.Compression.Base.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Syncfusion.XlsIO.Base.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Helpers.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Mvc.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Optimization.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.Razor.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.WebPages.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\System.Web.WebPages.Razor.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Newtonsoft.Json.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Ubiety.Dns.Core.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Ubiety.Logging.Core.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Antlr3.Runtime.pdb
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Pcomputer\Downloads\Project 100_\Project-Test1\Project-Test1\obj\Debug\Project-Test1.csproj.CopyComplete

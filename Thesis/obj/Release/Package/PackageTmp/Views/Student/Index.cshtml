@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "หน้าแรก";
+    Layout = "~/Views/Shared/_LayoutStudentTemplate.cshtml";
+}
+
+<script>
+    $(document).ready(function () {
+
+        if ($('#msgAlert').val() == "การสมัครสำเร็จ") {
+                $.alert({
+                    theme: 'modern',
+                    title: $('#msgAlert').val(),
+                    content: 'บันทึกข้อมูลสำเร็จ !!',
+                    type: 'green',
+                    typeAnimated: true,
+                    boxWidth: '30%',
+                    useBootstrap: false,
+                    buttons: {
+                        OK: {
+                            text: 'OK',
+                            btnClass: 'btn-green',
+                            action: function () {
+                                //location.reload();
+                            }
+                        }
+                    },
+                }); 
+            }
+            else if ($('#msgAlert').val() != "") {
+                $.alert({
+                    theme: 'modern',
+                    title: 'การสมัครไม่สำเร็จ !!!',
+                    content: $('#msgAlert').val(),
+                    type: 'red',
+                    typeAnimated: true,
+                    boxWidth: '30%',
+                    useBootstrap: false,
+                    buttons: {
+                        OK: {
+                            text: 'OK',
+                            btnClass: 'btn-red',
+                            action: function () {
+                                //location.reload();
+                            }
+                        }
+                    },
+                }); 
+            }
+        });
+</script>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <!-- column -->
+            <div class="col-lg-8" style="margin:auto;">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">กระบวนการเอกสาร</h4>
+                        <h5 class="card-subtitle">บอกถึงความพร้อมของเอกสารแต่ละชุด</h5>
+                        <hr />
+                        <table class="table no-border mini-table m-t-20">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th class="border-top-0">ชื่อเอกสาร</th>
+                                    <th class="border-top-0">สถานะของเอกสาร</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ใบสมัครงานสหกิจศึกษา (สก.03)</td>
+                                    <td>เรียบร้อย</td>
+                                </tr>
+                                <tr>
+                                    <td>สัญญาเข้ารับการปฎิบัติงาน (สก.06)</td>
+                                    <td>เรียบร้อย</td>
+                                </tr>
+                                <tr>
+                                    <td>แบบแจ้งรายละเอียด (สก.07)</td>
+                                    <td>@ViewData["no07"]</td>
+                                </tr>
+                                <tr>
+                                    <td>แบบแจ้งแผนปฏิบัติงานสหกิจศึกษา (สก.08)</td>
+                                    <td>@ViewData["no08"]</td>
+                                </tr>
+                                <tr>
+                                    <td>แบบแจ้งโครงร่างรายงานการปฏิบัติงานสหกิจศึกษา (สก.09)</td>
+                                    <td>@ViewData["no09"]</td>
+                                </tr>
+                                <tr>
+                                    <td>แบบประเมินผลนักศึกษาสหกิจศึกษา (สก.14)</td>
+                                    <td>เรียบร้อย</td>
+                                </tr>
+                                <tr>
+                                    <td>แบบรายงานนักศึกษาสหกิจศึกษาสำหรับผู้นิเทศงาน (สก.15)</td>
+                                    <td>เรียบร้อย</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- column -->
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">สถานประกอบการที่เลือก</h4>
+                        <hr />
+                        <h5 class="card-subtitle" style="margin-top:30px;">ชื่อสถานประกอบการ</h5>
+                        <label class="col-12" style="text-align:center; margin-bottom:30px;">@ViewData["company_name"]</label>
+                        <div class="d-flex align-items-center">
+                            <h5 class="text-muted" style="color:gray; font-weight:normal;">สถานะ : </h5>
+                            <label class="col-10">@ViewData["status"]</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">ข้อมูลอาจารย์นิเทศ</h4>
+                        <h5 class="card-subtitle">บอกชื่ออาจารย์ที่จะมานิเทศและวันที่จะมานิเทศ</h5>
+                        <hr />
+                        <h5 class="card-subtitle" style="margin-top:30px;">ชื่ออาจารย์นิเทศ</h5>
+                        <label class="col-12" style="text-align:center;">@ViewData["name_teacher"]</label>
+                        <hr style="margin-top:30px;" />
+                        <h5 class="card-subtitle" style="margin-top:30px;">วันที่อาจารย์นิเทศนัดหมาย</h5>
+                        <label class="col-12" style="text-align:center; margin-bottom:30px;">@ViewData["date"]</label>
+                    </div>
+                </div>
+            </div>
+            <div class="hide">
+                <input id="msgAlert" value="@ViewData["msgAlert"]" />
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Recent comment and chats -->
+        <!-- ============================================================== -->
+    </div>
+

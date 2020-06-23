@@ -1,0 +1,182 @@
+﻿@using System.Data
+@model DataSet
+
+@{
+
+    ViewBag.Title = "หน้าแรก";
+    Layout = "~/Views/Shared/_LayoutAdminTemplate.cshtml";
+    //Layout = null;
+}
+
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#viewAccount').DataTable({
+            "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
+            "order": [[ 2, "desc" ]]
+        });
+
+        $('#viewSemester').DataTable({
+            "lengthMenu": [[6, 25, 50, -1], [6, 25, 50, "All"]],
+            "order": [[ 0, "desc" ]]
+        });
+
+        $('.btn-DeleteAccount').click(function () {
+            var url = $(this).val();
+            $.alert({
+                theme: 'modern',
+                title: 'ต้องการลบบัญชีผู้ใช้ ?',
+                content: 'เลือกยืนยันถ้าต้องการจะลบบัญชีนี้',
+                type: 'red',
+                typeAnimated: true,
+                boxWidth: '20%',
+                useBootstrap: false,
+                buttons: {
+                    confirm: {
+                        text: 'ยืนยัน',
+                        btnClass: 'btn-red',
+                        action: function () {
+                            window.location.href = url;
+                        }
+                    },
+                    cancel: {
+                        text: 'ยกเลิก',
+                        action: function () {
+                            
+                        }
+                    },
+                },
+            }); 
+        });
+
+    }); 
+</script>
+
+<style>
+    tr {
+        text-align: center;
+    }
+
+
+</style>
+
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <!-- column -->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <!-- title -->
+                    <div class="align-items-center">
+
+                            <h4 class="card-title">ตารางแสดงบัญชีผู้ใช้</h4>
+                            <h5 class="card-subtitle">รายการส่วนนี้จะไม่ให้แก้ไขหรือลบข้อมูลของนักศึกษา</h5>
+                            <hr />
+
+                    </div>
+                    <!-- title -->
+                </div>
+                <div class="table-responsive col-12">
+                    <table id="viewAccount" class="table v-middle">
+                        <thead>
+                            <tr class="bg-light">
+                                <th class="border-top-0" style="text-align:center;">บัญชีผู้ใช้</th>
+                                <th class="border-top-0" style="text-align:center;">รหัสผ่าน</th>
+                                <th class="border-top-0" style="text-align:center;">ตำแหน่ง</th>
+                                <th class="border-top-0" style="text-align:center;">ภาควิชา</th>
+                                <th class="border-top-0" style="text-align:center;">แก้ไข/ลบ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (DataRow item in Model.Tables["AD"].Rows)
+                            {
+                                <tr>
+                                    <td>@item["user_id"]</td>
+                                    <td>@item["password"]</td>
+                                    <td>@item["position"]</td>
+                                    <td>@item["major"]</td>
+                                    <td>
+                                        @if (item["position"].ToString() == "นักศึกษา")
+                                        {
+                                            <button class="btn btn-primary" style="margin-right:30px;" disabled>แก้ไข</button>
+                                            <button class="btn btn-danger" disabled>ลบ</button>
+                                        }
+                                        else
+                                        {
+                                            @Html.ActionLink("แก้ไข", "EditAccount", new { user_id_edit = @item["user_id"], user_id_title = ViewData["user_id"], name_title = ViewData["name"] }, new { @class = "btn btn-primary", @style = "margin-right:30px;" })
+                                            <button class="btn btn-danger btn-DeleteAccount" value="@Url.Action("DeleteAccount","Admin", new{ user_id_del = @item["user_id"], user_id_title = ViewData["user_id"], name_title = ViewData["name"] })">ลบ</button>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Table -->
+    <div class="row">
+        <!-- column -->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <!-- title -->
+                    <div class="align-items-center">
+
+                        <h4 class="card-title">ตารางแสดงปีการศึกษา</h4>
+                        <h5 class="card-subtitle">รายการส่วนนี้จะแสดงแต่ละเทอมในปีการศึกษา</h5>
+                        <hr />
+
+                    </div>
+                    <!-- title -->
+                </div>
+                <div class="table-responsive col-12">
+                    <table id="viewSemester" class="table v-middle">
+                        <thead>
+                            <tr class="bg-light">
+                                <th class="border-top-0">ภาคการศึกษา</th>
+                                <th class="border-top-0">วันที่เริ่มต้น</th>
+                                <th class="border-top-0">วันที่สิ้นสุด</th>
+                                <th class="border-top-0">จำนวนครั้งการออกนิเทศ</th>
+                                <th class="border-top-0">แก้ไข</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (DataRow item in Model.Tables["AD1"].Rows)
+                            {
+                                <tr>
+                                    <td>@item["semester_id"]</td>
+                                    <td>@item["date_start"]</td>
+                                    <td>@item["date_end"]</td>
+                                    <td>@item["to_go"]</td>
+                                    <td>
+                                        @Html.ActionLink("แก้ไข", "EditSemester", new { semester_id = @item["semester_id"], user_id_title = ViewData["user_id"], name_title = ViewData["name"] }, new { @class = "btn btn-primary" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

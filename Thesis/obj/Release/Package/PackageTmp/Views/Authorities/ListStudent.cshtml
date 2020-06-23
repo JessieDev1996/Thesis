@@ -1,0 +1,158 @@
+﻿
+@{
+    ViewBag.Title = "ตรวจสอบความคืบหน้าของนักศึกษา";
+    Layout = "~/Views/Shared/_LayoutAuthoritiesTemplate.cshtml";
+}
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+
+        var year = new Date().getFullYear()+543;
+
+        $('#viewCompany').DataTable({
+            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            "order": [[ 0, "desc" ]]
+        });
+
+        $('#year').datepicker({
+            minViewMode: 'years',
+            autoclose: true,
+            format: 'yyyy',
+            orientation: "bottom auto"
+        }).datepicker("setDate", new Date('11/11/'+year));
+
+        $("#year").change(function () {
+            $('.selectpicker').val('กรุณาเลือกภาควิชา');
+            $('.selectpicker').selectpicker('refresh');
+        });
+
+        $("#major").change(function () {
+            var Student = {};
+            Student.url = "/Authorities/ViewStudent";
+            Student.type = "POST";
+            Student.data = JSON.stringify({
+                major: $("#major").val(),
+                years: $("#year").val()
+            });
+            Student.datatype = "json";
+            Student.contentType = "application/json";
+            Student.success = function (StudentList) {
+                $("#listStudent").empty();
+                var html = '';
+                for (var i = 0; i < StudentList.length; i++) {
+                    html += '<tr>';
+
+                    html += '<td>';
+                    html += StudentList[i].term;
+                    html += '</td>';
+
+                    html += '<td>';
+                    html += StudentList[i].student_id;
+                    html += '</td>';
+
+                    html += '<td>';
+                    html += StudentList[i].name;
+                    html += '</td>';
+
+                    html += '<td>';
+                    html += '<a href="/Authorities/ProcessStudent?student_id='+StudentList[i].student_id+'&user_id_title=@ViewData["user_id"]&name_title=@ViewData["name"]" class="btn btn-info" role="button">ตรวจสอบ</a>';
+                    html += '</td>';
+
+                    html += '</tr>';
+                }
+                $('#listStudent').append(html);
+            };
+            Student.error = function () {
+                alert("Error in Getting Student !!");
+            };
+            $.ajax(Student);
+        });
+
+    });
+    </script>
+
+<style>
+    td{
+        text-align:center;
+    }
+</style>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <!-- column -->
+        <div class="col-md-8" style="margin:auto;">
+            <div class="card">
+                <div class="card-body">
+                    <!-- title -->
+                    <div class="align-items-center col-md-12 form-group">
+                        <h4 class="card-title">ตารางแสดงข้อมูลรายชื่อ นศ</h4>
+                        <h5 class="card-subtitle">เลือกปีการศึกษาและภาควิชา เพื่อดูรายชื่อของ นศ.</h5>
+                        <h5 class="card-subtitle">**ในตารางสามรถเลือกดูความคืบหน้าของเอกสารของ นศ. แต่ละคนได้</h5>
+                        <hr />
+                    </div>
+                    <!-- title -->
+
+                    <div class="form-group col-md-12" style="text-align:center; margin-top:50px;">
+                        <div class="col-md-12">
+                            <label class="col-md-2" style="font-weight:bold;">ปีการศึกษา :</label>
+                            <div class="input-group col-md-2" style="margin:auto;">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                <input id="year" type="text" class="form-control" name="year" style="text-align:center;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12" style="text-align:center;">
+                        <div class="align-items-center form-horizontal d-flex align-items-center" style="margin:auto;">
+                            <label class="col-md-4" style="font-weight:bold; text-align:right;">ภาควิชา :</label>
+                            <div class="col-md-8" id="testSelect" style="text-align:left;">
+                                <select id="major" class="selectpicker form-control" data-width="50%" data-size="7" data-live-search="true" style="margin:auto; height:100px;" required>
+                                    <option value="กรุณาเลือกภาควิชา" disabled selected hidden>กรุณาเลือกภาควิชา</option>
+                                    <option value="วิศวกรรมโยธา">วิศวกรรมโยธา</option>
+                                    <option value="วิศวกรรมสิ่งแวดล้อม">วิศวกรรมสิ่งแวดล้อม</option>
+                                    <option value="วิศวกรรมไฟฟ้า">วิศวกรรมไฟฟ้า</option>
+                                    <option value="วิศวกรรมเครื่องกล">วิศวกรรมเครื่องกล</option>
+                                    <option value="วิศวกรรมอุตสาหการ">วิศวกรรมอุตสาหการ</option>
+                                    <option value="วิศวกรรมนวัตกรรมสิ่งทอ">วิศวกรรมนวัตกรรมสิ่งทอ</option>
+                                    <option value="วิศวกรรมอิเล็กทรอนิกส์และโทรคมนาคม">วิศวกรรมอิเล็กทรอนิกส์และโทรคมนาคม</option>
+                                    <option value="วิศวกรรมคอมพิวเตอร์">วิศวกรรมคอมพิวเตอร์</option>
+                                    <option value="วิศวกรรมเคมี">วิศวกรรมเคมี</option>
+                                    <option value="วิศวกรรมวัสดุ">วิศวกรรมวัสดุ</option>
+                                    <option value="วิศวกรรมเครื่องจักรกลเกษตร">วิศวกรรมเครื่องจักรกลเกษตร</option>
+                                    <option value="วิศวกรรมชลประทานและการจัดการน้ำ">วิศวกรรมชลประทานและการจัดการน้ำ</option>
+                                    <option value="วิศวกรรมอาหาร">วิศวกรรมอาหาร</option>
+                                    <option value="วิศวกรรมอิเล็กทรอนิกส์อากาศยาน">วิศวกรรมอิเล็กทรอนิกส์อากาศยาน</option>
+                                    <option value="วิศวกรรมระบบราง">วิศวกรรมระบบราง</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <hr style="margin-bottom:50px; margin-top:50px;" />
+                    </div>
+
+
+                    <div class="table-responsive col-md-10" style="margin:auto; margin-bottom:50px;">
+                        <table id="viewCompany" class="table v-middle">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th class="border-top-0" style="text-align:center; width:10%">เทอม</th>
+                                    <th class="border-top-0" style="text-align:center; width:30%">รหัสนักศึกษา</th>
+                                    <th class="border-top-0" style="text-align:center; width:30%">ชื่อ - นามสกุล</th>
+                                    <th class="border-top-0" style="text-align:center; width:30%">ตรวจสอบความคืบหน้า</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listStudent">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

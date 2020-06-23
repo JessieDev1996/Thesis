@@ -1,0 +1,227 @@
+﻿@using System.Data
+@model DataSet
+
+@{
+    ViewBag.Title = "เพิ่มบัญชีผู้ใช้";
+    Layout = "~/Views/Shared/_LayoutAdminTemplate.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#major_group").hide();
+
+        var msgAlert = $("#msgAlert").val();
+
+        if (msgAlert == "Success") {
+            $.alert({
+                theme: 'modern',
+                title: 'เพิ่มบัญชีผู้ใช้สำเร็จ',
+                content: '',
+                type: 'green',
+                typeAnimated: true,
+                boxWidth: '20%',
+                useBootstrap: false,
+                buttons: {
+                    OK: {
+                        text: 'OK',
+                        btnClass: 'btn-green',
+                        action: function () {
+                        }
+                    }
+                },
+            });
+        } else if (msgAlert == "Already") {
+            $.alert({
+                theme: 'modern',
+                title: 'เพิ่มบัญชีผู้ใช้ไม่สำเร็จ !!!',
+                content: 'กรุณาตรวจสอบบัญชีผู้ใช้ เนื่องจากมีชื่อผู้ใช้นี้ในระบบแล้ว',
+                type: 'red',
+                typeAnimated: true,
+                boxWidth: '30%',
+                useBootstrap: false,
+                buttons: {
+                    OK: {
+                        text: 'OK',
+                        btnClass: 'btn-red',
+                        action: function () {
+                        }
+                    }
+                },
+            });
+        }
+
+        $('input[type=radio][name=position]').change(function () {
+            if (this.value == 'อาจารย์ฝ่ายสหกิจศึกษา' || this.value == 'ผู้ช่วยอาจารย์ประจำภาควิชา') {
+                $("#major_group").show();
+                $("#major").prop('required', true);
+            }
+            else {
+                $("#major_group").hide();
+                //$("#major").removeAttr('required');
+                $("#major").prop('required', false);
+            }
+        });
+        
+    });
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        var elements = document.getElementsByTagName("INPUT");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].oninvalid = function (e) {
+                e.target.setCustomValidity("");
+                if (!e.target.validity.valid) {
+                    e.target.setCustomValidity("กรุณากรอกข้อมูลในฟิลด์นี้ !!");
+                }
+            };
+            elements[i].oninput = function (e) {
+                e.target.setCustomValidity("");
+            };
+        }
+    });
+</script>
+
+<!-- ============================================================== -->
+<!-- Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid" style="margin-top:30px;">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <!-- Row -->
+    <div class="row">
+        <!-- Column -->
+        <!-- Column -->
+        <!-- Column -->
+        <div class="col-md-5" style="margin-left:5%; margin-bottom:8%;">
+            <div class="card">
+                <div class="card-body">
+                    <div style="text-align:center;">
+
+                        <h4 class="card-title">เพิ่มบัญชีผู้ใช้</h4>
+                        <h5 class="card-subtitle">ตรวจสอบข้อมูลก่อนกดยืนยัน</h5>
+                        <hr />
+                    </div>
+                    <form class="form-horizontal form-material" method="post" id="formAccount">
+                        <div class="form-group">
+                            <label class="col-md-12" style="font-weight:bold;">บัญชีผู้ใช้ :</label>
+                            <div class="col-md-12">
+                                <input type="text" id="user_id" name="user_id" class="form-control form-control-line" maxlength="20" autocomplete="off" style="text-align:center;" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12" style="font-weight:bold;">รหัสผ่าน :</label>
+                            <div class="col-md-12">
+                                <input type="text" id="password" class="form-control form-control-line" name="password" maxlength="20" autocomplete="off" style="text-align:center;" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12" style="font-weight:bold;">ตำแหน่ง :</label>
+                            <div class="col-md-12" style="padding-left:3em;">
+                                <label class="radio col-md-12" style="font-weight:lighter;">
+                                    <input type="radio" name="position" value="เจ้าหน้าที่ฝ่ายสหกิจศึกษา" style="margin-right:10px;" checked>เจ้าหน้าที่ฝ่ายสหิกิจศึกษา
+                                </label>
+                                <label class="radio col-md-12" style="font-weight:lighter;">
+                                    <input type="radio" name="position" value="อาจารย์ฝ่ายสหกิจศึกษา" style="margin-right:10px;">อาจารย์ฝ่ายสหกิจศึกษา
+                                </label>
+                                <label class="radio col-md-12" style="font-weight:lighter;">
+                                    <input type="radio" name="position" value="ผู้ช่วยอาจารย์ประจำภาควิชา" style="margin-right:10px;">ผู้ช่วยอาจารย์ประจำภาควิชา
+                                </label>
+                                <label class="radio col-md-12" style="font-weight:lighter;">
+                                    <input type="radio" name="position" value="ผู้ดูแล" style="margin-right:10px;">ผู้ดูแล
+                                </label>
+                            </div>
+                        </div>
+                        <div id="major_group" class="form-group">
+                            <label class="col-md-12" style="font-weight:bold;">ภาควิชา :</label>
+                            <div class="col-md-12">
+                                <select class="selectpicker form-control" id="major" title="Please select" name="major">
+                                    <option>วิศวกรรมโยธา</option>
+                                    <option>วิศวกรรมสิ่งแวดล้อม</option>
+                                    <option>วิศวกรรมไฟฟ้า</option>
+                                    <option>วิศวกรรมเครื่องกล</option>
+                                    <option>วิศวกรรมอุตสาหการ</option>
+                                    <option>วิศวกรรมนวัตกรรมสิ่งทอ</option>
+                                    <option>วิศวกรรมอิเล็กทรอนิกส์และโทรคมนาคม</option>
+                                    <option>วิศวกรรมคอมพิวเตอร์</option>
+                                    <option>วิศวกรรมเคมี</option>
+                                    <option>วิศวกรรมวัสดุ</option>
+                                    <option>วิศวกรรมเครื่องจักรกลเกษตร</option>
+                                    <option>วิศวกรรมชลประทานและการจัดการน้ำ</option>
+                                    <option>วิศวกรรมอาหาร</option>
+                                    <option>วิศวกรรมอิเล็กทรอนิกส์อากาศยาน</option>
+                                    <option>วิศวกรรมระบบราง</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-12" style="margin-top:20px;">
+                                <button class="btn btn-success" type="submit">ยืนยัน</button>
+                            </div>
+                        </div>
+
+                        <div class="hide">
+                            <input name="user_id_title" value="@ViewData["user_id"]" />
+                            <input name="name_title" value="@ViewData["name"]" />
+                            <input id="msgAlert" value="@ViewData["msgAlert"]" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="margin-left:5%;">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align:center;">จำนวนบัญชีผู้ใช้ล่าสุด</h4>
+                    <hr />
+                    <div class="feed-widget">
+                        <ul class="list-style-none feed-body m-0 p-b-20">
+                            <li class="feed-item">
+                                <div class="feed-icon bg-megna"><i class="far fa-bell"></i></div>บัญชีผู้ใช้ทั้งหมด<span class="ml-auto font-14 text-info">@Model.Tables["Count"].Rows[0][0]</span>
+                            </li>
+                            <li class="feed-item">
+                                <div class="feed-icon bg-danger"><i class="ti-user"></i></div>ผู้ดูแล<span class="ml-auto font-14 text-info">@Model.Tables["Count1"].Rows[0][0]</span>
+                            </li>
+                            <li class="feed-item">
+                                <div class="feed-icon bg-success"><i class="ti-user"></i></div>เจ้าหน้าที่สหกิจ<span class="ml-auto font-14 text-info">@Model.Tables["Count2"].Rows[0][0]</span>
+                            </li>
+                            <li class="feed-item">
+                                <div class="feed-icon bg-warning"><i class="ti-user"></i></div>อาจารย์สหกิจและผู้ช่วย<span class="ml-auto font-14 text-info">@Model.Tables["Count3"].Rows[0][0]</span>
+                            </li>
+                            <li class="feed-item">
+                                <div class="feed-icon bg-info"><i class="ti-user"></i></div>อาจารย์นิเทศ<span class="ml-auto font-14 text-info">@Model.Tables["Count4"].Rows[0][0]</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+    </div>
+    <!-- Row -->
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- End Page wrapper  -->
+<!-- ============================================================== -->

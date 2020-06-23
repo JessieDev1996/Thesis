@@ -1,0 +1,123 @@
+﻿@using System.Data
+@model DataSet
+
+@{
+    ViewBag.Title = "เลือกสถานประกอบการ";
+    Layout = "~/Views/Shared/_LayoutStudentTemplate.cshtml";
+}
+
+<script>
+    $(document).ready(function () {
+        $('.btn-select').click(function () {
+            var url = $(this).val();
+            $.alert({
+                theme: 'modern',
+                title: 'ต้องการเลือกสถานประกอบการนี้นี้ ?',
+                content: '',
+                type: 'green',
+                typeAnimated: true,
+                boxWidth: '30%',
+                useBootstrap: false,
+                buttons: {
+                    confirm: {
+                        text: 'ยืนยัน',
+                        btnClass: 'btn-green',
+                        action: function () {
+                            window.location.href = url;
+                        }
+                    },
+                    cancel: {
+                        text: 'ยกเลิก',
+                        action: function () {
+                            
+                        }
+                    },
+                },
+            }); 
+        });
+    });
+</script>
+
+<div class="container-fluid">
+    @if (ViewData["check"] == "No")
+    {
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <h1 class="error-title text-danger" style="text-align:center;">ท่านมีความประสงค์ไม่ออกฝึกงาน</h1>
+                        <p class="text-muted m-t-30 m-b-30" style="text-align:center;">หากต้องการทำรายการกรุณาเปลี่ยนสถานะ</p>
+                        <p style="text-align:center;margin-top:20px;">@Html.ActionLink("กลับหน้าหลัก", "Index",  new { user_id_title = ViewData["user_id"], name_title = ViewData["name"]}, new { @class = "btn btn-danger btn-rounded waves-effect waves-light m-b-40" })</p>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+    <div class="row">
+        <!-- column -->
+        <div class="col-lg-11" style="margin:auto">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group col-md-12">
+                        <h4 class="card-title">เลือกสถานประกอบการ</h4>
+                        <h5 class="card-subtitle">เลือกสถารประกอบการที่ต้องการสมัคร</h5>
+                        <hr />
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <table class="table no-border mini-table m-t-20" style="text-align:center">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th class="border-top-0" style="text-align:center;">ชื่อภาษาไทย</th>
+                                    <th class="border-top-0" style="text-align:center;">ชื่อภาษาอังกฤษ</th>
+                                    <th class="border-top-0" style="text-align:center;">สาขาวิชา</th>
+                                    <th class="border-top-0" style="text-align:center;">จำนวน</th>
+                                    <th class="border-top-0" style="">ดูข้อมูล/สมัคร</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (DataRow item in Model.Tables["Company"].Rows)
+                                {
+                                    <tr>
+                                        <td style="vertical-align: middle;">@item["name_th"]</td>
+                                        <td style="vertical-align: middle;">@item["name_en"]</td>
+                                        <td style="vertical-align: middle;">@item["major"]</td>
+                                        <td style="vertical-align: middle;">@item["require"]</td>
+                                        <td style="vertical-align: middle;">
+                                            @Html.ActionLink("ดูเพิ่มเติม", "DetailCompany", new { company_id = @item["company_id"], user_id_title = ViewData["user_id"], name_title = ViewData["name"] }, new { @class = "btn btn-primary", @style = "margin-right:20px;" })
+                                            <button class="btn btn-info btn-select" value="@Url.Action("RegisterCompany", "Student", new { company_id = @item["company_id"], user_id_title = ViewData["user_id"], name_title = ViewData["name"] })">สมัคร</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    }
+    <!-- ============================================================== -->
+    <!-- Recent comment and chats -->
+    <!-- ============================================================== -->
+</div>
+

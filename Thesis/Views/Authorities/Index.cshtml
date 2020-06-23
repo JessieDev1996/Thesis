@@ -1,0 +1,104 @@
+﻿@using System.Data
+@model DataSet
+
+@{
+    Layout = "~/Views/Shared/_LayoutAuthoritiesTemplate.cshtml";
+    ViewBag.Title = "หน้าแรก";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#viewCompany').DataTable({
+            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            "order": [[ 3, "asc" ]]
+        });
+
+        $('.btn-DeleteCompany').click(function () {
+            var url = $(this).val();
+            $.alert({
+                theme: 'modern',
+                title: 'ต้องการลบสถานประกอบการนี้ ?',
+                content: 'เลือกยืนยันถ้าต้องการจะลบสถานประกอบการนี้',
+                type: 'red',
+                typeAnimated: true,
+                boxWidth: '30%',
+                useBootstrap: false,
+                buttons: {
+                    confirm: {
+                        text: 'ยืนยัน',
+                        btnClass: 'btn-red',
+                        action: function () {
+                            window.location.href = url;
+                        }
+                    },
+                    cancel: {
+                        text: 'ยกเลิก',
+                        action: function () {
+                            
+                        }
+                    },
+                },
+            }); 
+        });
+
+    });
+</script>
+
+<style>
+    tr {
+        text-align: center;
+    }
+</style>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <!-- column -->
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <!-- title -->
+                    <div class="align-items-center col-md-12 form-group">
+
+                        <h4 class="card-title">ตารางแสดงรายชื่อสถานประกอบการ</h4>
+                        <h5 class="card-subtitle">การค้นหาสถานประกอบการสามารถพิมพ์หาได้ที่ช่องค้นหาทางขวา</h5>
+                        <hr />
+
+                    </div>
+                    <!-- title -->
+
+                    <div class="table-responsive col-md-12">
+                        <table id="viewCompany" class="table v-middle">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th class="border-top-0" style="text-align:center;">ชื่อภาษาไทย</th>
+                                    <th class="border-top-0" style="text-align:center;">ชื่อภาษาอังกฤษ</th>
+                                    <th class="border-top-0" style="text-align:center;">เว็บไซต์</th>
+                                    <th class="border-top-0" style="text-align:center;">BlackList</th>
+                                    <th class="border-top-0" style="text-align:center;">แก้ไข/ลบ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (DataRow item in Model.Tables["Company"].Rows)
+                                {
+                                    <tr>
+                                        <td>@item["name_th"]</td>
+                                        <td>@item["name_en"]</td>
+                                        <td><a href="https://@item["website"]" target="_blank">@item["website"]</a></td>
+                                        <td>@item["blacklist"]</td>
+                                        <td>
+                                            @Html.ActionLink("แก้ไข", "EditCompany", new { company_id = @item["company_id"], user_id_title = ViewData["user_id"], name_title = ViewData["name"] }, new { @class = "btn btn-primary", @style = "margin-right:30px;" })
+                                            <button class="btn btn-danger btn-DeleteCompany" value="@Url.Action("DeleteCompany","Authorities", new { company_id = @item["company_id"], user_id_title = ViewData["user_id"], name_title = ViewData["name"] })">ลบ</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

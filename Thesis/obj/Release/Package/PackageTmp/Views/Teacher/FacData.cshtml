@@ -1,0 +1,413 @@
+﻿
+@using System.Data;
+@model DataSet
+@{
+    Layout = "";
+      if (Session["position"].ToString() != "อาจารย์นิเทศ")
+    {
+        Response.Redirect("~/Home/LoginTemplate");
+    }
+}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/assets/images/rmutt.png">
+    <title>ข้อมูลสถานประกอบการ-อาจารย์นิเทศ</title>
+    <!-- Custom CSS -->
+    <link href="~/Content/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/dist/css/style.min.css" rel="stylesheet">
+    <script src="~/Scripts/bootstrap-select.min.js"></script>
+    <link href="~/Content/bootstrap-select.min.css" rel="stylesheet" />
+
+    <link href="~/Content/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+    <style>
+        .jumbotron {
+            box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            border-radius: 5px
+        }
+         body {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="preloader" style="display: none;">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="mini-sidebar" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+
+                    <a class="navbar-brand" href="@Url.Action("Index", "Teacher")">
+
+                        <b class="logo-icon">
+
+                            <img src="~/Content/assets/images/rmutt.png" alt="หน้าแรก" class="light-logo">
+                        </b>
+                        <span class="logo-text">
+                            <img src="~/Content/assets/images/cooperative.png" alt="หน้าแรก" class="light-logo">
+                        </span>
+
+
+                    </a>
+
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+
+                    <ul class="navbar-nav float-left mr-auto">
+                    </ul>
+
+                    <ul class="navbar-nav float-right">
+
+                        <li><a style="color:white;" href="@Url.Action("Logout_teacher","Teacher")"><i class="mdi mdi-logout"></i> ออกจากระบบ</a></li>
+
+                    </ul>
+
+
+                </div>
+            </nav>
+        </header>
+
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+
+            <div class="scroll-sidebar">
+
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="in">
+
+                        <li>
+
+                            <div class="user-profile d-flex no-block dropdown m-t-20">
+                                <div class="user-pic"><img src="~/Content/assets/images/users/1.jpg" alt="users" class="rounded-circle" width="40"></div>
+                                <div class="user-content hide-menu m-l-10">
+
+                                    <h5 class="m-b-0 user-name font-medium">@ViewData["name"] </h5>
+                                    <span class="op-5 user-email">@ViewData["email"]</span>
+
+
+                                </div>
+                            </div>
+
+
+                        <li class="sidebar-item selected"> <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="@Url.Action("Index", "Teacher")" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">หน้าหลัก</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Score", "Teacher",new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"]  })" aria-expanded="false"><i class="mdi mdi-account-edit"></i><span class="hide-menu">ประเมินคะแนนนักศึกษา</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Ask", "Teacher",new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"]  })" aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">แบบสอบถามนิเทศ</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("ViewMatch", "Teacher", new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"]  })" aria-expanded="false"><i class="mdi mdi-calendar-check"></i><span class="hide-menu">รายการนิเทศ</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("FacData", "Teacher",new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"]  })" aria-expanded="false"><i class="mdi mdi-factory"></i><span class="hide-menu">ข้อมูลสถานประกอบการ</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("EditPersonal", "Teacher",new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"] })" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">ข้อมูลส่วนตัว</span></a></li>
+
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </aside>
+
+        <div class="page-wrapper">
+
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <h4 class="page-title">ข้อมูลสถานประกอบการ</h4>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">อาจารย์นิเทศ</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">ข้อมูลสถานประกอบการ</li>
+                                </ol>
+
+                            </nav>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                @if (@ViewData["semester_null"] == "No")
+                {
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <h1 class="error-title text-danger" style="text-align:center;">ยังไม่มีข้อมูลของภาคการศึกษาปัจจุบัน</h1>
+
+                                <p style="text-align:center;margin-top:20px;">@Html.ActionLink("กลับหน้าหลัก", "Index", new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"] }, new { @class = "btn btn-danger btn-rounded waves-effect waves-light m-b-40" })</p>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+                else
+                {
+                <div class="row">
+
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="d-md-flex align-items-center">
+                                    <div>
+                                        <h4 class="card-title">ข้อมูลสถานประกอบการ</h4>
+                                        <h5 class="card-subtitle">รายชื่อสถานประกอบการ</h5>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        @for (int i = 0; i < Model.Tables[1].Rows.Count; i++)
+                        {
+                            <div class="card">
+                                <div class="col-lg-12 card-body">
+                                    <br />
+                                    <br />
+
+                                    <h1 style="text-align:center;color:black">@Model.Tables[1].Rows[i][1] (@Model.Tables[1].Rows[i][2])</h1>
+                                    <hr style="border: 10px medium;" />
+
+
+                                    <form>
+                                        <br />
+                                        <br />
+                                        <div class="form-group row">
+                                            <div class="col-lg-5">
+                                                <label class="font-bold">ชื่อสถานประกอบการ :</label>&emsp;
+                                                <span>@Model.Tables[1].Rows[i][1]</span>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <label class="font-bold">ชื่อสถานประกอบการ(อังกฤษ) :</label>&emsp;
+                                                <span>@Model.Tables[1].Rows[i][2]</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group row">
+
+                                            <div class="col-lg-6">
+                                                <label class="font-bold">ประเภทกิจการ :</label>&emsp;&emsp;
+                                                <span>@Model.Tables[1].Rows[i][3]</span>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="font-bold">วันเวลาทำการ :</label>&emsp;
+                                                <span>@Model.Tables[1].Rows[i][4] @Model.Tables[1].Rows[i][5]</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group row">
+
+                                            <div class="col-lg-3">
+                                                <label class="font-bold">เบอร์โทรศัพท์ :</label>&emsp;&emsp;
+                                                <span>@Model.Tables[1].Rows[i][6]</span>
+                                            </div>
+
+                                            <div class="col-lg-3">
+                                                <label class="font-bold">เบอร์แฟกซ์ :</label>&emsp;
+                                                <span>@Model.Tables[1].Rows[i][7]</span>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="font-bold">เว็บไซต์ :</label>&emsp;
+                                                <a href="@Model.Tables[1].Rows[i][8]"><span>@Model.Tables[1].Rows[i][8]</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-3">
+                                                <label class="font-bold">อีเมล :</label>&emsp;
+                                                <span>@Model.Tables[1].Rows[i][9]</span>
+                                                
+                                                <br /><br />
+                                                <a href="https://www.google.com/maps/search/?api=1&query=@Model.Tables[1].Rows[i][19],@Model.Tables[1].Rows[i][20]">ดูแผนที่</a>
+
+
+
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label class="font-bold">ที่อยู่ของสถานประกอบการ</label><br />
+                                                @if (Model.Tables[1].Rows[i][10].ToString() == "-" || Model.Tables[1].Rows[i][10].ToString() == "")
+                                                {
+
+                                                }
+                                                else
+                                                {
+                                                    @Model.Tables[1].Rows[i][10]<span>&nbsp;</span>
+                                                }
+                                                @if (Model.Tables[1].Rows[i][11].ToString() == "-" || Model.Tables[1].Rows[i][11].ToString() == "")
+                                                {
+
+                                                }
+                                                else
+                                                {
+                                                    @Model.Tables[1].Rows[i][11]<span>&nbsp;</span>
+                                                }
+                                                @if (Model.Tables[1].Rows[i][12].ToString() == "-" || Model.Tables[1].Rows[i][12].ToString() == "")
+                                                {
+
+                                                }
+                                                else
+                                                {
+                                                    <span>ชั้น&nbsp;</span>@Model.Tables[1].Rows[i][12]<span>&nbsp;</span>
+                                                }
+                                                @if (Model.Tables[1].Rows[i][13].ToString() == "-" || Model.Tables[1].Rows[i][13].ToString() == "")
+                                                {
+
+                                                }
+                                                else
+                                                {
+                                                    <span>ซอย</span>@Model.Tables[1].Rows[i][13]<span>&nbsp;</span>
+                                                }
+                                                @if (Model.Tables[1].Rows[i][14].ToString() == "-" || Model.Tables[1].Rows[i][14].ToString() == "")
+                                                {
+
+                                                }
+                                                else
+                                                {
+                                                    <span>ถนน</span>@Model.Tables[1].Rows[i][14]<span>&nbsp;</span>
+                                                }
+                                                @if (Model.Tables[1].Rows[i][15].ToString() == "-" || Model.Tables[1].Rows[i][15].ToString() == "")
+                                                {
+
+                                                }
+                                                else
+                                                {
+                                                    <span>ตำบล</span>@Model.Tables[1].Rows[i][15]<span>&nbsp;</span>
+                                                }
+                                                @if (Model.Tables[1].Rows[i][16].ToString() == "-" || Model.Tables[1].Rows[i][16].ToString() == "")
+                                                {
+
+                                                }
+                                                else
+                                                {
+                                                    <span>อำเภอ</span>@Model.Tables[1].Rows[i][16]<span>&nbsp;</span>
+                                                }
+                                                @if (Model.Tables[1].Rows[i][17].ToString() == "-" || Model.Tables[1].Rows[i][17].ToString() == "")
+                                                {
+
+                                                }
+                                                else
+                                                {
+                                                    <span>จังหวัด</span>@Model.Tables[1].Rows[i][17]<span>&nbsp;</span>
+                                                }
+                                                @if (Model.Tables[1].Rows[i][18].ToString() == "-" || Model.Tables[1].Rows[i][18].ToString() == "")
+                                                {
+
+                                                }
+                                                else
+                                                {
+                                                    <span>รหัสไปรษณีย์&nbsp;</span> @Model.Tables[1].Rows[i][18]<span>&nbsp;</span>
+                                                }
+                                            </div>
+                                            <div class="col-lg-1">
+                                            </div>
+                                            <div class="col-lg-3">
+
+
+                                                <label class="font-bold">รายชื่อนักศึกษาที่ฝึกงาน</label>
+                                                <br />
+                                                @foreach (DataRow student in Model.Tables[0].Rows)
+                                                {
+                                                    if (Model.Tables[1].Rows[i][0].ToString() == student[0].ToString())
+                                                    {
+                                                        <span>@Html.ActionLink(student[2].ToString(), "Studentdata", new { student = student[4], Ta_id = ViewData["teacher_id"], Department = ViewData["department"], Status = @ViewData["Status"], name = @ViewData["name"], email = ViewData["email"], phone = ViewData["phone"] }, new { @class = "text-success" })</span>
+                                                        <br />
+                                                    }
+                                                }
+                                                <br />
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+
+
+                                </div>
+                            </div>
+
+                            <br />
+                            <br />
+                            <br />
+
+
+                        }
+
+                    </div>
+                </div>
+
+                }
+
+
+            </div>
+
+            <footer class="footer text-center">
+                <p>ระบบจัดการการฝึกงานและสหกิจศึกษา กรณีศึกษา:คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี</p>
+                All Rights Reserved by Xtreme Admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/Content/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/Content/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/dist/js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="~/Content/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="~/Content/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/Content/dist/js/custom.js"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="~/Content/assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="~/Content/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="~/Content/dist/js/pages/dashboards/dashboard1.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+
+    <script src="~/Scripts/locales/bootstrap-datepicker.th.min.js"></script>
+    <script>
+        $('body').fadeIn("slow")
+        
+    </script>
+</body>
+</html>
+

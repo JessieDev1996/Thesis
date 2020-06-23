@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "กระบวนเอกสารของนักศึกษา";
+    Layout = "~/Views/Shared/_LayoutAuthoritiesTemplate.cshtml";
+}
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <!-- column -->
+            <div class="col-lg-8" style="margin:auto;">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group col-md-12">
+                            <h4 class="card-title">กระบวนการเอกสาร</h4>
+                            <h5 class="card-subtitle">บอกถึงความพร้อมของเอกสารแต่ละชุด</h5>
+                            <hr />
+                        </div>
+                        <div class="form-group" style="text-align:center;">
+                            <label class="col-md-2 font-16" style="font-weight:bold;">@ViewData["id"]</label>
+                            <label class="col-md-4 font-16" style="font-weight:bold;">@ViewData["name_std"]</label>
+                            <label class="col-md-2 font-16" style="font-weight:bold;">@ViewData["major"]</label>
+                            <div class="col-md-12">
+                                <hr />
+                            </div>
+                        </div>
+                        <div class="table-responsive form-group col-md-10" style="margin:auto;">
+                            <table class="table no-border mini-table m-t-20">
+                                <thead>
+                                    <tr class="bg-light">
+                                        <th class="border-top-0">ชื่อเอกสาร</th>
+                                        <th class="border-top-0">สถานะของเอกสาร</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>ใบสมัครงานสหกิจศึกษา (สก.03)</td>
+                                        <td>@ViewData["no03"]</td>
+                                    </tr>
+                                    <tr>
+                                        <td>สัญญาเข้ารับการปฎิบัติงาน (สก.06)</td>
+                                        <td>@ViewData["no06"]</td>
+                                    </tr>
+                                    <tr>
+                                        <td>แบบแจ้งรายละเอียด (สก.07)</td>
+                                        <td>@ViewData["no07"]</td>
+                                    </tr>
+                                    <tr>
+                                        <td>แบบแจ้งแผนปฏิบัติงานสหกิจศึกษา (สก.08)</td>
+                                        <td>@ViewData["no08"]</td>
+                                    </tr>
+                                    <tr>
+                                        <td>แบบแจ้งโครงร่างรายงานการปฏิบัติงานสหกิจศึกษา (สก.09)</td>
+                                        <td>@ViewData["no09"]</td>
+                                    </tr>
+                                    <tr>
+                                        <td>แบบประเมินผลนักศึกษาสหกิจศึกษาสำหรับผู้นิเทศงาน (สก.14)</td>
+                                        <td>@ViewData["no14"]</td>
+                                    </tr>
+                                    <tr>
+                                        <td>แบบรายงานนักศึกษาสหกิจศึกษาสำหรับผู้นิเทศงาน (สก.15)</td>
+                                        <td>@ViewData["no15"]</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- Recent comment and chats -->
+        <!-- ============================================================== -->
+    </div>
+

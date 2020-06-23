@@ -1,0 +1,539 @@
+﻿
+@{
+    ViewBag.Title = "TeacherEdit";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <title>แก้ไขข้อมูลส่วนตัว</title>
+    <!-- Custom CSS -->
+    <link href="../../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#btnSubmit').click(function () {
+                var name = $('#name').val();
+                var pwd = $('#pwd').val();
+
+                if (name == '') {
+                    alert('ท่านยังไม่ได้ใส่ชื่อ-นามสกุล');
+                }
+                if (pwd == '') {
+                    alert('ท่านยังไม่ได้ใส่พาสเวิร์ด');
+                }
+
+                if (name != '' && pwd != '') {
+                    this.form.submit();
+                }
+            });
+
+            $('#btnUpload').click(function () {
+                
+                if ($('#file').get(0).files.length === 0) {
+
+                    alert("กรุณาเลือกไฟล์");
+                }
+                else {
+
+                    this.form.submit();
+                }
+
+            });
+
+            $("#file").change(function () {
+
+                var val = $(this).val();
+
+                switch (val.substring(val.lastIndexOf('.') + 1).toLowerCase()) {
+                    case 'jpg': case 'png': break;
+                    default:
+                        $(this).val('');
+                        // error message here
+                        alert("กรุณาเลือกไฟล์รูปภาพ .jpg หรือ .png เท่านั้น");
+                        break;
+                }
+            });
+
+            $('#checkSem').click(function () {
+                alert('ขณะนี้อยู่ในช่วงปิดเทอมไม่สามารถใช้งานส่วนนี้ได้');
+            });
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .kuy {
+            height: 20px;
+        }
+
+        .wtf {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+        }
+
+        .left1 {
+            text-align: left;
+        }
+    </style>
+
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="#">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <img src="../../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="../../assets/images/wtf1.png" class="light-logo" alt="homepage" />
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item search-box">
+                            <!---->
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                        @Html.ActionLink("ออกจากระบบ", "taLogout", "TeachersAndAuthorities", new { Style = "color:white", @class = "btn" })
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li>
+                            <!-- User Profile-->
+                            <div class="user-profile d-flex no-block dropdown m-t-20">
+
+                                <div class="user-pic"><img src="../../assets/images/users/1.jpg" alt="users" class="rounded-circle" width="40" /></div>
+                                <div class="user-content hide-menu m-l-10">
+                                    <div class="center">
+                                        <h4 class="m-b-0 user-name font-medium">อาจารย์และผู้ช่วย</h4>
+                                        <p>@ViewData["name"].ToString()</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="user-content hide-menu m-l-10">
+                                <div class="left1">
+                                    <h6>ภาควิชา : @ViewData["department"].ToString()</h6>
+                                </div>
+                            </div>
+                            <!-- End User Profile-->
+                        </li>
+                        <hr />
+                        <!-- User Profile-->
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("TeacherHome", "TeachersAndAuthorities", new { id = @ViewData["teacher_id"] })" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">หน้าหลัก</span></a></li>
+                        @if (ViewData["semCheck"] == null)
+                        {
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false" id="checkSem"><i class="mdi mdi-border-all"></i><span class="hide-menu">ตารางการออกนิเทศ</span></a></li>
+                        }
+                        else
+                        {
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("TeacherMatching", "TeachersAndAuthorities")" aria-expanded="false"><i class="mdi mdi-border-all"></i><span class="hide-menu">ตารางการออกนิเทศ</span></a></li>
+                        }
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("All_Accesment", "TeachersAndAuthorities")" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">แบบประเมิน สก.16</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Teacher", "TeachersAndAuthorities")" aria-expanded="false"><i class="mdi mdi-account-network"></i><span class="hide-menu">อาจารย์นิเทศ</span></a></li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="error-404.html" id="Userdd" role="button" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">นักศึกษา</span></a>
+                            <div class="user-content hide-menu m-l-10">
+                                <div class="dropdown-menu dropdown-menu" aria-labelledby="Userdd">
+                                    <a class="dropdown-item" href="@Url.Action("Student", "TeachersAndAuthorities")"><i class="mdi mdi-newspaper m-r-5 m-l-5"></i>รายงานการออก/ไม่ออกฝึกงาน</a>
+                                    <a class="dropdown-item" href="@Url.Action("StudentAll", "TeachersAndAuthorities")"><i class="mdi mdi-clipboard-account m-r-5 m-l-5"></i>รายชื่อนักศึกษาทั้งหมด</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="@Url.Action("StudentAdd", "TeachersAndAuthorities")"><i class="mdi mdi-account-multiple-plus m-r-5 m-l-5"></i>เพิ่มรายชื่อนักศึกษา</a>
+                                </div>
+                            </div>
+                        </li>
+                        <hr />
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("TeacherEdit", "TeachersAndAuthorities")" aria-expanded="false"><i class="mdi mdi-account-card-details"></i><span class="hide-menu">ข้อมูลส่วนตัว</span></a></li>
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+                    <div class="col-5">
+                        <h4 class="page-title">Menu</h4>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Library</li>*@
+                                    <li class="breadcrumb-item">Home</li>
+                                    <li class="breadcrumb-item active" aria-current="page"><a href="#">Library</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Table -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- column -->
+                    @*@<div class="col-lg-4 col-xlg-3 col-md-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <center class="m-t-30">
+                                    <img src="../../assets/images/users/@ViewData["profile_id"]" class="rounded-circle" width="150" /> <br> <br>
+                                    <h4>โปรไฟล์</h4>
+                                </center>
+                            </div>
+                            <div>
+                                <hr>
+                            </div>
+                            @using (Html.BeginForm("upload_image", "TeachersAndAuthorities", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                            <div class="card-body">
+                                <div class="center">
+                                    <h4>เปลี่ยนรูปโปรไฟล์</h4> <br>
+                                    <input type="file" name="file" id="file" /> <br> <br>                                   
+                                    <input type="button" id="btnUpload" class="btn btn-primary" value="ตกลง"> <input type="hidden" name="id" value="@ViewData["id"]">
+                                </div>
+                            </div>
+                            }
+                        </div>
+                    </div>*@
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-7">
+                        <div class="card">
+                            <div class="card-body">
+                                @using (Html.BeginForm("TeacherEdit", "TeachersAndAuthorities", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                <form class="form-horizontal form-material">
+
+                                    <div class="jumbotron" style="background-color:#36bea6;">
+                                        <h2 class="display-4" style="text-align:center;color:white;"><i class="mdi mdi-account-edit"></i> แก้ไขข้อมูลส่วนตัว</h2>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">รหัสประจำตัว</label>
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control form-control-line" value="@ViewData["teacher_id"]" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="example-email" class="col-md-12">ชื่อ-สกุล</label>
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control form-control-line" name="name" id="name" value="@ViewData["name"]">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">พาสเวิร์ด</label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="pwd" id="pwd" value="@ViewData["pwd"]" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">อีเมล</label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="email" id="email" value="@ViewData["email"]" class="form-control form-control-line" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">เบอร์โทร</label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="phone" id="phone" value="@ViewData["phone"]" class="form-control form-control-line" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            @*<button class="btn btn-success" type="submit" name="id" value="@ViewData["id"]">ตกลง</button>*@
+                                            <input type="button" id="btnSubmit" class="btn btn-primary" value="ตกลง"> <input type="hidden" name="id" value="@ViewData["id"]">
+                                            @Html.ActionLink("ยกเลิก", "TeacherHome", "TeachersAndAuthorities", new { id = @ViewData["teacher_id"] }, new { @class = "btn" })
+                                        </div>
+                                    </div>
+
+                                </form>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- Table -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                ฝ่ายสหกิจศึกษาคณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี <a href="https://wrappixel.com">WrapPixel</a>.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../dist/js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="../../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../../dist/js/custom.js"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="../../assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="../../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="../../dist/js/pages/dashboards/dashboard1.js"></script>
+</body>
+</html>
+
+@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        <script src="~/Scripts/modernizr-2.8.3.js"></script>
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+
+        <script>
+            $(document).ready(function () {
+                $('#btnSubmit').click(function () {
+                    var name = $('#name').val();
+                    if (name == '') {
+                        alert('Error !');
+                    } else {
+                        alert('Ok !!!');
+                        this.form.submit();
+                    }
+                });
+            });
+        </script>
+
+        <style>
+
+            .navbar-custom {
+                background-color: #7A0101;
+            }
+
+            .navbar-nav > li:hover {
+                background-color: #690000;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 50%;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2
+            }
+
+            th {
+                background-color: #7A0101;
+                color: white;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h2>แก้ไขข้อมูลส่วนตัว</h2>
+
+        <div class="navbar navbar-inverse navbar-fixed-top navbar-custom">
+            <div class="container">
+                <div class="navbar-header navbar-custom">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("หน้าหลัก", "TeacherHome", "TeachersAndAuthorities", new { id = @ViewData["teacher_id"] }, new { Style = "color:white", @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("จับคู่การนิเทศ", "TeacherMatching", "TeachersAndAuthorities", new { Style = "color:white" })</li>
+                        <li>@Html.ActionLink("แบบประเมินรายงาน", "All_Accesment", "TeachersAndAuthorities", new { Style = "color:white" })</li>
+                        <li>@Html.ActionLink("อาจารย์นิเทศ", "Teacher", "TeachersAndAuthorities", new { Style = "color:white" })</li>
+                        <li>@Html.ActionLink("นักศึกษา", "student", "TeachersAndAuthorities", new { Style = "color:white" })</li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("ออกจากระบบ", "logout", "TeachersAndAuthorities", new { Style = "color:white" })</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container body-content">
+            <form method="post">
+                <table>
+                    <tr>
+                        <th colspan="2">แก้ไขข้อมูลส่วนตัว</th>
+                    </tr>
+                    <tr>
+                        <td>รหัสประจำตัว</td>
+                        <td>@ViewData["teacher_id"]</td>
+                    </tr>
+                    <tr>
+                        <td>ชื่อ-นามสกุล</td>
+                        <td><input type="text" id="name" class="span4" name="name" value="@ViewData["name"].ToString()"></td>
+                    </tr>
+                    <tr>
+                        <td>รหัสผ่าน</td>
+                        <td><input type="text" id="password" class="span4" name="pwd" value="@ViewData["pwd"]"></td>
+                    </tr>
+                    <tr>
+                        <td>ภาควิชา</td>
+                        <td>@ViewData["department"]</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="right"><button type="submit" name="lgin" class="btn btn-primary" value="Sign in" onclick="msg()">แก้ไข</button> @Html.ActionLink("ยกเลิก", "TeacherHome", "TeachersAndAuthorities", new { id = @ViewData["teacher_id"] }, new { @class = "btn" })</td>
+                        <td colspan="2" align="right"><input type="button" id="btnSubmit" class="btn btn-primary" value="Sign in" /> @Html.ActionLink("ยกเลิก", "TeacherHome", "TeachersAndAuthorities", new { id = @ViewData["teacher_id"] }, new { @class = "btn" })</td>
+                    </tr>
+
+                </table>
+
+            </form>
+        </div>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    </body>
+    </html>*@

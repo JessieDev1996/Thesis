@@ -1,0 +1,358 @@
+﻿
+@using System.Data;
+@model DataSet
+@{
+    Layout = "";
+      if (Session["position"].ToString() != "อาจารย์นิเทศ")
+    {
+        Response.Redirect("~/Home/LoginTemplate");
+    }
+}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/assets/images/rmutt.png">
+    <title>แก้ไขข้อมูลส่วนตัว-อาจารย์นิเทศ</title>
+    <!-- Custom CSS -->
+    <link href="~/Content/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/dist/css/style.min.css" rel="stylesheet">
+    <script src="~/Scripts/bootstrap-select.min.js"></script>
+    <link href="~/Content/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery-confirm.css" rel="stylesheet" />
+    <style>
+        .jumbotron {
+            box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            border-radius: 5px
+        }
+         body {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="preloader" style="display: none;">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="mini-sidebar" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+
+                    <a class="navbar-brand" href="@Url.Action("Index", "Teacher")">
+
+                        <b class="logo-icon">
+
+                            <img src="~/Content/assets/images/rmutt.png" alt="หน้าแรก" class="light-logo">
+                        </b>
+                        <span class="logo-text">
+                            <img src="~/Content/assets/images/cooperative.png" alt="หน้าแรก" class="light-logo">
+                        </span>
+
+
+                    </a>
+
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+
+                    <ul class="navbar-nav float-left mr-auto">
+                    </ul>
+
+                    <ul class="navbar-nav float-right">
+
+                        <li><a style="color:white;" href="@Url.Action("Logout_teacher","Teacher")"><i class="mdi mdi-logout"></i> ออกจากระบบ</a></li>
+
+                    </ul>
+
+
+                </div>
+            </nav>
+        </header>
+
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+
+            <div class="scroll-sidebar">
+
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="in">
+
+                        <li>
+
+                            <div class="user-profile d-flex no-block dropdown m-t-20">
+                                <div class="user-pic"><img src="~/Content/assets/images/users/1.jpg" alt="users" class="rounded-circle" width="40"></div>
+                                <div class="user-content hide-menu m-l-10">
+
+                                    <h5 class="m-b-0 user-name font-medium">@ViewData["name"] </h5>
+                                    <span class="op-5 user-email">@ViewData["email"]</span>
+
+
+                                </div>
+                            </div>
+
+
+
+                        <li class="sidebar-item selected"> <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="@Url.Action("Index", "Teacher")" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">หน้าหลัก</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Score", "Teacher",new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"]  })" aria-expanded="false"><i class="mdi mdi-account-edit"></i><span class="hide-menu">ประเมินคะแนนนักศึกษา</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Ask", "Teacher",new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"]  })" aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">แบบสอบถามนิเทศ</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("ViewMatch", "Teacher", new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"]  })" aria-expanded="false"><i class="mdi mdi-calendar-check"></i><span class="hide-menu">รายการนิเทศ</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("FacData", "Teacher",new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"]  })" aria-expanded="false"><i class="mdi mdi-factory"></i><span class="hide-menu">ข้อมูลสถานประกอบการ</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("EditPersonal", "Teacher",new { Ta_id = ViewData["teacher_id"], Department = ViewData["department"],Status = @ViewData["Status"],name = @ViewData["name"],email =ViewData["email"],phone = ViewData["phone"] })" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">ข้อมูลส่วนตัว</span></a></li>
+
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </aside>
+
+        <div class="page-wrapper">
+
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <h4 class="page-title">แก้ไขข้อมูลส่วนตัว</h4>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">อาจารย์นิเทศ</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">แก้ไขข้อมูลส่วนตัว</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-xlg-3 col-md-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <center class="m-t-30">
+                                    <img src="~/Content/assets/images/users/1.jpg" class="rounded-circle" width="150">
+                                    <h4 class="card-title m-t-10">@ViewData["name"]</h4>
+                                    <h6 class="card-subtitle">@ViewData["department"]</h6>
+
+                                </center>
+                            </div>
+                            <div>
+                                <hr>
+                            </div>
+                            <div class="card-body">
+                                <small class="text-muted">อีเมล </small>
+                                <h6>@ViewData["email"]</h6>
+                                <small class="text-muted p-t-30 db">เบอร์โทรศัพท์</small>
+                                <h6>@ViewData["phone"]</h6>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 col-xlg-9 col-md-7">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-horizontal" id="formTest" method="post">
+                                    <div class="form-group">
+                                        <label class="col-md-12">ชื่อ-สกุล</label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="@ViewData["name"]" class="form-control form-control-line" name="Name" id="name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-email" class="col-md-12">อีเมล</label>
+                                        <div class="col-md-12">
+                                            <input type="email" placeholder="@ViewData["email"]" class="form-control form-control-line" name="Email" id="email">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">เบอร์โทรศัพท์</label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="@ViewData["phone"]" class="form-control form-control-line" name="Phone" id="phone">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">สาขาวิชา</label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="@ViewData["department"]" class="form-control form-control-line" readonly>
+                                        </div>
+                                    </div>
+
+                                    <div class="hidden">
+                                        <input type="hidden" name="department" value=@ViewData["department"]>
+                                        <input type="hidden" name="status" value=@ViewData["Status"]>
+                                    </div>
+
+                                    
+                                    @*<div class="modal fade bootstrapmodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+
+
+                            <div class="modal-title"><h2>การแจ้งเตือน</h2></div>
+                            <button data-dismiss="modal" class="close" style="text-align:left"></button>
+
+                        </div>
+
+                        <div class="modal-body">
+                            <h5>ท่านต้องการยืนยันการเปลี่ยนแปลงข้อมูลส่วนตัวหรือใหม่</h5>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success" name="Ta_id" value=" @ViewData["teacher_id"]">บันทึก</button>
+                            <button class="btn btn-danger" data-dismiss="modal"> ยกเลิก </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>*@
+
+
+
+
+
+
+                                </form>
+
+                                <button class="btn btn-success text-light"  name="Ta_id" id="test" value=" @ViewData["teacher_id"]">เปลี่ยนแปลงข้อมูล</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <footer class="footer text-center">
+                <p>ระบบจัดการการฝึกงานและสหกิจศึกษา กรณีศึกษา:คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี</p>
+                All Rights Reserved by Xtreme Admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/Content/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/Content/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/dist/js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="~/Content/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="~/Content/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/Content/dist/js/custom.js"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="~/Content/assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="~/Content/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="~/Content/dist/js/pages/dashboards/dashboard1.js"></script>
+    <script src="~/Scripts/bootstrap-select.min.js"></script>
+
+    <script src="~/Scripts/jquery-confirm.js"></script>
+    <script>
+        $(document).ready(function () {
+           $('body').fadeIn("slow");
+
+        $('#test').click(function () {
+            if ($('#name').val() == '') {
+                $.alert({
+                theme: 'modern',
+                title: 'แจ้งเตือน',
+                content: 'กรุณากรอกชื่อ-สกุล',
+                    buttons: {
+                        ยืนยัน: function () {
+
+                        },
+                    }
+                });
+            }
+            else if ($('#email').val() == '') {
+                 $.alert({
+                theme: 'modern',
+                title: 'แจ้งเตือน',
+                content: 'กรุณากรอกอีเมล',
+                     buttons: {
+
+                        ยืนยัน: function () {
+                          
+                        },
+                    }
+                });
+            }
+            else if ($('#phone').val() == '') {
+                $.alert({
+                theme: 'modern',
+                title: 'แจ้งเตือน',
+                content: 'กรุณากรอกเบอร์โทรศัพท์',
+                    buttons: {
+                        
+                        ยืนยัน: function () {
+                           
+                        },
+                    }
+                });
+            }
+            else {
+            
+            $.confirm({
+
+                theme: 'modern',
+                title: 'ต้องการเปลี่ยนแปลงข้อมูลหรือไม่',
+                content: 'เลือกยืนยันหากต้องการเปลี่ยนแปลงข้อมูล',
+                type: 'red',
+                typeAnimated: true,
+                boxWidth: '20%',
+                buttons: {
+                    confirm: {
+                        text: 'ยืนยัน',
+                        btnClass: 'btn-red',
+                        action: function () {
+                            $('#formTest').submit();
+                        }
+                    },
+                    cancel: {
+                        text: 'ยกเลิก',
+                        action: function () {
+
+                        }
+                    },
+                }
+            });
+            }
+        });
+        });
+        
+
+    </script>
+</body>
+</html>

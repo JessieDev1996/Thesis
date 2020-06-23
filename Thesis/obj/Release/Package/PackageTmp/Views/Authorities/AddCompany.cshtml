@@ -1,0 +1,538 @@
+﻿
+@{
+    ViewBag.Title = "เพิ่มข้อมูลสถานประกอบการ";
+    Layout = "~/Views/Shared/_LayoutAuthoritiesTemplate.cshtml";
+}
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var msgAlert = $("#msgAlert").val();
+
+        if (msgAlert == "Success") {
+            $.alert({
+                theme: 'modern',
+                title: 'เพิ่มสถานประการสำเร็จ',
+                content: '',
+                type: 'green',
+                typeAnimated: true,
+                boxWidth: '20%',
+                useBootstrap: false,
+                buttons: {
+                    OK: {
+                        text: 'OK',
+                        btnClass: 'btn-green',
+                        action: function () {
+                        }
+                    }
+                },
+            });
+        } else if (msgAlert == "Already") {
+            $.alert({
+                theme: 'modern',
+                title: 'เพิ่มสถานประการไม่สำเร็จ !!!',
+                content: 'กรุณาตรวจสอบชื่อสถานประกอบการ เนื่องจากมีชื่อสถานประกอบการนี้ในระบบแล้ว',
+                type: 'red',
+                typeAnimated: true,
+                boxWidth: '30%',
+                useBootstrap: false,
+                buttons: {
+                    OK: {
+                        text: 'OK',
+                        btnClass: 'btn-red',
+                        action: function () {
+                        }
+                    }
+                },
+            });
+        }
+
+        $(document).on('click', '.add', function () {
+            var tc = parseInt($("#totalContacts").val());
+            tc = tc + 1;
+            $("#totalContacts").val(tc)
+
+            var html = '<div id="form_major">';
+            html += '<div class="form-group col-md-12 d-flex">';
+            html += '<div class="col-md-5">';
+            html += '<label class"control-label" style="font-weight:bold;">ต้องการรับนักศึกษาในสาขา :</label>';
+            html += '<select class="selectpicker form-control" title="Please select" name="major[' + (tc - 1) + ']" required>';
+            html += '<option>วิศวกรรมโยธา</option>';
+            html += '<option>วิศวกรรมสิ่งแวดล้อม</option>';
+            html += '<option>วิศวกรรมไฟฟ้า</option>';
+            html += '<option>วิศวกรรมเครื่องกล</option>';
+            html += '<option>วิศวกรรมอุตสาหการ</option>';
+            html += '<option>วิศวกรรมนวัตกรรมสิ่งทอ</option>';
+            html += '<option>วิศวกรรมอิเล็กทรอนิกส์และโทรคมนาคม</option>';
+            html += '<option>วิศวกรรมคอมพิวเตอร์</option>';
+            html += '<option>วิศวกรรมเคมี</option>';
+            html += '<option>วิศวกรรมวัสดุ</option>';
+            html += '<option>วิศวกรรมเครื่องจักรกลเกษตร</option>';
+            html += '<option>วิศวกรรมชลประทานและการจัดการน้ำ</option>';
+            html += '<option>วิศวกรรมอาหาร</option>';
+            html += '<option>วิศวกรรมอิเล็กทรอนิกส์อากาศยาน</option>';
+            html += '<option>วิศวกรรมระบบราง</option>';
+            html += '</select>';
+            html += '</div>';
+            html += '<div class="col-md-4">';
+            html += '<label class"control-label" style="font-weight:bold;">ตำแหน่งงานที่นักศึกษาต้องปฏิบัติ :</label>';
+            html += '<input type="text" class="form-control" maxlength="30" name="position_of_student[' + (tc - 1) + ']" autocomplete = "off" />';
+            html += '</div>';
+            html += '<div class="col-md-3">';
+            html += '<label class"control-label" style="font-weight:bold;">ต้องการรับนักศึกษาจำนวน :</label>';
+            html += '<input type="number" class="form-control" maxlength="5" name="require[' + (tc - 1) + ']" autocomplete = "off" required />';
+            html += '</div>';
+            html += '</div>';
+            html += '<div class="form-group col-md-12 d-flex align-items-center">';
+            html += '<div class="col-md-7">';
+            html += '<label class"control-label" style="font-weight:bold;">ลักษณะงานที่นักศึกษาต้องปฏิบัติ :</label>';
+            html += '<input type="text" class="form-control" maxlength="70" name="job_description[' + (tc - 1) + ']" autocomplete = "off" />';
+            html += '</div>';
+            html += '<div class="col-md-5">';
+            html += '<button type="button" id = "btn-op' + (tc - 1) + '" class="btn btn-danger remove" style="margin-top:26px; margin-left:30px;">ลบ</button>';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+
+            $('.selectpicker').selectpicker('render');
+            $('#add_major').append(html);
+            $('.selectpicker').selectpicker('refresh');
+
+            $("#btn-op" + (tc-2).toString()).hide();
+        });
+
+        $(document).on('click', '.remove', function () {
+            var tc = parseInt($("#totalContacts").val());
+            tc = tc - 1;
+            $("#totalContacts").val(tc)
+            $(this).closest('#form_major').remove();
+            $("#btn-op" + (tc-1).toString()).show();
+        });
+
+        $('#year').datepicker({
+            minViewMode: 'years',
+            autoclose: true,
+            format: 'yyyy',
+            orientation: "bottom auto"
+        }).datepicker("setDate", "today" + 543);
+
+        $("#province").change(function () {
+            var Area = {};
+            Area.url = "/Authorities/Area";
+            Area.type = "POST";
+            Area.data = JSON.stringify({
+                province: $("#province").val()
+            });
+            Area.datatype = "json";
+            Area.contentType = "application/json";
+            Area.success = function (AreaList) {
+                $('.selectpicker').selectpicker('render');
+                $("#area").empty();
+                $("#sub_area").empty();
+                $('.selectpicker').selectpicker('refresh');
+                $('.selectpicker').selectpicker('render');
+                $("#area").append("<option hidden disabled selected>กรุณาเลือกอำเภอ</option>");
+                $("#sub_area").append("<option hidden disabled selected>กรุณาเลือกตำบล</option>");
+                $('.selectpicker').selectpicker('refresh');
+                for (var i = 0; i < AreaList.length; i++) {
+                    $('.selectpicker').selectpicker('render');
+                    $("#area").append("<option>" + AreaList[i] + "</option>");
+                    $('.selectpicker').selectpicker('refresh');
+                }
+            };
+            Area.error = function () {
+                alert("Error in Getting Area !!");
+            };
+            $.ajax(Area);
+        });
+
+        $("#area").change(function () {
+            var Sub_Area = {};
+            Sub_Area.url = "/Authorities/Sub_Area";
+            Sub_Area.type = "POST";
+            Sub_Area.data = JSON.stringify({
+                area: $("#area").val(),
+                province: $("#province").val()
+            });
+            Sub_Area.datatype = "json";
+            Sub_Area.contentType = "application/json";
+            Sub_Area.success = function (Sub_AreaList) {
+                $('.selectpicker').selectpicker('render');
+                $("#sub_area").empty();
+                $('.selectpicker').selectpicker('refresh');
+                $('.selectpicker').selectpicker('render');
+                $("#sub_area").append("<option hidden disabled selected>กรุณาเลือกตำบล</option>");
+                $('.selectpicker').selectpicker('refresh');
+                for (var i = 0; i < Sub_AreaList.length; i++) {
+                    $('.selectpicker').selectpicker('render');
+                    $("#sub_area").append("<option>" + Sub_AreaList[i] + "</option>");
+                    $('.selectpicker').selectpicker('refresh');
+                }
+            };
+            Sub_Area.error = function () {
+                alert("Error in Getting Sub_Area !!");
+            };
+            $.ajax(Sub_Area);
+        });
+
+        $("#sub_area").change(function () {
+            var Sub_Area = {};
+            Sub_Area.url = "/Authorities/Prototype_id";
+            Sub_Area.type = "POST";
+            Sub_Area.data = JSON.stringify({
+                sub_area: $("#sub_area").val(),
+                area: $("#area").val(),
+                province: $("#province").val()
+            });
+            Sub_Area.datatype = "json";
+            Sub_Area.contentType = "application/json";
+            Sub_Area.success = function (prototype_id) {
+                $("#prototype_id").val(prototype_id)
+            };
+            Sub_Area.error = function () {
+                alert("Error in Getting Sub_Area !!");
+            };
+            $.ajax(Sub_Area);
+        });
+    });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var elements = document.getElementsByTagName("INPUT");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].oninvalid = function (e) {
+                    e.target.setCustomValidity("");
+                    if (!e.target.validity.valid) {
+                        e.target.setCustomValidity("กรุณากรอกข้อมูลในฟิลด์นี้ !!");
+                    }
+                };
+                elements[i].oninput = function (e) {
+                    e.target.setCustomValidity("");
+                };
+            }
+        });
+    </script>
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-9" style="margin:auto;">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- title -->
+                        <div class="align-items-center">
+                            <h4 class="card-title">เพิ่มข้อมูลสถานประกอบการ</h4>
+                            <h5 class="card-subtitle">ข้อมูลสถานประกอบการทั้งเก่าและใหม่สามารถเพิ่มได้ที่นี่</h5>
+                            <h5 class="card-subtitle">**กรณีสถานประกอบการใหม่สามารถเพิ่มความต้องรับนักศึกษาได้เลยที่ปุ่ม ต้องการรับนักศึกษาเพิ่ม</h5>
+                            <hr />
+                        </div>
+                        <!-- title -->
+                        <form class="form-horizontal" method="post">
+                            <div class="hide">
+                                <input id="totalContacts" value=0 />
+                                <input id="prototype_id" name="prototype_id" value=0 />
+                                <input name="user_id_title" value="@ViewData["user_id"]" />
+                                <input name="name_title" value="@ViewData["name"]" />
+                                <input id="msgAlert" value="@ViewData["msgAlert"]" />
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-6">
+                                    <label class="control-label" style="font-weight:bold;">ชื่อภาษาอังกฤษ :</label>
+                                    <input class="form-control" name="name_en[0]" maxlength="150" autocomplete="off" required />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label" style="font-weight:bold;">ชื่อภาษาไทย :</label>
+                                    <input class="form-control" name="name_th[0]" maxlength="150" autocomplete="off" required />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-2">
+                                    <label class="control-label" style="font-weight:bold;">ที่อยู่เลขที่ :</label>
+                                    <input class="form-control" name="number" maxlength="10" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">หมู่บ้าน/อาคาร :</label>
+                                    <input class="form-control" name="building" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-1">
+                                    <label class="control-label" style="font-weight:bold;">ชั้น :</label>
+                                    <input class="form-control" name="floor" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">ซอย :</label>
+                                    <input class="form-control" name="lane" maxlength="50" autocomplete="off" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">ถนน :</label>
+                                    <input class="form-control" name="road" maxlength="50" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">จังหวัด :</label>
+                                    <select class="selectpicker form-control" id="province" name="province" title="กรุณาเลือกจังหวัด" data-live-search="true">
+                                        @foreach (string province in ViewBag.province)
+                                        {
+                                            <option value="@province">
+                                                @province
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">อำเภอ/เขต :</label>
+                                    <select id="area" class="selectpicker form-control" title="กรุณาเลือกอำเภอ" name="area"></select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">ตำบล/แขวง :</label>
+                                    <select id="sub_area" class="selectpicker form-control" title="กรุณาเลือกตำบล" name="sub_area" required></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">โทรศัพท์ :</label>
+                                    <input class="form-control" name="phone" maxlength="20" autocomplete="off" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">โทรสาร :</label>
+                                    <input class="form-control" name="fax" maxlength="20" autocomplete="off" />
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="control-label" style="font-weight:bold;">E-mail :</label>
+                                    <input class="form-control" name="email" maxlength="100" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">พิกัด X :</label>
+                                    <input class="form-control" name="pX" maxlength="20" autocomplete="off" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">พิกัด Y :</label>
+                                    <input class="form-control" name="pY" maxlength="20" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-5">
+                                    <label class="control-label" style="font-weight:bold;">Web Site :</label>
+                                    <div class="input-group">
+                                        <input class="form-control col-xl-3" style="text-align:right; font-weight:bold;" value="https://" disabled />
+                                        <input class="form-control col-xl-9" name="website" maxlength="50" autocomplete="off" required />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <label class="control-label" style="font-weight:bold;">ประเภทธุรกิจ/ธุรกิจ/ผลิตภัณฑ์ :</label>
+                                    <input class="form-control" name="business_type" maxlength="150" autocomplete="off" />
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label" style="font-weight:bold;">จำนวนพนักงานรวม :</label>
+                                    <input class="form-control" name="all_employees" maxlength="15" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-5">
+                                    <label class="control-label" style="font-weight:bold;">ชื่อ-นามสกุล ผู้จัดการสถานประกอบการ/หัวหน้าหน่วยงาน :</label>
+                                    <input class="form-control" name="name_s" maxlength="50" autocomplete="off" />
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">ตำแหน่ง :</label>
+                                    <input class="form-control" name="position_s" maxlength="30" autocomplete="off" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="position_s" data-valmsg-replace="true"></span>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">แผนก/ฝ่าย :</label>
+                                    <input class="form-control" name="department_s" maxlength="30" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label class="col-md-12" style="font-weight:bold;">หากมหาวิทยาลัยฯ ประสงค์จะติดต่อประสานงานในรายละเอียดกับสถานประกอบการ/หน่วยงาน :</label>
+                                <div class="col-md-11" style="margin:auto;">
+                                    <label class="radio-inline" style="margin-right:30px;">
+                                        <input type="radio" name="con_number" value=1 class="m-r-10">ติดต่อตามรายชื่อข้างตัน
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="con_number" value=2 class="m-r-10" checked>ติดต่อกับบุคคลที่สถานประกอบการ/หน่วยงานหมอบหมาย ต่อไปนี้
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-5">
+                                    <label class="control-label" style="font-weight:bold;">ชื่อ-นามสกุล ของบุคคลในสถานประกอบการ :</label>
+                                    <input class="form-control" name="name" maxlength="50" autocomplete="off" />
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">ตำแหน่ง :</label>
+                                    <input class="form-control" name="position" maxlength="30" autocomplete="off" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">แผนก/ฝ่าย :</label>
+                                    <input class="form-control" name="department" maxlength="30" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">โทรศัพท์ :</label>
+                                    <input class="form-control" name="con_phone" maxlength="15" autocomplete="off" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="control-label" style="font-weight:bold;">โทรสาร :</label>
+                                    <input class="form-control" name="con_fax" maxlength="15" autocomplete="off" />
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="control-label" style="font-weight:bold;">E-mail :</label>
+                                    <input class="form-control" name="con_email" maxlength="100" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-12">
+                                    <label class="control-label" style="font-weight:bold;">ข้อกำหนดอื่น ๆ :</label>
+                                    <input class="form-control" name="job_request" maxlength="150" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <div class="col-md-12 d-flex">
+                                    <div class="col-md-6">
+                                        <label class="control-label" style="font-weight:bold;">ระยะเวลาที่ต้องการให้นักศึกษาไปปฏิบัติงาน :</label>
+                                        <div class="form-inline">
+                                            <label class="control-label" style="font-weight:bold; margin-right:20px;">ปีการศึกษา :</label>
+                                            <input id="year" type="text" class="form-control" style="width:20%; text-align:center;" name="year">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="checkbox col-12">
+                                            <input type="checkbox" class="m-r-10" name="semester_id1" value=1 checked>ภาคเรียนที่ 1 (มิถุนายน - ตุลาคม)
+                                        </label>
+                                        <label class="checkbox col-12">
+                                            <input type="checkbox" class="m-r-10" name="semester_id2" value=1 checked>ภาคเรียนที่ 2 (พฤศจิกายน - มีนาคม)
+                                        </label>
+                                        <label class="checkbox col-12">
+                                            <input type="checkbox" class="m-r-10" name="semester_id3" value=1 checked>ภาคเรียนที่ 3 (เมษายน - มิถุนายน)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">เวลาในการปฏิบัติงาน :</label>
+                                    <input class="form-control" name="job_time" maxlength="20" autocomplete="off" />
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">วันในการปฏิบัติงาน :</label>
+                                    <input class="form-control" name="job_day" maxlength="50" autocomplete="off" />
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="control-label" style="font-weight:bold;">ค่าตอบแทน :</label>
+                                    <input class="form-control" type="text" name="pay" maxlength="20" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <div class="row col-md-12">
+                                    <div class="column col-md-6">
+                                        <label class="control-label" style="font-weight:bold;">ที่พัก :</label>
+                                        <div style="margin-left:50px;">
+                                            <div class="radio">
+                                                <label><input type="radio" name="accommodation" class="m-r-10" value="have free" checked>มีไม่เสียค่าใช้จ่าย</label>
+                                            </div>
+                                            <div class="radio d-flex align-items-center">
+                                                <label>
+                                                    <input type="radio" name="accommodation" class="m-r-10" value="have">มีนักศึกษาเสียค่าใช้จ่ายเอง
+                                                </label>
+                                                <input class="form-control" type="number" name="charge_accommodation" style="width:30%; margin-right:5px; margin-left:5px;">บาท/เดือน
+                                            </div>
+                                            <div class="radio">
+                                                <label><input type="radio" name="accommodation" class="m-r-10" value="none" checked>ไม่มี</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column col-md-6">
+                                        <label class="control-label" style="font-weight:bold;">รถรับส่งไปกลับระหว่างสถานประกอบการ ที่พัก และชุมชนใกล้เคียง :</label>
+                                        <div style="margin-left:50px;">
+                                            <div class="radio">
+                                                <label><input type="radio" name="bus" value="have free" class="m-r-10" checked>มีไม่เสียค่าใช้จ่าย</label>
+                                            </div>
+                                            <div class="radio d-flex align-items-center">
+                                                <label>
+                                                    <input type="radio" name="bus" class="m-r-10" value="have">มีนักศึกษาเสียค่าใช้จ่ายเอง
+                                                </label>
+                                                <input class="form-control" type="number" name="charge_bus" style="width:30%; margin-right:5px; margin-left:5px;">บาท/เดือน
+                                            </div>
+                                            <div class="radio">
+                                                <label><input type="radio" name="bus" class="m-r-10" value="none" checked>ไม่มี</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label class="control-label" style="font-weight:bold;">สวัสดิการอื่น ๆ ถ้ามี :</label>
+                                <input class="form-control" type="text" name="welfare" maxlength="100" autocomplete="off">
+                            </div>
+
+                            <div class="form-group col-md-12 d-flex">
+                                <div class="col-md-8">
+                                    <label class="control-label" style="font-weight:bold;">การคัดเลือกนักศึกษาเข้าปฏิบัติงาน :</label>
+                                    <div class="col-md-11" style="margin:auto;">
+                                        <label class="radio-inline" style="margin-right:30px;">
+                                            <input type="radio" name="exam" class="m-r-10" value="yes">ต้องการคัดเลือกนักศึกษาเอง
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="exam" class="m-r-10" value="no" checked>ไม่ต้องการคัดเลือกนักศึกษา
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-success add" style="margin-top:25px;" type="button">ต้องการรับนักศึกษาเพิ่ม</button>
+                                </div>
+                            </div>
+                            <div class="form-group" id="add_major">
+                                <hr />
+                            </div>
+                            <div class="form-group col-md-12" style="text-align:center;">
+                                <input type="submit" value="บันทึก" class="btn btn-info" style="margin:auto; width:150px; margin-top:30px;" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

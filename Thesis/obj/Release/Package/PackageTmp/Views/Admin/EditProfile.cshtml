@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewBag.Title = "แก้ไขข้อมูลส่วนตัว";
+    Layout = "~/Views/Shared/_LayoutAdminTemplate.cshtml";
+}
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $("#major_group").hide();
+
+        var msgAlert = $("#msgAlert").val();
+
+        if (msgAlert == "Success") {
+            $.alert({
+                theme: 'modern',
+                title: 'บันทึกข้อมูลสำเร็จ',
+                content: '',
+                type: 'green',
+                typeAnimated: true,
+                boxWidth: '20%',
+                useBootstrap: false,
+                buttons: {
+                    OK: {
+                        text: 'OK',
+                        btnClass: 'btn-green',
+                        action: function () {
+                        }
+                    }
+                },
+            });
+        } 
+
+    });
+
+    </script>
+
+<div class="container-fluid" style="margin-top:30px;">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <!-- Row -->
+    <form class="form-horizontal form-material" id="form_post" method="post">
+        <div class="row">
+            <!-- Column -->
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-md-5" style="margin-left:auto; text-align:center;">
+                <div class="card">
+                    <div class="card-body">
+                        <div style="text-align:center;">
+
+                            <h4 class="card-title">แก้ไขบัญชีผู้ใช้</h4>
+                            <h5 class="card-subtitle">ตรวจสอบข้อมูลก่อนกดยืนยัน</h5>
+                            <hr />
+                        </div>
+                        <div class="hide">
+                            <input name="user_id_title" value="@ViewData["user_id"]" />
+                            <input name="name_title" value="@ViewData["name"]" />
+                            <input type="text" name="date_time_in" value="@Model.Tables["Edit"].Rows[0]["date_time_in"].ToString()">
+                            <input id="msgAlert" value="@ViewData["msgAlert"]" />
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label class="col-md-12" style="font-weight:bold;">บัญชีผู้ใช้ :</label>
+                                <div class="col-md-12">
+                                    <input type="text" id="user_id" name="user_id" value="@Model.Tables["Edit"].Rows[0]["user_id"]" class="form-control form-control-line" style="text-align:center; width:50%; margin:auto;" readonly />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12" style="font-weight:bold;">รหัสผ่าน :</label>
+                                <div class="col-md-12">
+                                    <input type="text" id="password" class="form-control form-control-line" value="@Model.Tables["Edit"].Rows[0]["password"]" name="password" maxlength="20" autocomplete="off" style="text-align:center; width:50%; margin:auto;" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12" style="font-weight:bold;">ตำแหน่ง :</label>
+                                <div class="col-md-12">
+                                    <input type="text" id="password" class="form-control form-control-line" value="@Model.Tables["Edit"].Rows[0]["position"]" name="position" style="text-align:center; width:50%; margin:auto;" readonly />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12" style="font-weight:bold;">ภาควิชา :</label>
+                                <div class="col-md-12">
+                                    <input type="text" id="password" class="form-control form-control-line" value="@Model.Tables["Edit"].Rows[0]["major"]" name="major" style="text-align:center; width:50%; margin:auto;" readonly />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" style="margin-right:auto; text-align:center;">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <h4 class="card-title">ข้อมูลส่วนตัว</h4>
+                            <hr />
+                        </div>
+
+                        <center class="m-t-30">
+                            <img src="~/adminTemplate/assets/images/users/1.jpg" class="rounded-circle" width="150" />
+                            <label class="col-md-12" style="font-weight:bold; margin-top:20px;">ชื่อ - นามสกุล :</label>
+                            <input type="text" class="form-control form-control-line" value="@Model.Tables["Edit1"].Rows[0]["name"]" name="name" maxlength="100" autocomplete="off" style="text-align:center; width:50%;" />
+                        </center>
+
+                        <div>
+                            <hr>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <div class="d-flex align-items-center">
+                                <div class="col-md-1 m-r-10">
+                                    <i class="btn-circle bg-megna text-white mdi mdi-email-outline"></i>
+                                </div>
+                                <div class="col-md-9">
+                                    <label class="col-md-12" style="font-weight:bold; text-align:left;">ที่อยู่อีเมล :</label>
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" value="@Model.Tables["Edit1"].Rows[0]["email"]" name="email" maxlength="100" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <div class="d-flex align-items-center">
+                                <div class="col-md-1 m-r-10">
+                                    <i class="btn-circle bg-info text-white mdi mdi-cellphone-iphone"></i>
+                                </div>
+                                <div class="col-md-9">
+                                    <label class="col-md-12" style="font-weight:bold; text-align:left;">หมายเลขโทรศัพท์ :</label>
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" value="@Model.Tables["Edit1"].Rows[0]["phone"]" name="phone" maxlength="20" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <div class="d-flex align-items-center">
+                                <div class="col-md-1 m-r-10">
+                                    <i class="btn-circle bg-warning text-white mdi mdi-format-list-numbers"></i>
+                                </div>
+                                <div class="col-md-9">
+                                    <label class="col-md-12" style="font-weight:bold; text-align:left;">สถานะปัจจุบัน :</label>
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" value="@Model.Tables["Edit1"].Rows[0]["status"]" name="status" maxlength="30" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-9" style="margin:auto;">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group" style="text-align:center; margin:auto;">
+                            <div class="col-md-12">
+                                <button class="btn btn-success" type="submit" style="margin:auto; width:200px;">ยืนยัน</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

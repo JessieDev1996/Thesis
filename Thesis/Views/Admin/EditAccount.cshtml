@@ -1,0 +1,196 @@
+﻿@using System.Data
+@model DataSet
+
+@{
+    ViewBag.Title = "แก้ไขบัญชีผู้ใช้";
+    Layout = "~/Views/Shared/_LayoutAdminTemplate.cshtml";
+}
+
+
+<script>
+    $(document).ready(function () {
+        //--------------------------------------------------------------------------------
+        var _position = $('#get_position').val();
+        var _major = $('#get_major').val();
+        if (_position == 'อาจารย์ฝ่ายสหกิจศึกษา' || _position == 'ผู้ช่วยอาจารย์ประจำภาควิชา') {
+            $("#major_group").show();
+            $('select[name=major]').val(_major);
+            $('.selectpicker').selectpicker('refresh');
+        }
+        else {
+            $("#major_group").hide();
+            $('select[name=major]').val(_major);
+            $('.selectpicker').selectpicker('refresh');
+        }
+        $("input[name=position][value='" + _position + "']").prop("checked", true);
+        //----------------------------------------------------------------------------------
+
+        $('input[type=radio][name=position]').change(function () {
+            if (this.value == 'อาจารย์ฝ่ายสหกิจศึกษา' || this.value == 'ผู้ช่วยอาจารย์ประจำภาควิชา') {
+                $("#major_group").show();
+                $("#major").prop('required', true);
+            }
+            else {
+                $("#major_group").hide();
+                $("#major").prop('required', false);
+            }
+        });
+
+    });
+</script>
+
+<div class="container-fluid" style="margin-top:30px;">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <!-- Row -->
+    
+    <div class="row">
+        <!-- Column -->
+        <!-- Column -->
+        <!-- Column -->
+        <div class="col-md-5" style="margin-left:auto;">
+            <div class="card">
+                <div class="card-body">
+                    <div style="text-align:center;">
+
+                        <h4 class="card-title">แก้ไขบัญชีผู้ใช้</h4>
+                        <h5 class="card-subtitle">ตรวจสอบข้อมูลก่อนกดยืนยัน</h5>
+                        <hr />
+                    </div>
+                    <form class="form-horizontal form-material" method="post" id="formAccount">
+                        <div class="hide">
+                            <input id="get_position" type="text" value="@Model.Tables["Edit"].Rows[0]["position"].ToString()" />
+                            <input id="get_major" type="text" value="@Model.Tables["Edit"].Rows[0]["major"].ToString()" />
+                            <input name="user_id_title" value="@ViewData["user_id"]" />
+                            <input name="name_title" value="@ViewData["name"]" />
+                            <input type="text" name="date_time_in" value="@Model.Tables["Edit"].Rows[0]["date_time_in"].ToString()">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12" style="font-weight:bold;">บัญชีผู้ใช้ :</label>
+                            <div class="col-md-12">
+                                <input type="text" id="user_id" name="user_id" value="@Model.Tables["Edit"].Rows[0]["user_id"]" class="form-control form-control-line" autocomplete="off" style="text-align:center;" readonly />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12" style="font-weight:bold;">รหัสผ่าน :</label>
+                            <div class="col-md-12">
+                                <input type="text" id="password" class="form-control form-control-line" value="@Model.Tables["Edit"].Rows[0]["password"]" name="password" maxlength="20" autocomplete="off" style="text-align:center;" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12" style="font-weight:bold;">ตำแหน่ง :</label>
+                            <div class="col-md-12" style="padding-left:3em;">
+                                <label class="radio col-md-12" style="font-weight:lighter;">
+                                    <input type="radio" name="position" value="เจ้าหน้าที่ฝ่ายสหกิจศึกษา" style="margin-right:10px;">เจ้าหน้าที่ฝ่ายสหิกิจศึกษา
+                                </label>
+                                <label class="radio col-md-12" style="font-weight:lighter;">
+                                    <input type="radio" name="position" value="อาจารย์ฝ่ายสหกิจศึกษา" style="margin-right:10px;">อาจารย์ฝ่ายสหกิจศึกษา
+                                </label>
+                                <label class="radio col-md-12" style="font-weight:lighter;">
+                                    <input type="radio" name="position" value="ผู้ช่วยอาจารย์ประจำภาควิชา" style="margin-right:10px;">ผู้ช่วยอาจารย์ประจำภาควิชา
+                                </label>
+                                <label class="radio col-md-12" style="font-weight:lighter;">
+                                    <input type="radio" name="position" value="ผู้ดูแล" style="margin-right:10px;">ผู้ดูแล
+                                </label>
+                            </div>
+                        </div>
+                        <div id="major_group" class="form-group">
+                            <label class="col-md-12" style="font-weight:bold;">ภาควิชา :</label>
+                            <div class="col-md-12">
+                                <select class="selectpicker form-control" id="major" title="Please select" name="major">
+                                    <option>วิศวกรรมโยธา</option>
+                                    <option>วิศวกรรมสิ่งแวดล้อม</option>
+                                    <option>วิศวกรรมไฟฟ้า</option>
+                                    <option>วิศวกรรมเครื่องกล</option>
+                                    <option>วิศวกรรมอุตสาหการ</option>
+                                    <option>วิศวกรรมนวัตกรรมสิ่งทอ</option>
+                                    <option>วิศวกรรมอิเล็กทรอนิกส์และโทรคมนาคม</option>
+                                    <option>วิศวกรรมคอมพิวเตอร์</option>
+                                    <option>วิศวกรรมเคมี</option>
+                                    <option>วิศวกรรมวัสดุ</option>
+                                    <option>วิศวกรรมเครื่องจักรกลเกษตร</option>
+                                    <option>วิศวกรรมชลประทานและการจัดการน้ำ</option>
+                                    <option>วิศวกรรมอาหาร</option>
+                                    <option>วิศวกรรมอิเล็กทรอนิกส์อากาศยาน</option>
+                                    <option>วิศวกรรมระบบราง</option>
+                                    <option class="hide">เจ้าหน้าที่ฝ่ายสหกิจศึกษา</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-12" style="margin-top:20px;">
+                                <button class="btn btn-success" type="submit">ยืนยัน</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="margin-right:auto;">
+            <div class="card">
+                <div class="card-body">
+                    <div style="text-align:center;">
+                        <h4 class="card-title">ข้อมูลเพิ่มเติมของบัญชี</h4>
+                        <hr />
+                    </div>
+                    <center class="m-t-30">
+                        <img src="~/adminTemplate/assets/images/users/1.jpg" class="rounded-circle" width="150" />
+                        <h4 class="card-title m-t-10">@Model.Tables["Edit1"].Rows[0]["name"].ToString()</h4>
+                        <h6 class="card-subtitle">@Model.Tables["Edit"].Rows[0]["position"].ToString()</h6>
+                    </center>
+                </div>
+                <div>
+                    <hr>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="m-r-10">
+                            <i class="btn-circle bg-megna text-white mdi mdi-email-outline"></i>
+                        </div>
+                        <div>
+                            <small class="text-muted">ที่อยู่อีเมล :</small>
+                            <h6>@Model.Tables["Edit1"].Rows[0]["email"].ToString()</h6>
+                        </div>
+
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="m-r-10">
+                            <i class="btn-circle bg-info text-white mdi mdi-cellphone-iphone"></i>
+                        </div>
+                        <div>
+                            <small class="text-muted p-t-30 db">หมายเลขโทรศัพท์ :</small>
+                            <h6>@Model.Tables["Edit1"].Rows[0]["phone"].ToString()</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="m-r-10">
+                            <i class="btn-circle bg-warning text-white mdi mdi-format-list-numbers"></i>
+                        </div>
+                        <div>
+                            <small class="text-muted p-t-30 db">สถานะปัจจุบัน :</small>
+                            <h6>@Model.Tables["Edit1"].Rows[0]["status"].ToString()</h6>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Row -->
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+</div>
+

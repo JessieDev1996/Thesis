@@ -1,0 +1,471 @@
+﻿
+@{
+    ViewBag.Title = "StudentAll";
+    int rowYes = 0;
+    int rowNo = 0;
+    Layout = null;
+}
+@model DataSet
+@using System.Data;
+
+
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <title>นักศึกษา</title>
+    <!-- Custom CSS -->
+    <link href="../../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $('#checkSem').click(function () {
+                alert('ขณะนี้อยู่ในช่วงปิดเทอมไม่สามารถใช้งานส่วนนี้ได้');
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .kuy {
+            height: 20px;
+        }
+
+        .wtf {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+        }
+
+        .left1 {
+            text-align: left;
+        }
+    </style>
+
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="#">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <img src="../../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="../../assets/images/wtf1.png" class="light-logo" alt="homepage" />
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item search-box">
+                            <!---->
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                        @Html.ActionLink("ออกจากระบบ", "taLogout", "TeachersAndAuthorities", new { Style = "color:white", @class = "btn" })
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li>
+                            <!-- User Profile-->
+                            <div class="user-profile d-flex no-block dropdown m-t-20">
+
+                                <div class="user-pic"><img src="../../assets/images/users/1.jpg" alt="users" class="rounded-circle" width="40" /></div>
+                                <div class="user-content hide-menu m-l-10">
+                                    <div class="center">
+                                        <h4 class="m-b-0 user-name font-medium">อาจารย์และผู้ช่วย</h4>
+                                        <p>@ViewData["name"].ToString()</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="user-content hide-menu m-l-10">
+                                <div class="left1">
+                                    <h6>ภาควิชา : @ViewData["department"].ToString()</h6>
+                                </div>
+                            </div>
+                            <!-- End User Profile-->
+                        </li>
+                        <hr />
+                        <!-- User Profile-->
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("TeacherHome", "TeachersAndAuthorities", new { id = @ViewData["teacher_id"] })" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">หน้าหลัก</span></a></li>
+                        @if (ViewData["semCheck"] == null)
+                        {
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false" id="checkSem"><i class="mdi mdi-border-all"></i><span class="hide-menu">ตารางการออกนิเทศ</span></a></li>
+                        }
+                        else
+                        {
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("TeacherMatching", "TeachersAndAuthorities")" aria-expanded="false"><i class="mdi mdi-border-all"></i><span class="hide-menu">ตารางการออกนิเทศ</span></a></li>
+                        }
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("All_Accesment", "TeachersAndAuthorities")" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">แบบประเมิน สก.16</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Teacher", "TeachersAndAuthorities")" aria-expanded="false"><i class="mdi mdi-account-network"></i><span class="hide-menu">อาจารย์นิเทศ</span></a></li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="error-404.html" id="Userdd" role="button" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">นักศึกษา</span></a>
+                            <div class="user-content hide-menu m-l-10">
+                                <div class="dropdown-menu dropdown-menu" aria-labelledby="Userdd">
+                                    <a class="dropdown-item" href="@Url.Action("Student", "TeachersAndAuthorities")"><i class="mdi mdi-newspaper m-r-5 m-l-5"></i>รายงานการออก/ไม่ออกฝึกงาน</a>
+                                    <a class="dropdown-item" href="@Url.Action("StudentAll", "TeachersAndAuthorities")"><i class="mdi mdi-clipboard-account m-r-5 m-l-5"></i>รายชื่อนักศึกษาทั้งหมด</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="@Url.Action("StudentAdd", "TeachersAndAuthorities")"><i class="mdi mdi-account-multiple-plus m-r-5 m-l-5"></i>เพิ่มรายชื่อนักศึกษา</a>
+                                </div>
+                            </div>
+                        </li>
+                        <hr />
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("TeacherEdit", "TeachersAndAuthorities")" aria-expanded="false"><i class="mdi mdi-account-card-details"></i><span class="hide-menu">ข้อมูลส่วนตัว</span></a></li>
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+                    <div class="col-5">
+                        <h4 class="page-title">Menu</h4>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Library</li>*@
+                                    <li class="breadcrumb-item">Home</li>
+                                    <li class="breadcrumb-item active" aria-current="page"><a href="#">Library</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Sales chart -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Sales chart -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Table -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="jumbotron" style="background-color:#2962ff;">
+                                    <h1 class="display-4" style="text-align:center;color:white;">รายชื่อนักศึกษา</h1>
+                                </div>
+
+                                <div class="center">
+                                    <h2>@ViewData["term"]</h2>
+
+                                    <label><font style="color:#007bff" ;>เลือกเทอมและปีการศึกษาอื่นๆ </font></label>
+
+                                    @using (Html.BeginForm("StudentAll", "TeachersAndAuthorities", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        <select name="semester_id" onchange="this.form.submit();">
+                                            <option>กรุณาเลือก</option>
+                                            @foreach (DataRow semester in Model.Tables[2].Rows)
+                                            {
+                                                <option value="@semester[0]">@semester[0]</option>
+                                            }
+                                        </select>
+                                    }
+                                    <br>
+                                </div>
+
+
+                                @if (Model.Tables[1].Rows.Count > 0)
+                                {
+                                    @*<div class="table-responsive">
+                <table class="table v-middle">
+                    <thead>
+                        <tr class="bg-light">
+                            <th class="border-top-0">ลำดับ</th>
+                            <th class="border-top-0">รหัสนักศึกษา</th>
+                            <th class="border-top-0">ชื่อ-นามสกุล</th>
+                            <th class="border-top-0">ชื่อบริษัทที่ออกฝึก</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (DataRow st in Model.Tables[1].Rows)
+                        {
+                            rowYes = rowYes + 1;
+                            <tr>
+                                <td>@rowYes</td>
+                                <td>@st[0]</td>
+                                <td>@st[1]</td>
+                                <td>
+                                    @if (st[3].ToString() == ViewData["sem"].ToString())
+                                    {
+                                        foreach (DataRow com in Model.Tables[0].Rows)
+                                        {
+                                            if (st[0].ToString() == com[0].ToString())
+                                            {
+                                                <p>@com[2]</p>
+                                            }
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <p><font color="red">ยังไม่ออก</font></p>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>*@
+                                    foreach (DataRow sec in Model.Tables[3].Rows)
+                                    {
+
+                                        <h2>@sec[0]</h2>
+
+                                        <div class="table-responsive">
+                                            <table class="table v-middle">
+                                                <thead>
+                                                    <tr class="bg-light">
+                                                        <th class="border-top-0">ลำดับ</th>
+                                                        <th class="border-top-0">รหัสนักศึกษา</th>
+                                                        <th class="border-top-0">ชื่อ-นามสกุล</th>
+                                                        <th class="border-top-0">ชื่อบริษัทที่ออกฝึก</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (DataRow st in Model.Tables[1].Rows)
+                                                    {
+                                                        if (sec[0].ToString() == st[4].ToString())
+                                                        {
+                                                            rowYes = rowYes + 1;
+                                                            
+                                                        <tr>
+                                                            <td>@rowYes</td>
+                                                            <td>@st[0]</td>
+                                                            <td>@st[1]</td>
+                                                            <td>
+                                                                @if (st[3].ToString() == ViewData["sem"].ToString())
+                                                                {
+                                                                    foreach (DataRow com in Model.Tables[0].Rows)
+                                                                    {
+                                                                        if (st[0].ToString() == com[0].ToString() && sec[0].ToString() == st[4].ToString())
+                                                                        {
+                                                                            <p>@com[2]</p>
+                                                                        }
+
+                                                                    }
+                                                                }
+                                                                else
+                                                                {
+                                                                    <p><font color="red">ยังไม่ออก</font></p>
+                                                                }
+                                                            </td>
+                                                        </tr>
+                                                        }
+                                                    }
+                                                </tbody> 
+                                            </table>
+                                        </div>
+                                        rowYes = 0;
+                                    }
+
+                                }
+
+                                <!-- title -->
+                            </div>                            
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- Table -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                ฝ่ายสหกิจศึกษาคณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี <a href="https://wrappixel.com">WrapPixel</a>.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../dist/js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="../../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../../dist/js/custom.js"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="../../assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="../../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="../../dist/js/pages/dashboards/dashboard1.js"></script>
+</body>
+</html>
+
+
+@*<table class="table v-middle">
+        <thead>
+            <tr>
+                <th>ลำดับ</th>
+                <th>รหัสนักศึกษา</th>
+                <th>ชื่อ-นามสกุล</th>
+                <th>ชื่อบริษัทที่ออกฝึก</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (DataRow st in Model.Tables[1].Rows)
+            {
+                rowYes = rowYes + 1;
+                <tr>
+                    <td>@rowYes</td>
+                    <td>@st[0]</td>
+                    <td>@st[1]</td>
+                    <td>
+                        @if(st[3].ToString() == ViewData["sem"].ToString())
+                        {
+                            foreach(DataRow com in Model.Tables[0].Rows)
+                            {
+                                if(st[0].ToString() == com[0].ToString())
+                                {
+                                    <p>@com[2]</p>
+                                }
+
+                            }
+                        }
+                        else
+                        {
+                            <p><font color="red">ยังไม่ออก</font></p>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+
