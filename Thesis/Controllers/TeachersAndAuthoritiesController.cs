@@ -20,7 +20,7 @@ namespace Project_03.Controllers
     {
         //string strConnection = "Data Source=JES-42COM\\SQLEXPRESS;Initial Catalog=Cooperative;Integrated Security=True;"; //Connect Database
 
-        string strConnection = "Data Source=localhost;username=root;password=;database=coperativermutt;";//Connect Database
+        //string strConnection = "Data Source=localhost;username=root;password=;database=coperativermutt;";//Connect Database
 
         public static string TA_ID;
         public static string TA_MAJOR;
